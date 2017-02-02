@@ -62,17 +62,6 @@ by \texttt{detex diss.tex | tr -cd '0-9A-Za-z $\tt\backslash$n' | wc -w}
 
 \section*{Original Aims of the Project}
 
-To write a demonstration dissertation\footnote{A normal footnote without the
-complication of being in a table.} using \LaTeX\ to save
-student's time when writing their own dissertations. The dissertation
-should illustrate how to use the more common \LaTeX\ constructs. It
-should include pictures and diagrams to show how these can be
-incorporated into the dissertation.  It should contain the entire
-\LaTeX\ source of the dissertation and the makefile.  It should
-explain how to construct an MSDOS disk of the dissertation in
-Postscript format that can be used by the book shop for printing, and,
-finally, it should have the prescribed layout and format of a diploma
-dissertation.
 
 
 \section*{Work Completed}
@@ -150,11 +139,13 @@ Finally, to ensure all the page numbering is correct run \texttt{pdflatex}
 on \texttt{diss.tex} until the \texttt{.aux} files do not change.  This
 usually takes 2 more runs.
 
-\subsection{The makefile}
+\subsection{The OpenGL pipeline}
 
-To simplify the calls to \texttt{pdflatex} and \texttt{bibtex}, 
-a makefile has been provided, see Appendix~\ref{makefile}. 
-It provides the following facilities:
+The OpenGL pipeline is comprised of several stages. As graphics programmers we generally only concern ourselves with two of the programmable stages: The fragment shader and the vertex shader.
+
+From the vertex shaders perspective, it is provided with an individual vertex, and the data that might be associated with it (3d Cartesian coordinates, Vertex Colour, UV Texture coordinates) These are then processed arbitrarily by the vertex shader. And passed onto vertex Post-Processing stage, which we have little or no control over as programmers.
+
+From the fragment shaders perspective, we are provided implicitly with our fragments position within the viewport (Including depth information) and any other data that was passed on by the vertex shader (Texture coordinates). We can then perform lighting calculations, texture lookups in this stage.
 
 \begin{description}
 
@@ -187,11 +178,20 @@ be reconstructed by typing \texttt{make all}.
 \end{description}
 
 
-\section{Counting words}
+\section{Anti-Aliasing techniques}
 
-An approximate word count of the body of the dissertation may be
-obtained using:
+Aliasing occurs when we misrepresent a signal frequency as we sample it. 
+To ameliorate artefacts such as these in a graphics pipeline we can employ one of various techniques:
 
+\subsection{Multisample Anti-aliasing}
+
+The default technique employed by OpenGL, this technique samples a number of times only along polygon edges and downsamples the fragment before it is passed to the fragment shader. In most scenarious this approach is adequate, but this technique fails where artefacts are visible inside of polygons boundaries.
+
+\subsection{Supersample Anti-aliasing}
+
+Being the simplest approach, we take multiple samples for each pixel onscreen, and downsample before presenting the image.
+
+This approach h results in the best image, and can ameliorate aliasing inside of polygon boundaries.
 \texttt{wc diss.tex}
 
 \noindent
@@ -362,12 +362,32 @@ examples. The second figure was drawn using \texttt{xfig} and exported in
 
 \chapter{Evaluation}
 
-\section{Printing and binding}
+\section{Optimisation}
+While the approach outlined can give a unnoticably similar image to the user, it will have been for nothing if we can't perform it as quickly or slower than the default MSAA method. 
 
-Use a ``duplex'' laser printer that can print on both sides to print
-two copies of your dissertation. Then bind them, for example using the
-comb binder in the Computer Laboratory Library.
+We can do a few things to speed things up:
+	Decrease resolution at the edges,
+	Downgrade lighting and texture calculations at the edges,
+	Perform an early depth pass to exploit hardware specific early depth optimisations,
+	
+By far the most obvious performance improvement we can make is to run fragment shaders on fragments we know will be visible,
 
+We render our scene twice, yet we run fragment shader code into an area of the viewport that will be overwritten my a multisampled area.
+
+Our fragment shaders shouldn't run in these areas, so we should fail fast in areas that will be overwritten.
+
+This snippet can be used to quickly determine if our fragment is in an area that will be overwritten.
+
+code
+code 
+code
+
+Then we only perform the useful bulk of the fragment shader code exactly the same number of times as when we weren't multisampling at all.
+
+Alternatively we could run our render pipeline for the multisampled central area first. Then, since our depth buffer will be populated, force early depth tests on our next render pass so that fragment shaders only run on the outer edges of the image.
+Because this approach doesn't run the boundary check above, we should expect better performance from this, but this early depth test optimisation is implementation specific - we can't guarantee that the approach will work on all platforms. So we don't use this optimisation.
+
+	
 \section{Further information}
 
 See the Unix Tools notes at
