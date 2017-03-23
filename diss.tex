@@ -49,8 +49,7 @@ Name:               & \bf George Ash                       \\
 College:            & \bf Fitzwilliam College                     \\
 Project Title:      & \bf Smart Antialiasing for Consumer Virtual Reality \\
 Examination:        & \bf Computer Science Tripos -- Part II, July 2017  \\
-Word Count:         & \bf 1587\footnotemark[1]
-                      (well less than the 12000 limit)  \\
+Word Count:         & \bf 1587\footnotemark[1] \\
 Supervisor:         & Dr Rafal Mantiuk                    \\ 
 \end{tabular}
 }
@@ -62,22 +61,13 @@ by \texttt{detex diss.tex | tr -cd '0-9A-Za-z $\tt\backslash$n' | wc -w}
 
 \section*{Original Aims of the Project}
 
-To write a demonstration dissertation\footnote{A normal footnote without the
-complication of being in a table.} using \LaTeX\ to save
-student's time when writing their own dissertations. The dissertation
-should illustrate how to use the more common \LaTeX\ constructs. It
-should include pictures and diagrams to show how these can be
-incorporated into the dissertation.  It should contain the entire
-\LaTeX\ source of the dissertation and the makefile.  It should
-explain how to construct an MSDOS disk of the dissertation in
-Postscript format that can be used by the book shop for printing, and,
-finally, it should have the prescribed layout and format of a diploma
-dissertation.
+To examine the effect on the image quality and GPU load when applying antialiasing only to a small field of view in a consumer Virtual Reality (VR) Headmounted Display (HMD).
 
 
 \section*{Work Completed}
 
-All that has been completed appears in this dissertation.
+Implementation of a generic, seamless method to multisample only in the centre of the screen using OpenGL.
+
 
 \section*{Special Difficulties}
 
@@ -118,25 +108,96 @@ appreciated.
 
 \chapter{Introduction}
 
-\section{Overview of the files}
+\section{Background}
 
-This document consists of the following files:
+Through the affordability of display panels and cheap wide-angle lenses, Virtual Reality Displays are beggining to flood the consumer market. To meet this demand, efficient rendering software and practices will need to be adopted.
 
-\begin{itemize}
-\item \texttt{makefile} --- The makefile for the dissertation and
-                         Project Proposal
-\item \texttt{diss.tex} --- The dissertation
-\item \texttt{proposal.tex}  --- The project proposal 
-\item \texttt{figs} -- A directory containing diagrams and pictures
-\item \texttt{refs.bib} --- The bibliography database
-\end{itemize}
+Graphics rendering pipelines take good advantage of available GPU power. But the constraints of realistic, immersive virtual reality present a huge challenge to engineers. They must output a high resolution, wide field of view, antialiased image, with a response to stimulus time under 20ms.
+
+As this technology progresses and matures, it will become increasingly important to provide low-latency response times. Resolutions will need to increase to around 8K*8K, but to achieve this our graphics processing hardware and software will have to evolve too.
+
+Aliasing in graphics refers to spatial and temporal artefacts present in a rendered image. They are the result of sampling a higher frequency signal component at a lower freqency.
+
+Antialising is the process of removing such artefacts, but this has to be done efficiently or we will sacrifice frame drops and potential motion sickness for the end-user.
+There are a multitude of antialiasing approaches, though most sample at a higher frequency than will be presented in the final image, then downsampling through some filter. 
+
+
+\section{Common Antialiasing Approaches}
+
+There are a multitude of antialising approaches, one of the most common is Supersampled Anti-alising (SSAA).
+First the scene is sampled at an integer multiple higher resolution than we intend to present it.
+Then, before presenting, this image is downsampled by taking for each pixel in the presented image, a linear combination of its closest neighbors in the higher resolution image. In the figure below, to calculate the final pixels colour, 4 samples per pixel are computed, each run through the fragment shader and then these pixels each contribute to the resulting image. The formula for for determining the final colour of the pixel is the simple mean average for each colour (Red, Green and Blue):
+$$ c = \frac{1}{n}\displaystyle\sum_{i=1}^n c_i $$ where n is the number of samples per pixels we take.
+
+
+
+\begin{figure}
+\setlength{\unitlength}{1mm}-
+\begin{center}
+\begin{picture}(125,100)
+
+\put(10,65){High-res image}
+
+\put(0,40){\framebox(20,20){$1_1$}}
+\put(20,40){\framebox(20,20){$1_2$}}
+\put(0,20){\framebox(20,20){$1_3$}}
+\put(20,20){\framebox(20,20){$1_4$}}
+
+\put(40,55){\vector(1,0){20}}
+\put(40,45){\vector(1,0){20}}
+\put(40,25){\vector(1,0){20}}
+\put(40,35){\vector(1,0){20}}
+
+\put(50,75){Fragment Shader}
+\put(60,10){\framebox(10,60)}
+
+\put(70,33){\vector(1,0){20}}
+\put(70,38){\vector(1,0){20}}
+\put(70,43){\vector(1,0){20}}
+\put(70,48){\vector(1,0){20}}
+
+\put(88,55){Presented Image}
+\put(90,30){\framebox(20,20){1}}
+
+
+
+\end{picture}
+\end{center}
+\caption{An example of 4x Supersampling for a single pixel.}
+\label{latexpic1}
+\end{figure}
+
+Another common approach, that is built into the OpenGL API, is Multisampled Anti-aliasing (MSAA). As before, the scene is sampled at a higher resolution than we intend to present it. If one of the subsamples is covered by a triangle being rendered, a fragment shader must be run on the whole sample, but the result of that fragment shader is applied to all subsamples. This means that fragment shader only has to be run the same number of times as it would have in the single sampled image. 
+MSAA provides a significant speedup over SSAA and is widely employed in practice, but only removes spatial artefacts at polygon edges. SSAA can remove artefacts within polygons, an example of which will be presented later.
+
+\section{Virtual Reality Headmounted Displays}
+
+A typical virtual Reality Headmounted Display (HMD) is comprised of 2 main components: The screen - to which our rendered image is presented and a wide-angle lens - to project the displayed image into the eye. The lens allows for the user to focus on a screen that is normally too close for the eye to focus on by itself. 
+Side effects of the lens used in the Oculus Rift DK2 are chromatic abberation, pincushion distortion, and astigmatism.\\
+
+Chromatic abberation refers to the separation of colour due to the different refractive indexes for different wavelengths of light. A Virtual Reality API should correct for this.\\
+
+Pincushion distortion refers to the stretching of the image near the egdes. The inverse of pincushion distortion, barrel disortion, can be applied to reverse the effects of pincushion distortion. The barrel distortion that we apply results in a varying number of texels per pixel in our final image, a property will be explored in the second extension. Again a Virtual Reality API should apply barrel distortion for you.
+
+
+\begin{figure}[tbh]
+\centerline{\includegraphics[width=10cm]{figs/distortiongrid.png}}
+\caption{Barrel distortion applied to a rectangular grid}
+\label{distortiongrid}
+\end{figure}
+
+Lens astigmatism is a property of the lenses used in most consumer HMDs. Because of the astigmatism, the image presented to the user is sharp in the center but becomes progressivelly blurrier as you look towards the edges.  It can be corrected for by adding more lenses to the HMD, but this ends up being too expensive and bulky for consumer versions.
+
+\begin{figure}
+\centerline{\includegraphics[width=8cm]{figs/blur.png}}
+\caption{A depiction of lens astigmatism. The percieved image blurs as you move away from the sharp center.}
+\label{blurred}
+\end{figure}
+
+This property can be exploited by antialiasing only where the image is sharpest, in the center. Graphical artefacts at the edges should be blurred enough to be unnoticable.
 
 \section{Building the document}
 
-This document was produced using \LaTeXe which is based upon
-\LaTeX\cite{Lamport86}.  To build the document you first need to
-generate \texttt{diss.aux} which, amongst other things, contains the
-references used.  This if done by executing the command:
 
 \texttt{pdflatex diss}
 
@@ -202,10 +263,87 @@ Alternatively, try something like:
 
 \chapter{Preparation}
 
-This chapter is empty!
+This chapter outlines any preparatory work that was done before implementation of the two antialiasing approaches.
+
+\section{OpenGL}
+
+The OpenGL API provides an interface to render 3D graphics. It's oldest and most widely adopted open source API and provides some antialising functionality.
+
+Some OpenGL terminology that will be used lots later.
+
+
+\begin{description}
+
+\item\texttt{Framebuffer} \\
+  A collection of buffers that can be used as the destination for rendering.
+
+\item\texttt{Blitting} \\
+  The process of moving image data between framebuffers.
+
+\item\texttt{Front Buffer}
+  The buffer containing the image that is presented onscreen now. This buffer is contained within the Default Framebuffer.
+
+\item\texttt{Back Buffer} \\
+  The buffer containing the image that will be presented onscreen in the next frame, is contained within the Default Framebuffer. 
+\end{description}
+
+\subsection{The OpenGL pipeline}
+
+OpenGL provides a pipeline through which data about the rendered scene is processed and rasterized. A simplified view of it is presented here, given that some stages are optional or non-programmable.
+
+
+
+
+\begin{figure}
+\setlength{\unitlength}{0.8mm}-
+\begin{center}
+\begin{picture}(80,120)
+
+\put(0,100){\framebox(80,10){Vertex Data}}
+\put(0,80){\framebox(80,10){Vertex Shader}}
+\put(0,60){\framebox(80,10){Geometry Shader}}
+\put(0,40){\framebox(80,10){Primitive Assembly \& Rasterization}}
+\put(0,20){\framebox(80,10){Fragment Shader}}
+\put(0,0){\framebox(80,10){Per Sample Operations}}
+
+
+
+\put(40,20){\vector(0,-1){10}}
+\put(40,40){\vector(0,-1){10}}
+\put(40,60){\vector(0,-1){10}}
+\put(40,80){\vector(0,-1){10}}
+\put(40,100){\vector(0,-1){10}}
+
+
+
+
+\end{picture}
+\end{center}
+\caption{A glimpse at the OpenGL rendering pipeline}
+\label{latexpic1}
+\end{figure}
+
+The Vertex Shader is run for every vertex in the scene. In the typical case it transforms vertexes in 3d world space to screen space coordinates.
+
+The Geometry Shader is run for every primitive in the scene (in all uses we'll simplify these to triangles). It is an unusual stage in that it can output more primitives than it takes as input. This stage is optional and can incur a heavy cost if utilized.
+
+The Fragment shader is run for every fragment (image data /*TODO*/ define fragment) in the clip space.
+
+\section{Development}
+
+Being relatively new to OpenGL I decided to build a small renderer to teach myself the basics of the API.
+
+This small renderer proved invaluable to the success of the project, since I knew and understood the source code completely, I could implement and test an idea for optimisation or an implementation strategy quickly.
+
+To get an idea of how these implementations would fare in a larger, more computationally intensive renderer I decided to modify the demo provided with the Oculus SDK 5.0.1: OculusWorldDemo. 
+The codebase to this was in C++ and the rendering code was written to be extensible - allowing for different graphics APIs to implement lower level rendering calls. The OpenGL implementation was Open Source and under the Apache License.
+
+
 
 
 \chapter{Implementation}
+
+
 
 \section{Verbatim text}
 
@@ -267,38 +405,6 @@ Simple diagrams can be written directly in \LaTeX.  For example, see
 figure~\ref{latexpic1} on page~\pageref{latexpic1} and see
 figure~\ref{latexpic2} on page~\pageref{latexpic2}.
 
-\begin{figure}
-\setlength{\unitlength}{1mm}
-\begin{center}
-\begin{picture}(125,100)
-\put(0,80){\framebox(50,10){AAA}}
-\put(0,60){\framebox(50,10){BBB}}
-\put(0,40){\framebox(50,10){CCC}}
-\put(0,20){\framebox(50,10){DDD}}
-\put(0,00){\framebox(50,10){EEE}}
-
-\put(75,80){\framebox(50,10){XXX}}
-\put(75,60){\framebox(50,10){YYY}}
-\put(75,40){\framebox(50,10){ZZZ}}
-
-\put(25,80){\vector(0,-1){10}}
-\put(25,60){\vector(0,-1){10}}
-\put(25,50){\vector(0,1){10}}
-\put(25,40){\vector(0,-1){10}}
-\put(25,20){\vector(0,-1){10}}
-
-\put(100,80){\vector(0,-1){10}}
-\put(100,70){\vector(0,1){10}}
-\put(100,60){\vector(0,-1){10}}
-\put(100,50){\vector(0,1){10}}
-
-\put(50,65){\vector(1,0){25}}
-\put(75,65){\vector(-1,0){25}}
-\end{picture}
-\end{center}
-\caption{A picture composed of boxes and vectors.}
-\label{latexpic1}
-\end{figure}
 
 \begin{figure}
 \setlength{\unitlength}{1mm}
