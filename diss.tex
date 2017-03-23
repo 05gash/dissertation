@@ -5,6 +5,13 @@
 \usepackage{graphicx}  % allows inclusion of PDF, PNG and JPG images
 \usepackage{verbatim}
 \usepackage{docmute}   % only needed to allow inclusion of proposal.tex
+\usepackage{fancyvrb}
+\usepackage{color}
+
+
+\DefineVerbatimEnvironment{blockcode}
+  {Verbatim}
+  {fontsize=\small}
 
 \raggedbottom                           % try to avoid widows and orphans
 \sloppy
@@ -66,13 +73,13 @@ To examine the effect on the image quality and GPU load when applying antialiasi
 
 \section*{Work Completed}
 
-Implementation of a generic, seamless method to multisample only in the centre of the screen using OpenGL.
-
+Implementation of a generic, seamless method to multisample only in the centre of the screen using OpenGL. Examined an implementation to accomodate to Foveated Rendering.
+A user study was conducted that determined image quality across a range of antialiasing techniques.
 
 \section*{Special Difficulties}
 
-Learning how to incorporate encapulated postscript into a \LaTeX\
-document on both Ubuntu Linux and OS X.
+Learning to profile accurately GPU software.
+Learning OpenGL in depth.
  
 \newpage
 \section*{Declaration}
@@ -196,69 +203,6 @@ Lens astigmatism is a property of the lenses used in most consumer HMDs. Because
 
 This property can be exploited by antialiasing only where the image is sharpest, in the center. Graphical artefacts at the edges should be blurred enough to be unnoticable.
 
-\section{Building the document}
-
-
-\texttt{pdflatex diss}
-
-\noindent
-Then the bibliography can be generated from \texttt{refs.bib} using:
-
-\texttt{bibtex diss}
-
-\noindent
-Finally, to ensure all the page numbering is correct run \texttt{pdflatex}
-on \texttt{diss.tex} until the \texttt{.aux} files do not change.  This
-usually takes 2 more runs.
-
-\subsection{The makefile}
-
-To simplify the calls to \texttt{pdflatex} and \texttt{bibtex}, 
-a makefile has been provided, see Appendix~\ref{makefile}. 
-It provides the following facilities:
-
-\begin{description}
-
-\item\texttt{make} \\
- Display help information.
-
-\item\texttt{make proposal.pdf} \\
- Format the proposal document as a PDF.
-
-\item\texttt{make view-proposal} \\
- Run \texttt{make proposal.pdf} and then display it with a Linux PDF viewer
- (preferably ``okular'', if that is not available fall back to ``evince'').
-
-\item\texttt{make diss.pdf} \\
- Format the dissertation document as a PDF.
-
-\item\texttt{make count} \\
-Display an estimate of the word count.
-
-\item\texttt{make all} \\
-Construct \texttt{proposal.pdf} and \texttt{diss.pdf}.
-
-\item\texttt{make pub} \\ Make \texttt{diss.pdf}
-and place it in my \texttt{public\_html} directory.
-
-\item\texttt{make clean} \\ Delete all intermediate files except the
-source files and the resulting PDFs. All these deleted files can
-be reconstructed by typing \texttt{make all}.
-
-\end{description}
-
-
-\section{Counting words}
-
-An approximate word count of the body of the dissertation may be
-obtained using:
-
-\texttt{wc diss.tex}
-
-\noindent
-Alternatively, try something like:
-
-\verb/detex diss.tex | tr -cd '0-9A-Z a-z\n' | wc -w/
 
 
 \chapter{Preparation}
@@ -285,13 +229,14 @@ Some OpenGL terminology that will be used lots later.
 
 \item\texttt{Back Buffer} \\
   The buffer containing the image that will be presented onscreen in the next frame, is contained within the Default Framebuffer. 
+
+\item\texttt{Fragment} \\
+  Collection of values produced by the rasterizer. A fragment represents a sample-sized segment of a rasterized primitive. These are processed by the fragment shader. 
 \end{description}
 
 \subsection{The OpenGL pipeline}
 
 OpenGL provides a pipeline through which data about the rendered scene is processed and rasterized. A simplified view of it is presented here, given that some stages are optional or non-programmable.
-
-
 
 
 \begin{figure}
@@ -320,14 +265,14 @@ OpenGL provides a pipeline through which data about the rendered scene is proces
 \end{picture}
 \end{center}
 \caption{A glimpse at the OpenGL rendering pipeline}
-\label{latexpic1}
+\label{latexpic2}
 \end{figure}
 
-The Vertex Shader is run for every vertex in the scene. In the typical case it transforms vertexes in 3d world space to screen space coordinates.
+The Vertex Shader is run for every vertex in the scene. In the typical case it transforms vertexes in 3d world space to window space coordinates.
 
 The Geometry Shader is run for every primitive in the scene (in all uses we'll simplify these to triangles). It is an unusual stage in that it can output more primitives than it takes as input. This stage is optional and can incur a heavy cost if utilized.
 
-The Fragment shader is run for every fragment (image data /*TODO*/ define fragment) in the clip space.
+The Fragment shader is run for every fragment in the window space.
 
 \section{Development}
 
@@ -335,49 +280,125 @@ Being relatively new to OpenGL I decided to build a small renderer to teach myse
 
 This small renderer proved invaluable to the success of the project, since I knew and understood the source code completely, I could implement and test an idea for optimisation or an implementation strategy quickly.
 
-To get an idea of how these implementations would fare in a larger, more computationally intensive renderer I decided to modify the demo provided with the Oculus SDK 5.0.1: OculusWorldDemo. 
+To get an idea of how these implementations would fare in a larger, more computationally intensive renderer I decided to modify the demo provided with the Oculus SDK 5.0.1: OculusWorldDemo.
 The codebase to this was in C++ and the rendering code was written to be extensible - allowing for different graphics APIs to implement lower level rendering calls. The OpenGL implementation was Open Source and under the Apache License.
 
+An agile approach was taken when implementing the antialising methods, stories were broken up into small, managable chunks. After these were implemented - extensions could be written up and implemented on top.
+Due to the high degree of coupling between modules in the Demo, unit tests were deemed to time-consuming to write, and would have required extensive mocking of complex modules.
+To make up for this, and to ensure correctness, runtime assertions were made on all branches and method calls.
+
+\section{Software libraries}
+
+The OculusVR SDK was used in the Demo to interface with the Oculus Rift DK2 HMD. An outdated version 0.5.0.1 was used being the last version to support linux.
+The SDK provided vector and matrix math modules, runtime assertions, and allowed barrel distortion and chromatic abberation to be performed on colour buffers.
+
+GLFW was used for context creation in the toy renderer.
+GLM was used for matrix math in the toy renderer.
+
+\section{Programming Languages}
+
+C++ was used in both the toy renderer and OculusWorldDemo. It has native OpenGL bindings and has extensive compiler support allowing for performance to be maximised.
 
 
+GLSL is the OpenGL C-like shader language that is run on the GPU. It was used to implement the first and second extensions. It's syntax is very similar to C. So learning it didn't take long.
+
+
+\section{Development Tools}
+
+Sublime text was the editor used to write all the software here.
+
+The C/C++ debugger \texttt{gdb} was used to debug both the toy renderer and OculusWorldDemo
+
+\texttt{apitrace} and \texttt{bugle} were used to debug and profile the OpenGL calls in both the toy renderer and OculusWorldDemo.
+
+\subsection{Version Control}
+
+Git was used as a version control system due to its flexibility and my familiarity with it. Remote repositories were placed both on a separate harddrive and Github. These remotes were updated on every commit. Commits were made after every development story was completed.
+
+\subsection{Failsafes}
+
+In the event of failure of my development machine, MCS machines were compatible and tested with the software I was using. Also two backups were made of all changes to the codebase, detailed above.
 
 \chapter{Implementation}
 
+\section{OculusWorldDemo Structure}
+
+Given that the implementation of two antialiasing techniques is built on top of Oculus' existing work, it was first neccesary to understand a large portion of their codebase.
+Here I give a brief overview of system components that will be modified and used later on. I also give a brief overview of Oculus' SDK before detailing components that were added and modified to OculusWorldDemo.
 
 
-\section{Verbatim text}
+\section{Projection Transformation}
 
-Verbatim text can be included using \verb|\begin{verbatim}| and
-\verb|\end{verbatim}|. I normally use a slightly smaller font and
-often squeeze the lines a little closer together, as in:
+An essential component to 3D graphics is the projection transformation. It takes as input 3D coordinates and maps them to 2D window coordinates.
+2 types of projection must be dealt with in the implementation.
 
-{\renewcommand{\baselinestretch}{0.8}\small
-\begin{verbatim}
-GET "libhdr"
- 
-GLOBAL { count:200; all  }
- 
-LET try(ld, row, rd) BE TEST row=all
-                        THEN count := count + 1
-                        ELSE { LET poss = all & ~(ld | row | rd)
-                               UNTIL poss=0 DO
-                               { LET p = poss & -poss
-                                 poss := poss - p
-                                 try(ld+p << 1, row+p, rd+p >> 1)
-                               }
-                             }
-LET start() = VALOF
-{ all := 1
-  FOR i = 1 TO 12 DO
-  { count := 0
-    try(0, 0, 0)
-    writef("Number of solutions to %i2-queens is %i5*n", i, count)
-    all := 2*all + 1
-  }
-  RESULTIS 0
-}
-\end{verbatim}
-}
+\subsection{Orthographic projection}
+The orthographic projection.
+\[
+ \begin{pmatrix}
+  \frac{2}{right-left} & 0 & 0 & -\frac{right+left}{right-left} \\
+  0 & \frac{2}{top-bottom} & 0 & -\frac{top+bottom}{right-left} \\
+  0 & 0 & \frac{2}{far-near} & -\frac{far + near}{far-near} \\
+  0 & 0 & 0 & 1
+ \end{pmatrix}
+
+This matrix is used to render two dimensional information at a required distance from the user.
+\]
+\subsection{Perspective projection}
+
+The perspective 
+\[
+ \begin{pmatrix}
+  a & b & c \\
+  d & e & f \\
+  g & h & i
+ \end{pmatrix}
+\]
+
+\section{MultiSample Resolve}
+
+This function takes as arguments a multisampled or supersampled texture along with an output texture. It then resolves the samples from the source texture to the target texture.
+
+
+\begin{blockcode}[commandchars=\\\{\}, numbers=left]
+void RenderDevice::ResolveMsaa(OVR::Render::Texture* msaaTex, OVR::Render::Texture* outputTex, float ratio)
+\{
+    bool isMsaaTarget = msaaTex->GetSamples() > 1;
+    glBindFramebuffer( GL_READ_FRAMEBUFFER, MsaaFbo);
+    glFramebufferTexture2D( GL_READ_FRAMEBUFFER, GL_COLOR_ATTACHMENT0,
+                            isMsaaTarget ? GL_TEXTURE_2D_MULTISAMPLE : GL_TEXTURE_2D,
+                            ((Texture*)msaaTex)->TexId, 0);
+    glFramebufferRenderbuffer(GL_READ_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, 0);
+    OVR_ASSERT(glCheckFramebufferStatus(GL_READ_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE);
+
+    glBindFramebuffer( GL_DRAW_FRAMEBUFFER, CurrentFbo );
+    glFramebufferTexture2D(GL_DRAW_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, ((Texture*)outputTex)->TexId, 0);
+    glFramebufferRenderbuffer(GL_DRAW_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, 0);
+
+    OVR_ASSERT(glCheckFramebufferStatus(GL_DRAW_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE);
+
+\color{green}    int off_x = (outputTex->GetWidth() - outputTex->GetWidth()/ratio)/2; //Offset from bottom left of the target texture we wish to blit the source to. 
+\color{green}    int off_y = (outputTex->GetHeight() - outputTex->GetHeight()/ratio)/2; // ditto
+\color{green}    glBlitFramebuffer( 0, 0, msaaTex->GetWidth(), msaaTex->GetHeight(), off_x, off_y,
+\color{green}                             off_x + outputTex->GetWidth()/ ratio,
+\color{green}                             off_y + outputTex->GetHeight()/ ratio,
+\color{green}                             GL_COLOR_BUFFER_BIT, GL_LINEAR);
+
+    glBindFramebuffer( GL_FRAMEBUFFER, 0 );  
+    GLint err = glGetError();
+    OVR_ASSERT_AND_UNUSED(!err, err);
+\}
+\end{blockcode}
+
+The method needs to set up the OpenGL state machine for the \texttt{glBlitFramebuffer} on line 21. First a multisampled framebuffer is set up to be read in line 2. Next we associate this framebuffer with \texttt{msaaTex} in lines 3-4. 
+We then set up the destination texture in its own framebuffer, and set the GL state to draw to this buffer in the blit in lines 11-13.
+
+Note that assertions are made to check for framebuffer completetness /*TODO*/define.
+
+Lines 19-24 implement the last stage of the downsampling method given in Y. We only blit the color buffer and do a linear downsample. 
+
+The GL_LINEAR filter will perform a supersample resolve using the method given in section BRAH.
+
 
 \section{Tables}
 
@@ -398,44 +419,6 @@ Last      & AAA     & X   \\
 \noindent
 There is another example table in the proforma.
 \end{samepage}
-
-\section{Simple diagrams}
-
-Simple diagrams can be written directly in \LaTeX.  For example, see
-figure~\ref{latexpic1} on page~\pageref{latexpic1} and see
-figure~\ref{latexpic2} on page~\pageref{latexpic2}.
-
-
-\begin{figure}
-\setlength{\unitlength}{1mm}
-\begin{center}
-
-\begin{picture}(100,70)
-\put(47,65){\circle{10}}
-\put(45,64){abc}
-
-\put(37,45){\circle{10}}
-\put(37,51){\line(1,1){7}}
-\put(35,44){def}
-
-\put(57,25){\circle{10}}
-\put(57,31){\line(-1,3){9}}
-\put(57,31){\line(-3,2){15}}
-\put(55,24){ghi}
-
-\put(32,0){\framebox(10,10){A}}
-\put(52,0){\framebox(10,10){B}}
-\put(37,12){\line(0,1){26}}
-\put(37,12){\line(2,1){15}}
-\put(57,12){\line(0,2){6}}
-\end{picture}
-
-\end{center}
-\caption{A diagram composed of circles, lines and boxes.}
-\label{latexpic2}
-\end{figure}
-
-
 
 \section{Adding more complicated graphics}
 

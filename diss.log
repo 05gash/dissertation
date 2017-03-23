@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.13)  23 MAR 2017 00:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.13)  25 MAR 2017 21:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -187,44 +187,58 @@ Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 ) (./docmute.sty
 Package: docmute 2012/03/22 v1.4 Input stand-alone documents
 )
-(./diss.aux
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
 
-LaTeX Warning: Label `latexpic1' multiply defined.
-
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count102
+\FV@InFile=\read2
+\FV@TabBox=\box26
+\c@FancyVerbLine=\count103
+\FV@StepNumber=\count104
+\FV@OutFile=\write3
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/01/03 v1.1b Standard LaTeX Color (DPC)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
+Package color Info: Driver file: pdftex.def on input line 143.
+)
+No file diss.aux.
 \openout1 = `diss.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-\AtBeginShipoutBox=\box26
-Package hyperref Info: Link coloring OFF on input line 17.
- (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+\AtBeginShipoutBox=\box27
+Package hyperref Info: Link coloring OFF on input line 24.
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count102
+\c@section@level=\count105
 )
-LaTeX Info: Redefining \ref on input line 17.
-LaTeX Info: Redefining \pageref on input line 17.
-LaTeX Info: Redefining \nameref on input line 17.
+LaTeX Info: Redefining \ref on input line 24.
+LaTeX Info: Redefining \pageref on input line 24.
+LaTeX Info: Redefining \nameref on input line 24.
 
 (./diss.out) (./diss.out)
-\@outlinefile=\write3
-\openout3 = `diss.out'.
+\@outlinefile=\write4
+\openout4 = `diss.out'.
 
 
 *geometry* driver: auto-detecting
@@ -263,16 +277,16 @@ LaTeX Info: Redefining \nameref on input line 17.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count103
+\scratchcounter=\count106
 \scratchdimen=\dimen117
-\scratchbox=\box27
-\nofMPsegments=\count104
-\nofMParguments=\count105
+\scratchbox=\box28
+\nofMPsegments=\count107
+\nofMParguments=\count108
 \everyMPshowfont=\toks18
-\MPscratchCnt=\count106
+\MPscratchCnt=\count109
 \MPscratchDim=\dimen118
-\MPnumerator=\count107
-\makeMPintoPDFobject=\count108
+\MPnumerator=\count110
+\makeMPintoPDFobject=\count111
 \everyMPtoPDFconversion=\toks19
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -289,7 +303,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\docmute@nestinglevel=\count109
+\docmute@nestinglevel=\count112
 
 [1
 
@@ -297,507 +311,90 @@ e
 
 ]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 47.
+(Font)              <14.4> on input line 54.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 47.
+(Font)              <7> on input line 54.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 58.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 74.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 74.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 74.
- [3] [4] (./diss.toc)
-\tf@toc=\write4
-\openout4 = `diss.toc'.
+(Font)              <5> on input line 65.
+ [3] [4]
+
+Package hyperref Warning: old toc file detected, not used; run LaTeX again.
+
+\tf@toc=\write5
+\openout5 = `diss.toc'.
 
 [5
 
 ] [6
 
-] (./diss.lof)
-\tf@lof=\write5
-\openout5 = `diss.lof'.
+]
 
- [7] [8]
+Package hyperref Warning: old lof file detected, not used; run LaTeX again.
+
+\tf@lof=\write6
+\openout6 = `diss.lof'.
+
+[7]
+
+LaTeX Warning: Citation `Moore95' on page 8 undefined on input line 108.
+
+[8]
 Chapter 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 137.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 137.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 137.
 [9
 
 ]
-Overfull \hbox (199.16824pt too wide) detected at line 152
+Overfull \hbox (199.16824pt too wide) detected at line 159
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--177
+Underfull \hbox (badness 10000) in paragraph at lines 182--184
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 178--179
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
 
  []
 
-<figs/distortiongrid.png, id=225, 965.6075pt x 1103.12125pt>
+<figs/distortiongrid.png, id=120, 965.6075pt x 1103.12125pt>
 File: figs/distortiongrid.png Graphic file (type png)
 
 <use figs/distortiongrid.png>
-Package pdftex.def Info: figs/distortiongrid.png used on input line 184.
+Package pdftex.def Info: figs/distortiongrid.png used on input line 191.
 (pdftex.def)             Requested size: 284.52756pt x 325.04764pt.
- <figs/blur.png, id=226, 642.4pt x 642.4pt>
+ <figs/blur.png, id=121, 642.4pt x 642.4pt>
 File: figs/blur.png Graphic file (type png)
 
 <use figs/blur.png>
-Package pdftex.def Info: figs/blur.png used on input line 192.
+Package pdftex.def Info: figs/blur.png used on input line 199.
 (pdftex.def)             Requested size: 227.62204pt x 227.6174pt.
- [11 <./figs/distortiongrid.png (PNG copy)>] [12 <./figs/blur.png>] [13] [14
-
-]
+ [11 <./figs/distortiongrid.png (PNG copy)>] [12 <./figs/blur.png>]
 Chapter 2.
-[15] [16]
+[13
+
+] [14] [15] [16
+
+]
 Chapter 3.
-[17
-
-] <figs/cuarms.pdf, id=267, 60.225pt x 72.27pt>
-File: figs/cuarms.pdf Graphic file (type pdf)
- <use figs/cuarms.pdf>
-Package pdftex.def Info: figs/cuarms.pdf used on input line 431.
-(pdftex.def)             Requested size: 60.22484pt x 72.2698pt.
-
-<figs/diagram.pdf, id=268, 458.71375pt x 336.25626pt>
-File: figs/diagram.pdf Graphic file (type pdf)
- <use figs/diagram.pdf>
-Package pdftex.def Info: figs/diagram.pdf used on input line 444.
-(pdftex.def)             Requested size: 458.71263pt x 336.25543pt.
-
-[18] [19 <./figs/cuarms.pdf>] [20 <./figs/diagram.pdf>]
-Chapter 4.
-[21
-
-] [22
-
-]
-Chapter 5.
-(./diss.bbl [23] [24
-
-]) [25] [26
-
-]
-Appendix A.
-File: diss.tex  (verbatim)
-[27]
-Overfull \hbox (284.26651pt too wide) in paragraph at lines 483--483
-[]\OT1/cmtt/m/n/8 To examine the effect on the image quality and GPU load when 
-applying antialiasing only to a small field of view in a consumer Virtual Reali
-ty (VR) Headmounted Display (HMD).[] 
- []
-
-
-Overfull \hbox (522.26993pt too wide) in paragraph at lines 483--483
-[]\OT1/cmtt/m/n/8 Through the affordability of display panels and cheap wide-an
-gle lenses, Virtual Reality Displays are beggining to flood the consumer market
-. To meet this demand, efficient rendering software and practices will need to 
-be adopted.[] 
- []
-
-[28]
-Overfull \hbox (781.52365pt too wide) in paragraph at lines 483--483
-[]\OT1/cmtt/m/n/8 Graphics rendering pipelines take good advantage of available
- GPU power. But the constraints of realistic, immersive virtual reality present
- a huge challenge to engineers. They must output a high resolution, wide field 
-of view, antialiased image, with a response to stimulus time under 20ms.[] 
- []
-
-
-Overfull \hbox (654.02182pt too wide) in paragraph at lines 483--483
-[]\OT1/cmtt/m/n/8 As this technology progresses and matures, it will become inc
-reasingly important to provide low-latency response times. Resolutions will nee
-d to increase to around 8K*8K, but to achieve this our graphics processing hard
-ware and software will have to evolve too.[] 
- []
-
-
-Overfull \hbox (305.51682pt too wide) in paragraph at lines 483--483
-[]\OT1/cmtt/m/n/8 Aliasing in graphics refers to spatial and temporal artefacts
- present in a rendered image. They are the result of sampling a higher frequenc
-y signal component at a lower freqency.[] 
- []
-
-
-Overfull \hbox (271.51633pt too wide) in paragraph at lines 483--483
-[]\OT1/cmtt/m/n/8 Antialising is the process of removing such artefacts, but th
-is has to be done efficiently or we will sacrifice frame drops and potential mo
-tion sickness for the end-user.[] 
- []
-
-
-Overfull \hbox (275.76639pt too wide) in paragraph at lines 483--483
-[]\OT1/cmtt/m/n/8 There are a multitude of antialiasing approaches, though most
- sample at a higher frequency than will be presented in the final image, then d
-ownsampling through some filter.[] 
- []
-
-
-Overfull \hbox (3.76248pt too wide) in paragraph at lines 483--483
-[]\OT1/cmtt/m/n/8 There are a multitude of antialising approaches, one of the m
-ost common is Supersampled Anti-alising (SSAA).[] 
- []
-
-
-Overfull \hbox (1538.03452pt too wide) in paragraph at lines 483--483
-[]\OT1/cmtt/m/n/8 Then, before presenting, we downsample this image by taking f
-or each pixel in the presented image, a linear combination of its closest neigh
-bors in the higher resolution image. In the figure below, we sample 4 times per
- pixel in the presented image, run each sample through the fragment shader and 
-then use these to form the resulting image. The formula for for determining the
- final colour of the pixel is the simple mean average for each colour (Red, Gre
-en and Blue):[] 
- []
-
-
-Overfull \hbox (1644.28604pt too wide) in paragraph at lines 483--483
-[]\OT1/cmtt/m/n/8 Another common approach, that is built into the OpenGL API, i
-s Multisampled Anti-aliasing (MSAA). As before, we sample the scene at a higher
- resolution than we intend to present it. If one of our subsamples is covered b
-y a triangle being rendered, we must run a fragment shader on the whole sample,
- but the result of that fragment shader is applied to all subsamples. This mean
-s that we only need to run the fragment shader the same number of times as we w
-ould have in the single sampled image.[] 
- []
-
-
-Overfull \hbox (454.26895pt too wide) in paragraph at lines 483--483
-[]\OT1/cmtt/m/n/8 MSAA provides a significant speedup over SSAA and is widely e
-mployed in practice, but only removes spatial artefacts at polygon edges. SSAA 
-can remove artefacts within polygons, an example of which we'll see later.[] 
- []
-
-
-Overfull \hbox (909.02548pt too wide) in paragraph at lines 483--483
-[]\OT1/cmtt/m/n/8 A typical virtual Reality Headmounted Display (HMD) is compri
-sed of 2 main components: The screen - to which our rendered image is presented
- and a wide-angle lens - to project the displayed image into the eye. The lens 
-allows for the user to focus on a screen that is normally too close for the eye
- to focus on by itself.[] 
- []
-
-
-Overfull \hbox (54.76321pt too wide) in paragraph at lines 483--483
-[]\OT1/cmtt/m/n/8 Side effects of the lens used in the Oculus Rift DK2 are chro
-matic abberation, pincushion distortion, and astigmatism.\\[] 
- []
-
-
-Overfull \hbox (309.76688pt too wide) in paragraph at lines 483--483
-[]\OT1/cmtt/m/n/8 Chromatic abberation refers to the separation of colour due t
-o the different refractive indexes for different wavelengths of light. A Virtua
-l Reality API should correct for this.\\[] 
- []
-
-
-Overfull \hbox (1372.28214pt too wide) in paragraph at lines 483--483
-[]\OT1/cmtt/m/n/8 Pincushion distortion refers to the stretching of the image n
-ear the egdes. We can apply the inverse of pincushion distortion, barrel disort
-ion, to our image to reverse the effects of pincushion distortion. The barrel d
-istortion results in a varying number of texels per pixel in our final image, a
- property we'll investigate and explore in the second extension. Again a Virtua
-l Reality API should apply barrel distortion for you.[] 
- []
-
-[29]
-Overfull \hbox (1036.52731pt too wide) in paragraph at lines 483--483
-[]\OT1/cmtt/m/n/8 Lens astigmatism is a property of the lenses used in most con
-sumer HMDs. Because of the astigmatism, the image presented to the user is shar
-p in the center but becomes progressivelly blurrier as you look towards the edg
-es.  It can be corrected for by adding more lenses to the HMD, but this ends up
- being too expensive and bulky for consumer versions.[] 
- []
-
-
-Overfull \hbox (301.26675pt too wide) in paragraph at lines 483--483
-[]\OT1/cmtt/m/n/8 We're going to exploit this property by antialiasing only whe
-re the image is sharpest, in the center. Graphical artefacts at the edges shoul
-d be blurred enough to be unnoticable.[] 
- []
-
-[30]
-Overfull \hbox (29.26285pt too wide) in paragraph at lines 483--483
-[]\OT1/cmtt/m/n/8 This chapter outlines any preparatory work that was done befo
-re implementation of the two antialiasing approaches.[] 
- []
-
-
-Overfull \hbox (207.76541pt too wide) in paragraph at lines 483--483
-[]\OT1/cmtt/m/n/8 The OpenGL API provides an interface to render 3D graphics. I
-t's oldest and most widely adopted open source API and provides some antialisin
-g functionality.[] 
- []
-
-
-Overfull \hbox (63.26334pt too wide) in paragraph at lines 483--483
-[]  \OT1/cmtt/m/n/8 The buffer containing the image that is presented onscreen 
-now. This buffer is contained within the Default Framebuffer.[] 
- []
-
-
-Overfull \hbox (93.01376pt too wide) in paragraph at lines 483--483
-[]  \OT1/cmtt/m/n/8 The buffer containing the image that will be presented onsc
-reen in the next frame, is contained within the Default Framebuffer.[] 
- []
-
-
-Overfull \hbox (394.7681pt too wide) in paragraph at lines 483--483
-[]\OT1/cmtt/m/n/8 OpenGL provides a pipeline through which data about the rende
-red scene is processed and rasterized. We'll present a simplified view of it he
-re, given that some stages are optional or non-programmable.[] 
- []
-
-[31] [32] [33]
-File: proposal.tex  (verbatim)
- [34]
-Overfull \hbox (46.26309pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 A problem with modern Virtual Reality headsets is that they u
-se low resolution displays to cover a huge Field of View.[] 
- []
-
-
-Overfull \hbox (16.51266pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 Graphical artefacts, such as moir\'e patterns and pixellated 
-edges (jaggies), are pronounced on these displays.[] 
- []
-
-
-Overfull \hbox (25.01279pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 A good technique to ameliorate these artefacts if super-sampl
-ing, but super-sampling is often too expensive in VR[] 
- []
-
-
-Overfull \hbox (994.0267pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 Unfortunately, modern consumer headsets suffer from astigmati
-sm because of a single lens between the viewer and the display. We can't remove
- these distortions without (another) anastigmatic lens, however we do currently
- give equal preference to image quality across the whole of the display even wh
-en the edges of the image become distorted.[] 
- []
-
-
-Overfull \hbox (696.52243pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 and sampling less as we move towards the blurrier edges (Figu
-re \ref{blurfig}). This project aims to extend an existing open source system t
-o include this optimisation, and to measure the impact on both the performance 
-of the system, and on the image quality to the user.[] 
- []
-
-
-Overfull \hbox (960.02621pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 Novel anti-aliasing techniques, such as subpixel-reconstructi
-on and temporal antialiasing, are still actively being developed. I intend to b
-uild on Intel's research[1] into a hybrid raytracing/rasterizing VR renderer by
- creating an entirely rasterized solution that retains image quality while allo
-wing for GPU hardware acceleration.[] 
- []
-
-
-Overfull \hbox (828.27432pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 Free and extensible renderers exist for VR headsets, such as 
-Unity. However I will be extending the existing open-source OSVR-RenderManager,
- which will allow me to easily create separate reusable demos to show off certa
-in graphical artefacts, and, if neccesary, to modify the entire rendering pipel
-ine.[] 
- []
-
-
-Overfull \hbox (25.01279pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 OSVR is compatible with all modern VR headsets, and supports 
-all modern graphics APIs (OpenGL, Vulkan, Direct3D).[] 
- []
-
-
-Overfull \hbox (994.0267pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 I have good experience in C/C++ through small projects and th
-e IB C/C++ course. I'm familiar with the graphics pipeline and have experience 
-in WebGL, with some experience writing vertex and fragment shaders in OpenGL. I
- will need to refresh my knowledge of shader programming, and will need to take
- some time learning most of the OpenGL API.[] 
- []
-
-
-Overfull \hbox (798.5239pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 For this project I shall be using my own quad-core machine wi
-th a VR capable GPU. I will also be using an Occulus Rift Development Kit 2 [3]
-(lent to me by the Hackers at Cambridge group) for testing and user studies. So
-urce backups will be made both to a private Github repository and MCS daily.[] 
-
- []
-
-
-Overfull \hbox (348.01743pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 \item \textbf{Setup} Fork the existing Open Source Virtual Re
-ality-RenderManager repository. Create a daily cronjob to backup this to github
- and MCS. Research my chosen renderer's pipeline.[] 
- []
-
-
-Overfull \hbox (496.76956pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 \item \textbf {Core development} Develop/modify a simple supe
-r-sampling algorithm. Extend the algorithm to allow for areas of the screen to 
-be ignored. Further extend to seamlessly composite draws that we sample differe
-ntly.[] 
- []
-
-
-Overfull \hbox (207.76541pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 \item \textbf {Demo creation} Create a couple of OpenGL demos
- that highlight both moire patterns and pixellated edges, for use in visual qua
-lity experiment.[] 
- []
-
-
-Overfull \hbox (203.51535pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 \item \textbf {Optimisation} Make use of a GPU profiler to de
-termine any redundancy or inefficiency. Refactor the algorithm to make it easil
-y configurable.[] 
- []
-
-[35]
-Overfull \hbox (1070.5278pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 \item \textbf {Evaluation} Make use of benchmarking/profiling
- software to evaluate the algorithm with regards to performance. Perform visual
- quality experiment to evaluate the impact of the algorithm on image quality to
- the user, recruit college members across fields to participate. Compare my app
-roach against no anti-aliasing, and fullscreen anti-aliasing.[] 
- []
-
-
-Overfull \hbox (54.76321pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 \item Provide an alternative anti-aliasing technique that suf
-fers only negligible loss in image quality to the end user.[] 
- []
-
-
-Overfull \hbox (373.51779pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 \item Evaluate both full screen antialiasing, my selective an
-tialiasing approach, and no antialiasing from a user perspective by constructin
-g demos that show off artefacts masked by antialiasing.[] 
- []
-
-
-Overfull \hbox (267.26627pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 \item Research using a heuristic to determine salient objects
- or regions in the scene, and extend my algorithm to more closely resemble a fo
-veated rendering[2] technique.[] 
- []
-
-
-Overfull \hbox (59.01328pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 \item Further reduce the requirement to super-sample by deter
-mining which objects/samples can be shared between each eye.[] 
- []
-
-
-Overfull \hbox (343.76736pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 \item \textbf{Michaelmas weeks 2--4} Start project Setup, Beg
-in refreshing knowledge on OpenGL. Research the rendering pipeline of my chosen
- renderer. Formulate an implementation strategy.[] 
- []
-
-
-Overfull \hbox (220.5156pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 \item \textbf{Michaelmas weeks 5--6} Complete project setup. 
-Test writing custom code in the renderer, start implementation of selective ant
-ialiasing algorithm[] 
- []
-
-
-Overfull \hbox (42.01303pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 \item \textbf{Lent weeks 6--8} Finish user studies, start per
-formance analysis. Write up User studies in disseration.[] 
- []
-
-
-Overfull \hbox (16.51266pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 \item \textbf{Easter term 0--2:}  Complete dissertation, proo
-f read. Submit to DoS and supervisor for comments.[] 
- []
-
-[36]
-Overfull \hbox (16.51266pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 \item Using Astigmatism in Wide Angle HMDs to Improve Renderi
-ng D. Pohl, T. Bolkart, S. Nickels, O. Grau, 2015.[] 
- []
-
-
-Overfull \hbox (8.01254pt too wide) in paragraph at lines 486--486
-[]\OT1/cmtt/m/n/8 \item Foveated 3d graphics. B. Guenter, M. Finch, S. Drucker,
- D. Tan, and J. Snyder. ACM SIGGRAPH Asia, 2012.[] 
- []
-
-[37] [38
-
-]
-Appendix B.
-File: makefile.txt  (verbatim)
-[39]
-File: refs.bib  (verbatim)
- [40]
-Appendix C.
-(./proposal.tex
-File: figs/blur.png Graphic file (type png)
- <use figs/blur.png>
-Package pdftex.def Info: figs/blur.png used on input line 42.
-(pdftex.def)             Requested size: 136.57462pt x 136.57436pt.
- [41
-
-] [42]
-Underfull \hbox (badness 1521) in paragraph at lines 104--105
-[]\OT1/cmr/m/n/12 Further re-duce the re-quire-ment to super-sample by de-ter-m
-in-ing which ob-
- []
-
-[43])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 501.
- [44]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 501.
- (./diss.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 501.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 501.
-Package rerunfilecheck Info: File `diss.out' has not changed.
-(rerunfilecheck)             Checksum: 1E53CF19B417CC2AEB0FE403FB7B65D7;1576.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 501.
- ) 
+! Missing } inserted.
+<inserted text> 
+                }
+l.339   \frac
+             {2}{right-left} & 0 & 0 & -\frac{right+left}{right-left} \\ 
 Here is how much of TeX's memory you used:
- 5770 strings out of 494953
- 84562 string characters out of 6180976
- 174793 words of memory out of 5000000
- 8891 multiletter control sequences out of 15000+600000
- 11550 words of font info for 43 fonts, out of 8000000 for 9000
+ 6041 strings out of 494953
+ 89647 string characters out of 6180976
+ 177466 words of memory out of 5000000
+ 9254 multiletter control sequences out of 15000+600000
+ 11082 words of font info for 41 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 29i,11n,32p,544b,469s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on diss.pdf (44 pages, 505942 bytes).
-PDF statistics:
- 516 PDF objects out of 1000 (max. 8388607)
- 441 compressed objects within 5 object streams
- 122 named destinations out of 1000 (max. 500000)
- 237 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 29i,11n,32p,508b,318s stack positions out of 5000i,500n,10000p,200000b,80000s
 
+!  ==> Fatal error occurred, no output PDF file produced!

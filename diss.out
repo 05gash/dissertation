@@ -2,26 +2,12 @@
 \BOOKMARK [1][-]{section.1.1}{Background}{chapter.1}% 2
 \BOOKMARK [1][-]{section.1.2}{Common Antialiasing Approaches}{chapter.1}% 3
 \BOOKMARK [1][-]{section.1.3}{Virtual Reality Headmounted Displays}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.4}{Building the document}{chapter.1}% 5
-\BOOKMARK [2][-]{subsection.1.4.1}{The makefile}{section.1.4}% 6
-\BOOKMARK [1][-]{section.1.5}{Counting words}{chapter.1}% 7
-\BOOKMARK [0][-]{chapter.2}{Preparation}{}% 8
-\BOOKMARK [1][-]{section.2.1}{OpenGL}{chapter.2}% 9
-\BOOKMARK [2][-]{subsection.2.1.1}{The OpenGL pipeline}{section.2.1}% 10
-\BOOKMARK [0][-]{chapter.3}{Implementation}{}% 11
-\BOOKMARK [1][-]{section.3.1}{Verbatim text}{chapter.3}% 12
-\BOOKMARK [1][-]{section.3.2}{Tables}{chapter.3}% 13
-\BOOKMARK [1][-]{section.3.3}{Simple diagrams}{chapter.3}% 14
-\BOOKMARK [1][-]{section.3.4}{Adding more complicated graphics}{chapter.3}% 15
-\BOOKMARK [0][-]{chapter.4}{Evaluation}{}% 16
-\BOOKMARK [1][-]{section.4.1}{Printing and binding}{chapter.4}% 17
-\BOOKMARK [1][-]{section.4.2}{Further information}{chapter.4}% 18
-\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 19
-\BOOKMARK [0][-]{chapter.5}{Bibliography}{}% 20
-\BOOKMARK [0][-]{appendix.A}{Latex source}{}% 21
-\BOOKMARK [1][-]{section.A.1}{diss.tex}{appendix.A}% 22
-\BOOKMARK [1][-]{section.A.2}{proposal.tex}{appendix.A}% 23
-\BOOKMARK [0][-]{appendix.B}{Makefile}{}% 24
-\BOOKMARK [1][-]{section.B.1}{makefile}{appendix.B}% 25
-\BOOKMARK [1][-]{section.B.2}{refs.bib}{appendix.B}% 26
-\BOOKMARK [0][-]{appendix.C}{Project Proposal}{}% 27
+\BOOKMARK [0][-]{chapter.2}{Preparation}{}% 5
+\BOOKMARK [1][-]{section.2.1}{OpenGL}{chapter.2}% 6
+\BOOKMARK [2][-]{subsection.2.1.1}{The OpenGL pipeline}{section.2.1}% 7
+\BOOKMARK [1][-]{section.2.2}{Development}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.3}{Software libraries}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.4}{Programming Languages}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.5}{Development Tools}{chapter.2}% 11
+\BOOKMARK [2][-]{subsection.2.5.1}{Version Control}{section.2.5}% 12
+\BOOKMARK [2][-]{subsection.2.5.2}{Failsafes}{section.2.5}% 13
