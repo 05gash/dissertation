@@ -1,0 +1,17 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces An example of 4x Supersampling for a single pixel.}}{10}{figure.1.1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Barrel distortion applied to a rectangular grid}}{11}{figure.1.2}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces A depiction of lens astigmatism. The percieved image blurs as you move away from the sharp center.}}{12}{figure.1.3}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces A glimpse at the OpenGL rendering pipeline}}{14}{figure.2.1}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Shows a high level process of rendering to two resolutions with one draw call}}{21}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Example figure using encapsulated postscript}}{24}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Example figure where a picture can be pasted in}}{25}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Example diagram drawn using \texttt {xfig}}}{25}{figure.3.4}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {C.1}{\ignorespaces The center of the perceived image is sharp, while the edges get progressively blurrier}}{50}{figure.C.1}

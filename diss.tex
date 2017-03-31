@@ -7,6 +7,7 @@
 \usepackage{docmute}   % only needed to allow inclusion of proposal.tex
 \usepackage{fancyvrb}
 \usepackage{color}
+\usepackage{amsmath}
 
 
 \DefineVerbatimEnvironment{blockcode}
@@ -128,7 +129,6 @@ Aliasing in graphics refers to spatial and temporal artefacts present in a rende
 Antialising is the process of removing such artefacts, but this has to be done efficiently or we will sacrifice frame drops and potential motion sickness for the end-user.
 There are a multitude of antialiasing approaches, though most sample at a higher frequency than will be presented in the final image, then downsampling through some filter. 
 
-
 \section{Common Antialiasing Approaches}
 
 There are a multitude of antialising approaches, one of the most common is Supersampled Anti-alising (SSAA).
@@ -155,7 +155,7 @@ $$ c = \frac{1}{n}\displaystyle\sum_{i=1}^n c_i $$ where n is the number of samp
 \put(40,25){\vector(1,0){20}}
 \put(40,35){\vector(1,0){20}}
 
-\put(50,75){Fragment Shader}
+\put(50,75){Subsample Resolve}
 \put(60,10){\framebox(10,60)}
 
 \put(70,33){\vector(1,0){20}}
@@ -174,7 +174,7 @@ $$ c = \frac{1}{n}\displaystyle\sum_{i=1}^n c_i $$ where n is the number of samp
 \label{latexpic1}
 \end{figure}
 
-Another common approach, that is built into the OpenGL API, is Multisampled Anti-aliasing (MSAA). As before, the scene is sampled at a higher resolution than we intend to present it. If one of the subsamples is covered by a triangle being rendered, a fragment shader must be run on the whole sample, but the result of that fragment shader is applied to all subsamples. This means that fragment shader only has to be run the same number of times as it would have in the single sampled image. 
+Another common approach, that is built into the OpenGL API, is Multisampled Anti-aliasing (MSAA). As before, the scene is sampled at a higher resolution than we intend to present it, forming a coverage mask for each pixel. If any of the samples in this coverage mask are covered by a triangle, we need to run a fragment shader for this pixel. The result of the fragment shader is applied to all relevant subsamples in the coverage mask. We therefore don't have to run a fragment shader for every subsample in the pixel, only those that are covered by multiple triangles.
 MSAA provides a significant speedup over SSAA and is widely employed in practice, but only removes spatial artefacts at polygon edges. SSAA can remove artefacts within polygons, an example of which will be presented later.
 
 \section{Virtual Reality Headmounted Displays}
@@ -247,7 +247,7 @@ OpenGL provides a pipeline through which data about the rendered scene is proces
 \put(0,100){\framebox(80,10){Vertex Data}}
 \put(0,80){\framebox(80,10){Vertex Shader}}
 \put(0,60){\framebox(80,10){Geometry Shader}}
-\put(0,40){\framebox(80,10){Primitive Assembly \& Rasterization}}
+\put(0,40){\framebox(80,10){Primitive Assembly, Rasterization}}
 \put(0,20){\framebox(80,10){Fragment Shader}}
 \put(0,0){\framebox(80,10){Per Sample Operations}}
 
@@ -326,6 +326,18 @@ In the event of failure of my development machine, MCS machines were compatible 
 Given that the implementation of two antialiasing techniques is built on top of Oculus' existing work, it was first neccesary to understand a large portion of their codebase.
 Here I give a brief overview of system components that will be modified and used later on. I also give a brief overview of Oculus' SDK before detailing components that were added and modified to OculusWorldDemo.
 
+\section{The Render Loop}
+At every frame, the Oculus SDK provides headtracking position that must be used to maintain the appropreate user state in the program.
+
+The bulk of rendering code is done within the OculusWorldDemoApp::OnIdle() method, which determines if and when a frame should be drawn, along with other bookeeping.
+For each frame the following must be done:
+
+\begin{itemize}
+  \item The SDK call \texttt{ovrHmd\_BeginFrame()} should be called to mark the beginning of the frame.
+  \item Update headtracking state.
+  \item Draw the scene to some texture(s) $\tau$.
+  \item Call \texttt{ovrHmd\_EndFrame($\tau$)}.
+\end{itemize}
 
 \section{Projection Transformation}
 
@@ -335,29 +347,72 @@ An essential component to 3D graphics is the projection transformation. It takes
 \subsection{Orthographic projection}
 The orthographic projection.
 \[
- \begin{pmatrix}
-  \frac{2}{right-left} & 0 & 0 & -\frac{right+left}{right-left} \\
-  0 & \frac{2}{top-bottom} & 0 & -\frac{top+bottom}{right-left} \\
-  0 & 0 & \frac{2}{far-near} & -\frac{far + near}{far-near} \\
-  0 & 0 & 0 & 1
- \end{pmatrix}
-
-This matrix is used to render two dimensional information at a required distance from the user.
+\begin{pmatrix}
+\dfrac{2}{right-left} & 0 & 0 & -\dfrac{right+left}{right-left} \\
+0 & \dfrac{2}{top-bottom} & 0 & -\dfrac{top+bottom}{right-left} \\
+0 & 0 & \dfrac{2}{far-near} & -\dfrac{far + near}{far-near} \\
+0 & 0 & 0 & 1
+\end{pmatrix}
 \]
+
+This matrix is used to render two dimensional information at a required distance from the user. In OculusWorldDemo and others it is used to render UI components.
 \subsection{Perspective projection}
 
-The perspective 
+The perspective projection is also used to render 3D scenes.
 \[
- \begin{pmatrix}
-  a & b & c \\
-  d & e & f \\
-  g & h & i
- \end{pmatrix}
+\begin{pmatrix}
+\dfrac{2*near}{right-left} & 0 & \dfrac{right + left}{right - left} & 0 \\
+0 & \dfrac{2*near}{top-bottom} & \dfrac{top+bottom}{top-bottom} & 0 \\
+0 & 0 & -\dfrac{far + near}{far-near} & -\dfrac{-2far*near}{far-near} \\
+0 & 0 & -1 & 0
+\end{pmatrix}
 \]
+
+To project onto a smaller portion of the screen we have to specify alternate orthographic and perspective projection matrices that correspond to the smaller viewing frustrum in the center of the screen. In OculusWorldDemo we can specify new matrices: \texttt{OrthoProjectionSmall} and \texttt{OrthoProjection} that are initialised, using the following method.
+
+\begin{blockcode}
+Matrix4f centeredSmallMatrix(Matrix4f m, float ratio){
+    Matrix4f rtn; 
+    rtn = copyMatrix(m);
+    rtn[0][0] *= ratio; //vertical FOV * 1/ratio
+    rtn[1][1] *= ratio; //vertical FOV * 1/ratio
+    return rtn;
+}
+\end{blockcode}
+
+The above returns a projection matrix with field of view that has $\frac{1}{\texttt{ratio}}$ of the field of view of the input projection matrix. The returned matrix also maintains the centering of the input matrix.
+
+/*TODO*/ insert split fov image here. 
+
+\section{Drawing the Scene}
+
+The perspective transformation is usually performed in the vertex shader stage, so the perspective transformation matrix must be linked up to this stage.
+
+
+\begin{blockcode}
+/*TODO*/ vertex shader code
+\end{blockcode} 
+
+This matrix can be linked up to the vertex shader with the function \texttt{glUniformMatrix4fv()}.
+
+\section{Drawing the scene}
+
+The render method of each scene needs only to know which eye it is rendering to, and whether it is drawing to the center or the borders of the image. 
+So the render method was modified to include the perspective projection matrix of the portion of the scene it is drawing to.
+
+\begin{blockcode}[commandchars=\\\{\}]
+void OculusWorldDemoApp::RenderEyeView(ovrEyeType eye,
+                                       \color{green}Matrix4f * projection,
+                                       \color{green}Matrix4f * orthoProj)
+\end{blockcode}
+
+We can then bind the correct projection matrices with a call to \texttt{glUniformMatrix4fv()}
+Nothing else needs altering in the draw call.
 
 \section{MultiSample Resolve}
 
-This function takes as arguments a multisampled or supersampled texture along with an output texture. It then resolves the samples from the source texture to the target texture.
+With a multisampled or supersampled texture along with a single sampled border texture we must perform a downsample to merge the two together before presenting onscreen. 
+The function below takes as arguments a multisampled or supersampled texture along with an output texture. It then resolves the samples from the source texture to the target texture.
 
 
 \begin{blockcode}[commandchars=\\\{\}, numbers=left]
@@ -397,7 +452,159 @@ Note that assertions are made to check for framebuffer completetness /*TODO*/def
 
 Lines 19-24 implement the last stage of the downsampling method given in Y. We only blit the color buffer and do a linear downsample. 
 
-The GL_LINEAR filter will perform a supersample resolve using the method given in section BRAH.
+The GL\_LINEAR filter will perform a supersample resolve using the method given in section BRAH.
+
+
+\section{OpenGL optimisations}
+
+The approach given has two main disadvantages:
+
+For each frame:
+\begin{itemize}
+  \item The entire scene must be traversed on each draw call - That's twice for each eye.
+  \item Many near identical draw calls are made, where only user perspective and position changes.
+\end{itemize}
+
+This situation can be improved twofold by taking advantage of the geometry shader.
+
+\section{Amplifying Geometry}
+
+Instead of submitting a draw call for each viewport, we can provide projection and view information to the geometry shader, which can decide which projection matrix to apply to which view. It can then, for each primitive it recieves, send one to each specified view in a single draw call. This allows us do perform supersampling with half as many draw calls as needed before.
+
+\subsection{The Geometry Shader}
+
+First, we need to effectively disable the vertex shader. We can simply allow it to pass through all of its input data towards the Geometry Shader.
+Then, our geometry shader can handle the perspective projection.
+
+\begin{figure}[tbh]
+\centerline{\includegraphics[scale=0.6]{figs/geoshader.eps}}
+\caption{Shows a high level process of rendering to two resolutions with one draw call}
+\label{epsfig1}
+\end{figure}
+
+
+
+This optimisation requires the OpenGL extension \texttt{ARB\_viewport\_array} though it is near ubiqitous across modern implementations.
+
+It's possible to either simultaneously render to separate layers of a layered texture, or simultaneously render to two separate viewports within the same, large texture. I use the latter approach for simplicity. I also assume 4 samples per pixel in this implementation, though it's not difficult to apply this to higher or lower levels of sampling. 
+First, we must specify our viewports' dimensions:
+
+\begin{blockcode}
+float v[] = {0, 0, mWidth, mHeight,
+             mWidth, 0, mWidth*2, mHeight};
+glViewportArrayv(0, 2, v); //Specify a viewport array, of length 2
+\end{blockcode} 
+
+The above initialises a viewport array such that the first viewport occupies the left half of the texture, and the second the right half of the screen. Viewport 0 will have a high field of view rendered to it, while Viewport 1 will have a low field of view, representing the area we will supersample.\\
+
+Next we must enable and compile a geometry shader.
+
+\begin{blockcode}
+  layout(triangles) in;
+  layout(triangle_strip, max_vertices=6) out;
+  ...
+  for (i=0; i<2; i++){
+    currentProj = i==0 ? proj : projSmall; //select currentProj based on i
+
+    fColour = vColour[0];
+    fTexCoord = vTexCoord[0];
+    gl_Position = currentProj*view*model*gl_in[0].gl_Position;
+    EmitVertex();
+    gl_ViewportIndex = i;
+  ...
+  EndPrimitive();
+\end{blockcode}
+
+As required by the geometry shader we first specify the input and output primitive. This same code can be generalised for other primitive types, but triangles are shown here being the general case.
+Then we can loop over the viewports, emitting a primitive at each.
+
+Line 5 selects the projection matrix based on the looping variable \texttt{i}. Then, colour, texture and normal information are passed on to the fragment shader for use in lighting and texturing. Finally the position of the vertex is calculated by the standard Model, View, Perspective transformation, Along with the index of the viewport it will be sent to. This snippet is applied to all vertices in the primitive.
+
+The resulting wide framebuffer can then be resolved in the same way given in section AWRAW. We can blit the right half of the screen onto the left half.
+Alternatively, you could perform a downsample in the barrel distortion shader, though this alternative wasn't implemented.  
+
+\section{Extension 1: Foveated Rendering}
+
+Foveated rendering refers to the technique of tracking users fovea, so that we can dynamically increase sampling at a fixation point, reducing resolution in the users peripheral. The technique shows promise because only a small field of view around a given fixation point can be percieved in high resolution owing to the number of cones in the fovea.
+
+Given eye-tracking information at the beginning of the frame, ideally a fixation point $(fix_x,fix_y)$ in window coordinates, we can use a very similar technique to the one developed here to perform foveated rendering. The fixation point here is assumed to be in the predistorted window space. 
+
+\subsection{Recalculating projection}
+
+SASDASD defines the perspective projection matrix, given the frustrum parameters $(near, far, top, bottom, left, right)$ of the full field of view, we can calculate a new projection matrix that we can use to render around our fixation point $(fix_x, fix_y)$:
+
+\[
+\begin{matrix}
+top_{fove}: top \cdot r + fix_y \\
+bottom_{fove}: bottom \cdot r + fix_y \\
+left_{fove}: left \cdot r + fix_x \\
+right_{fove}: right \dot r + fix_x 
+\end{matrix}
+\]
+Where $r$ is a parameter that denotes the ratio of the screen space rendered at high resolution to the space rendered at a lower one. It should be small enough such that the field of view around the fovea is rendered to full resolution, though its value differs based on a large number of factors, including the users proximity to the screen and the size of the screen.
+
+We can then (using the geometry shader approach given in chapter DKAADK) render to two separate viewports. One for a supersampled image around the fovea, and the other for the low resolution peripheral. A method of blending the two images together needs to be made, a blit operation onto the texture passed to the Oculus SDK here will work. 
+
+\section{Extension 1.5 Non-uniform Texel Density}
+
+Thanks to the barrel distortion, the number of texels per pixel as we move away from the center of the image increases. And because of the nature of graphics APIs, we must render to a higher resolution than needed in the edge of the image, even though this high resolution is only needed in the center, where texel density is relatively uniform and lowest.
+
+If we use the same foveated rendering technique for a fixation point in the centre of the screen, we can shade fewer fragments wilst maintaining at least 1 texel per pixel as a threshold.
+
+We can take this even further and render below the single texel per pixel threshold, exploiting astigmasitm in the lens.
+
+\subsection{Blending the two textures}
+
+A blit operation here might be wasteful, given that the rendertarget is not antialiased. So a better method would be to 
+
+\section{Even faster optimisations}
+
+The disadvantage of the geometry shader approach to multi-resolution shading is the incurred cost of invoking the optional geometry shader stage.
+Two extensions to OpenGL have been proposed by Oculus, \texttt{OVR\_MULTIEW}, and \texttt{OVR\_MULTIVIEW2}. These extensions will allow multiple elements of a 2D texture array to be rendered to simultaneously. Allowing us to render both the high resolution central image and lower resolution peripheral in one call, without the need for invoking the geometry shader and without intrusive modifications to the vertex shader. The only implementations of these extensions are in GLES currently - perhaps because of the lack of a geometry shader stage in GLES.
+
+Regardless, a brief implementation of multi-resolution rendering will be given here.
+
+First we need to set up a layered texture.
+
+\begin{blockcode}
+glGenTextures(1, &frameBufferTextureId); //generate a texture
+glBindTexture(GL_TEXTURE_2D_ARRAY, frameBufferTextureId);
+glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MIN_FILTER, GL_LINEAR); //set downsample filter
+glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MAG_FILTER, GL_LINEAR); //set upscale filter
+glTexStorage3D(GL_TEXTURE_2D_ARRAY, 1, GL_RGBA8, mWidth, mHeight, 2); //allocate storage for two textures per eye
+\end{blockcode}
+
+Then, a framebuffer must be generated, and the layered texture attached to it.
+
+\begin{blockcode}
+glGenFramebuffers(1, &frameBufferObjectId); //Generate a framebuffer
+glBindFramebuffer(GL_DRAW_FRAMEBUFFER, frameBufferObjectId); //set framebuffer to be drawn to
+glFramebufferTextureMultiviewOVR(GL_DRAW_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, frameBufferTextureId, 0, 0, 2); attach layered texture
+\end{blockcode}
+
+Then, we can generate depth buffers for each layer, and attach them to the framebuffer.
+
+\begin{blockcode}
+glGenTextures(1, &frameBufferDepthTextureId);
+glBindTexture(GL_TEXTURE_2D_ARRAY, frameBufferDepthTextureId);
+glTexStorage3D(GL_TEXTURE_2D_ARRAY, 1, GL_DEPTH_COMPONENT24, width, height, 2); //create layered depth texture
+
+glFramebufferTextureMultiviewOVR(GL_DRAW_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, frameBufferDepthTextureId, 0, 0, 2); //attach layered depth texture
+\end{blockcode}
+
+Finally, an assertion on framebuffer comepleteness should be made.
+\begin{blockcode}
+OVR_ASSERT(glCheckFramebufferStatus(GL_DRAW_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE); //assert framebuffer is complete
+\end{blockcode}
+
+
+Then, in a manner similar to selecting a projection matrix based on viewport before, a projection can be selected based on the variable \texttt{gl\_ViewID\_OVR} in the vertex shader like so.
+
+\begin{blockcode}
+currentProj = gl_ViewID_OVR == 0 ? proj : projSmall; //select currentProj based on 
+\end{blockcode}
+
+
 
 
 \section{Tables}
@@ -451,12 +658,6 @@ examples. The second figure was drawn using \texttt{xfig} and exported in
 
 \chapter{Evaluation}
 
-\section{Printing and binding}
-
-Use a ``duplex'' laser printer that can print on both sides to print
-two copies of your dissertation. Then bind them, for example using the
-comb binder in the Computer Laboratory Library.
-
 \section{Further information}
 
 See the Unix Tools notes at
@@ -465,9 +666,6 @@ See the Unix Tools notes at
 
 
 \chapter{Conclusion}
-
-I hope that this rough guide to writing a dissertation is \LaTeX\ has
-been helpful and saved you time.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
