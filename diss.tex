@@ -679,9 +679,6 @@ The two textures can be blended in post-processing by the same method given in s
 
 \section{Tables}
 
-\begin{samepage}
-Here is a simple example\footnote{A footnote} of a table.
-
 \begin{center}
 \begin{tabular}{l|c|r}
 Left      & Centred & Right \\
@@ -693,45 +690,31 @@ Last      & AAA     & X   \\
 \end{tabular}
 \end{center}
 
-\noindent
-There is another example table in the proforma.
-\end{samepage}
-
-\section{Adding more complicated graphics}
-
-The use of \LaTeX\ format can be tedious and it is often better to use
-encapsulated postscript (EPS) or PDF to represent complicated graphics.
-Figure~\ref{epsfig} and~\ref{xfig} on page \pageref{xfig} are
-examples. The second figure was drawn using \texttt{xfig} and exported in
-{\tt.eps} format. This is my recommended way of drawing all diagrams.
-
-
-\begin{figure}[tbh]
-\centerline{\includegraphics{figs/cuarms.pdf}}
-\caption{Example figure using encapsulated postscript}
-\label{epsfig}
-\end{figure}
-
-\begin{figure}[tbh]
-\vspace{4in}
-\caption{Example figure where a picture can be pasted in}
-\label{pastedfig}
-\end{figure}
-
-
-\begin{figure}[tbh]
-\centerline{\includegraphics{figs/diagram.pdf}}
-\caption{Example diagram drawn using \texttt{xfig}}
-\label{xfig}
-\end{figure}
-
-
 \chapter{Evaluation}
+
+\section{Subjective Assesment}
+
+
+
+\section{Objective Assesment}
+
+While the user study performed provides a robust and reliable assesment of image quality across different approaches, Computational metrics for objective image quality assesment can be essential.The performance of the system can determine how quickly the image resonds to stimulus which can help reduce simulation sickness in the user. Given that implementations of graphics APIs differ dramatically, along with hardware implementations, measuring a framerate directly on a particlar machine cannot be the best indicator of performance as a whole. Though the framerates of different approaches are given, it should be understood that performance can vary dramatically across different hardware vendors, graphics APIs and their implementations, and rendering programs. Given this, a range of other information is given to best represent the antialiasing approaches and given some more meaningful insight into their execution. Information such as: triangle count, fragment and vertex shader invocations, memory fetches, API calls, average instructions per frame on CPU, average instructions per frame on GPU were measured and compared, along with some interpretation of this in a platform independent setting.
+
+\section{API calls}
+
+A reduction in the number of API calls we send to the GPU can contribute to better performance of the system. Every API call needs to be validated. The standard OpenGL calls are listed below in descending order of performance cost.
+
+\begin{enumerate}
+\item blah \\
+\end{enumerate}
+
+\section{Fragment shader invocations}
+
 
 \section{Removal of artefacts}
 By capturing views of a scene using different rendering techniques and subtracting them, we can observe artefacts that were present in the scene before and after antialiasing was applied.
 
-Using 
+Using Supersampled Antialiasing, we can see texture filtering has improved, while multisampling only removes artefacts at polygon boundaries.
 
 \section{Further information}
 

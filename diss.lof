@@ -8,12 +8,9 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Shows a regular pixel grid pre and post brown distortion. Coordinates are normalised to the range $[-1,1]$}}{18}{figure.3.1}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Shows the field of view for each eye. Not shown are the fov\_Up and fov\_Down parameters}}{20}{figure.3.2}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Shows the high level process of rendering to two resolutions with one draw call}}{23}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Example figure using encapsulated postscript}}{27}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Example figure where a picture can be pasted in}}{28}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Example diagram drawn using \texttt {xfig}}}{28}{figure.3.6}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces The center of the perceived image is sharp, while the edges get progressively blurrier}}{54}{figure.C.1}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces The center of the perceived image is sharp, while the edges get progressively blurrier}}{52}{figure.C.1}

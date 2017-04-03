@@ -32,16 +32,18 @@
 \contentsline {subsection}{\numberline {3.12.1}Blending the two textures}{25}{subsection.3.12.1}
 \contentsline {section}{\numberline {3.13}Even faster optimisations}{26}{section.3.13}
 \contentsline {section}{\numberline {3.14}Tables}{27}{section.3.14}
-\contentsline {section}{\numberline {3.15}Adding more complicated graphics}{27}{section.3.15}
 \contentsline {chapter}{\numberline {4}Evaluation}{29}{chapter.4}
-\contentsline {section}{\numberline {4.1}Removal of artefacts}{29}{section.4.1}
-\contentsline {section}{\numberline {4.2}Further information}{29}{section.4.2}
+\contentsline {section}{\numberline {4.1}Subjective Assesment}{29}{section.4.1}
+\contentsline {section}{\numberline {4.2}Objective Assesment}{29}{section.4.2}
+\contentsline {section}{\numberline {4.3}API calls}{29}{section.4.3}
+\contentsline {section}{\numberline {4.4}Removal of artefacts}{30}{section.4.4}
+\contentsline {section}{\numberline {4.5}Further information}{30}{section.4.5}
 \contentsline {chapter}{\numberline {5}Conclusion}{31}{chapter.5}
 \contentsline {chapter}{Bibliography}{31}{chapter.5}
 \contentsline {chapter}{\numberline {A}Latex source}{35}{appendix.A}
 \contentsline {section}{\numberline {A.1}diss.tex}{35}{section.A.1}
 \contentsline {section}{\numberline {A.2}proposal.tex}{46}{section.A.2}
-\contentsline {chapter}{\numberline {B}Makefile}{51}{appendix.B}
-\contentsline {section}{\numberline {B.1}makefile}{51}{section.B.1}
-\contentsline {section}{\numberline {B.2}refs.bib}{52}{section.B.2}
-\contentsline {chapter}{\numberline {C}Project Proposal}{53}{appendix.C}
+\contentsline {chapter}{\numberline {B}Makefile}{49}{appendix.B}
+\contentsline {section}{\numberline {B.1}makefile}{49}{section.B.1}
+\contentsline {section}{\numberline {B.2}refs.bib}{50}{section.B.2}
+\contentsline {chapter}{\numberline {C}Project Proposal}{51}{appendix.C}

@@ -32,16 +32,18 @@
 \BOOKMARK [2][-]{subsection.3.12.1}{Blending the two textures}{section.3.12}% 32
 \BOOKMARK [1][-]{section.3.13}{Even faster optimisations}{chapter.3}% 33
 \BOOKMARK [1][-]{section.3.14}{Tables}{chapter.3}% 34
-\BOOKMARK [1][-]{section.3.15}{Adding more complicated graphics}{chapter.3}% 35
-\BOOKMARK [0][-]{chapter.4}{Evaluation}{}% 36
-\BOOKMARK [1][-]{section.4.1}{Removal of artefacts}{chapter.4}% 37
-\BOOKMARK [1][-]{section.4.2}{Further information}{chapter.4}% 38
-\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 39
-\BOOKMARK [0][-]{chapter.5}{Bibliography}{}% 40
-\BOOKMARK [0][-]{appendix.A}{Latex source}{}% 41
-\BOOKMARK [1][-]{section.A.1}{diss.tex}{appendix.A}% 42
-\BOOKMARK [1][-]{section.A.2}{proposal.tex}{appendix.A}% 43
-\BOOKMARK [0][-]{appendix.B}{Makefile}{}% 44
-\BOOKMARK [1][-]{section.B.1}{makefile}{appendix.B}% 45
-\BOOKMARK [1][-]{section.B.2}{refs.bib}{appendix.B}% 46
-\BOOKMARK [0][-]{appendix.C}{Project Proposal}{}% 47
+\BOOKMARK [0][-]{chapter.4}{Evaluation}{}% 35
+\BOOKMARK [1][-]{section.4.1}{Subjective Assesment}{chapter.4}% 36
+\BOOKMARK [1][-]{section.4.2}{Objective Assesment}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.3}{API calls}{chapter.4}% 38
+\BOOKMARK [1][-]{section.4.4}{Removal of artefacts}{chapter.4}% 39
+\BOOKMARK [1][-]{section.4.5}{Further information}{chapter.4}% 40
+\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 41
+\BOOKMARK [0][-]{chapter.5}{Bibliography}{}% 42
+\BOOKMARK [0][-]{appendix.A}{Latex source}{}% 43
+\BOOKMARK [1][-]{section.A.1}{diss.tex}{appendix.A}% 44
+\BOOKMARK [1][-]{section.A.2}{proposal.tex}{appendix.A}% 45
+\BOOKMARK [0][-]{appendix.B}{Makefile}{}% 46
+\BOOKMARK [1][-]{section.B.1}{makefile}{appendix.B}% 47
+\BOOKMARK [1][-]{section.B.2}{refs.bib}{appendix.B}% 48
+\BOOKMARK [0][-]{appendix.C}{Project Proposal}{}% 49
