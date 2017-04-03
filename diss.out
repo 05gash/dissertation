@@ -14,30 +14,34 @@
 \BOOKMARK [0][-]{chapter.3}{Implementation}{}% 14
 \BOOKMARK [1][-]{section.3.1}{OculusWorldDemo Structure}{chapter.3}% 15
 \BOOKMARK [1][-]{section.3.2}{The Render Loop}{chapter.3}% 16
-\BOOKMARK [1][-]{section.3.3}{Projection Transformation}{chapter.3}% 17
-\BOOKMARK [2][-]{subsection.3.3.1}{Orthographic projection}{section.3.3}% 18
-\BOOKMARK [2][-]{subsection.3.3.2}{Perspective projection}{section.3.3}% 19
-\BOOKMARK [1][-]{section.3.4}{Drawing the Scene}{chapter.3}% 20
-\BOOKMARK [1][-]{section.3.5}{Drawing the scene}{chapter.3}% 21
-\BOOKMARK [1][-]{section.3.6}{MultiSample Resolve}{chapter.3}% 22
-\BOOKMARK [1][-]{section.3.7}{OpenGL optimisations}{chapter.3}% 23
-\BOOKMARK [1][-]{section.3.8}{Amplifying Geometry}{chapter.3}% 24
-\BOOKMARK [2][-]{subsection.3.8.1}{The Geometry Shader}{section.3.8}% 25
-\BOOKMARK [1][-]{section.3.9}{Extension 1: Foveated Rendering}{chapter.3}% 26
-\BOOKMARK [2][-]{subsection.3.9.1}{Recalculating projection}{section.3.9}% 27
-\BOOKMARK [1][-]{section.3.10}{Extension 1.5 Non-uniform Texel Density}{chapter.3}% 28
-\BOOKMARK [2][-]{subsection.3.10.1}{Blending the }{section.3.10}% 29
-\BOOKMARK [1][-]{section.3.11}{Even faster optimisations}{chapter.3}% 30
-\BOOKMARK [1][-]{section.3.12}{Tables}{chapter.3}% 31
-\BOOKMARK [1][-]{section.3.13}{Adding more complicated graphics}{chapter.3}% 32
-\BOOKMARK [0][-]{chapter.4}{Evaluation}{}% 33
-\BOOKMARK [1][-]{section.4.1}{Further information}{chapter.4}% 34
-\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 35
-\BOOKMARK [0][-]{chapter.5}{Bibliography}{}% 36
-\BOOKMARK [0][-]{appendix.A}{Latex source}{}% 37
-\BOOKMARK [1][-]{section.A.1}{diss.tex}{appendix.A}% 38
-\BOOKMARK [1][-]{section.A.2}{proposal.tex}{appendix.A}% 39
-\BOOKMARK [0][-]{appendix.B}{Makefile}{}% 40
-\BOOKMARK [1][-]{section.B.1}{makefile}{appendix.B}% 41
-\BOOKMARK [1][-]{section.B.2}{refs.bib}{appendix.B}% 42
-\BOOKMARK [0][-]{appendix.C}{Project Proposal}{}% 43
+\BOOKMARK [1][-]{section.3.3}{Barrel Distortion}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.4}{Implementation overview}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.5}{Projection Transformation}{chapter.3}% 19
+\BOOKMARK [2][-]{subsection.3.5.1}{Orthographic projection}{section.3.5}% 20
+\BOOKMARK [2][-]{subsection.3.5.2}{Perspective projection}{section.3.5}% 21
+\BOOKMARK [2][-]{subsection.3.5.3}{Matrix Initilisation}{section.3.5}% 22
+\BOOKMARK [1][-]{section.3.6}{Drawing the scene}{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.7}{Allocating Textures}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.8}{MultiSample Resolve}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.9}{OpenGL optimisations}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.10}{Amplifying Geometry}{chapter.3}% 27
+\BOOKMARK [2][-]{subsection.3.10.1}{The Geometry Shader}{section.3.10}% 28
+\BOOKMARK [1][-]{section.3.11}{Extension 1: Foveated Rendering}{chapter.3}% 29
+\BOOKMARK [2][-]{subsection.3.11.1}{Recalculating projection}{section.3.11}% 30
+\BOOKMARK [1][-]{section.3.12}{Extension 1.5 Non-uniform Texel Density}{chapter.3}% 31
+\BOOKMARK [2][-]{subsection.3.12.1}{Blending the two textures}{section.3.12}% 32
+\BOOKMARK [1][-]{section.3.13}{Even faster optimisations}{chapter.3}% 33
+\BOOKMARK [1][-]{section.3.14}{Tables}{chapter.3}% 34
+\BOOKMARK [1][-]{section.3.15}{Adding more complicated graphics}{chapter.3}% 35
+\BOOKMARK [0][-]{chapter.4}{Evaluation}{}% 36
+\BOOKMARK [1][-]{section.4.1}{Removal of artefacts}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.2}{Further information}{chapter.4}% 38
+\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 39
+\BOOKMARK [0][-]{chapter.5}{Bibliography}{}% 40
+\BOOKMARK [0][-]{appendix.A}{Latex source}{}% 41
+\BOOKMARK [1][-]{section.A.1}{diss.tex}{appendix.A}% 42
+\BOOKMARK [1][-]{section.A.2}{proposal.tex}{appendix.A}% 43
+\BOOKMARK [0][-]{appendix.B}{Makefile}{}% 44
+\BOOKMARK [1][-]{section.B.1}{makefile}{appendix.B}% 45
+\BOOKMARK [1][-]{section.B.2}{refs.bib}{appendix.B}% 46
+\BOOKMARK [0][-]{appendix.C}{Project Proposal}{}% 47
