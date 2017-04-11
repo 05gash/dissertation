@@ -4,11 +4,12 @@ def resultsParse(location):
 	results = [0,0,0,0,0]
 	f = open(location, "r")
 	for line in f:
-		results[parseLine(line)] = results[parseLine(line)]+1
+		results[parseLine(line)] = results[parseLine(line)] + 1
 	print results
 
 
 def parseLine(line):
+	rtn = ''
 	line = line.replace(" ","")
 
 	p = re.compile('sb|mb')
@@ -18,6 +19,12 @@ def parseLine(line):
 	fields = line.split(',')
 	first = fields[0].split('-')[0]
 	second = fields[0].split('-')[1]
-	if p.match(fields[1]): return second
-	elif o.match(fields[1]): return first
-	else: return random.choice([first, second])	
+	if p.match(fields[1]): rtn = second
+	elif o.match(fields[1]): rtn = first
+	else: rtn = random.choice([first, second])	
+	return int(rtn)
+
+
+resultsParse('/home/cen/Downloads/finals - Sheet1.csv')
+resultsParse('/home/cen/Downloads/finals - Sheet2.csv')
+resultsParse('/home/cen/Downloads/finals - Sheet3.csv')

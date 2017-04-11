@@ -676,23 +676,35 @@ currentProj = gl_ViewID_OVR == 0 ? proj : projSmall; //select currentProj based 
 
 The two textures can be blended in post-processing by the same method given in section ASDSDAK
 
-
-\section{Tables}
-
-\begin{center}
-\begin{tabular}{l|c|r}
-Left      & Centred & Right \\
-Justified &         & Justified \\[3mm]
-%\hline\\%[-2mm]
-First     & A       & XXX \\
-Second    & AA      & XX  \\
-Last      & AAA     & X   \\
-\end{tabular}
-\end{center}
-
 \chapter{Evaluation}
 
 \section{Subjective Assesment}
+
+A user study was performed to asses the subjective quality across the techniques implemented. The section BLAH describes the experiment, and section NRAH describes its results.
+
+\section{User Study Setup}
+
+Subjects were given 3 different scenes to observe, each with headtracking disabled, and headtracking enabled, across 3 different antialiasing techniques and a control. They were: no antialiasing (control), Fullscreen multisampling (4x),  Subscreen multisampling (4x), Subscreen Supersampling (2x). The latter two being implemented by myself.\\
+
+Test subjects were presented with two images, one after another, and asked to choose the one with better image quality, though the interpretation of better quality was left to the subject. All permutations of image comparison were presented to users, with each experiment taking around 30 minutes. Subjects were also prompted to give verbal feedback describing the reason for their choice.
+
+The three scenes shown were:
+
+\begin{enumarate}
+\item A scene of green, untextured blocks, moving in a horizontal circle around the user.\\
+
+\item A scene of a courtyard, including downsampled textures and complex geometry.\\
+
+\item A scene from a balcony, facing a tree with alpha culling to implement leaves.\\
+
+\end{enumerate} 
+
+
+\section{User study results}
+
+Results varied slightly when headtracking was disabled, possibly owing to the salience of temporal artefacts at polygon edges (flickering) when headtracking was enabled. Subjects Subscreen Supersampling generally performed poorly here, despite offering the best texture filtering of all the techniques. Users complained that the image was noticably, sharp at the centre, and were able to distinguish between the higher quality texture filtering in the centre of the image and the border, and this was pronounced where headtracking was enabled. However Subscreen Supersampling performed the best at the scene of the tree, with spacial artefacts owing to alpha culling being ameliorated only by supersampling.
+
+Fullscreen Multisampling and Subscreen Multisampling were largely indistinguishable, most users had difficulty choosing between them and some made contradictary choices when the image order was reversed. This is might be due to more time fixating on the centre of the screen, but also astigmatism at the edge of the image could help mask artefacts. This seems to be the most promising result from the user study, and backs up the premise on which the project was based.
 
 
 
@@ -702,14 +714,19 @@ While the user study performed provides a robust and reliable assesment of image
 
 \section{API calls}
 
-A reduction in the number of API calls we send to the GPU can contribute to better performance of the system. Every API call needs to be validated. The standard OpenGL calls are listed below in descending order of performance cost.
+A reduction in the number of API calls we send to the GPU can contribute to better performance of the system. Every API call needs to be send to the GPU and validated, taking hundreds to thousands of instructions.
 
 \begin{enumerate}
 \item blah \\
 \end{enumerate}
 
+
 \section{Fragment shader invocations}
 
+Fragment shader invocations generally increase linearly with the size of image, assuming the scene is isotropic. If our application bottleneck is at the fragment shader stage, we will reap performance benefits by shading less fragments.
+
+\subsection{Multisampling}
+OpenGL Multisampling will run a fragment shader for every primitive that partially occludes a sample, if we take some Multisample rate per pixel $r, where r>1$ along with the number of pixels being rendered to $n$, we can calculate at what ratio and screen dimension subscreen multisampling will invoke the fragment shader less than fullscreen multisampling. One invocation of the OpenGL rendering pipeline will shade $\frac{1}{4}n*r + n$ fragments in the suscreen case whereas the OpenGL pipeline will shade   
 
 \section{Removal of artefacts}
 By capturing views of a scene using different rendering techniques and subtracting them, we can observe artefacts that were present in the scene before and after antialiasing was applied.
