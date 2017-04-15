@@ -25,6 +25,6 @@ def parseLine(line):
 	return int(rtn)
 
 
-resultsParse('/home/cen/Downloads/finals - Sheet1.csv')
-resultsParse('/home/cen/Downloads/finals - Sheet2.csv')
-resultsParse('/home/cen/Downloads/finals - Sheet3.csv')
+resultsParse('/home/ga354/Downloads/finals - Sheet1.csv')
+resultsParse('/home/ga354/Downloads/finals - Sheet2.csv')
+resultsParse('/home/ga354/Downloads/finals - Sheet3.csv')

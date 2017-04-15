@@ -9,8 +9,9 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Shows the field of view for each eye. Not shown are the fov\_Up and fov\_Down parameters}}{20}{figure.3.2}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Shows the high level process of rendering to two resolutions with one draw call}}{23}{figure.3.3}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Shows a regular pixel grid pre and post brown distortion. Coordinates are normalised to the range $[-1,1]$}}{30}{figure.4.1}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces The center of the perceived image is sharp, while the edges get progressively blurrier}}{52}{figure.C.1}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces The center of the perceived image is sharp, while the edges get progressively blurrier}}{54}{figure.C.1}

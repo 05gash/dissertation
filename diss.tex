@@ -690,7 +690,7 @@ Test subjects were presented with two images, one after another, and asked to ch
 
 The three scenes shown were:
 
-\begin{enumarate}
+\begin{enumerate}
 \item A scene of green, untextured blocks, moving in a horizontal circle around the user.\\
 
 \item A scene of a courtyard, including downsampled textures and complex geometry.\\
@@ -702,7 +702,11 @@ The three scenes shown were:
 
 \section{User study results}
 
-Results varied slightly when headtracking was disabled, possibly owing to the salience of temporal artefacts at polygon edges (flickering) when headtracking was enabled. Subjects Subscreen Supersampling generally performed poorly here, despite offering the best texture filtering of all the techniques. Users complained that the image was noticably, sharp at the centre, and were able to distinguish between the higher quality texture filtering in the centre of the image and the border, and this was pronounced where headtracking was enabled. However Subscreen Supersampling performed the best at the scene of the tree, with spacial artefacts owing to alpha culling being ameliorated only by supersampling.
+Results varied slightly when headtracking was disabled, possibly owing to the salience of temporal artefacts at polygon edges (flickering) when headtracking was enabled. 
+
+The first scene of moving cubes showed the best 
+
+Subjects Subscreen Supersampling generally performed poorly here, despite offering the best texture filtering of all the techniques. Users complained that the image was noticably, sharp at the centre, and were able to distinguish between the higher quality texture filtering in the centre of the image and the border, and this was pronounced where headtracking was enabled. However Subscreen Supersampling performed the best at the scene of the tree, with spacial artefacts owing to alpha culling being ameliorated only by supersampling.
 
 Fullscreen Multisampling and Subscreen Multisampling were largely indistinguishable, most users had difficulty choosing between them and some made contradictary choices when the image order was reversed. This is might be due to more time fixating on the centre of the screen, but also astigmatism at the edge of the image could help mask artefacts. This seems to be the most promising result from the user study, and backs up the premise on which the project was based.
 
@@ -731,16 +735,37 @@ OpenGL Multisampling will run a fragment shader for every primitive that partial
 \section{Removal of artefacts}
 By capturing views of a scene using different rendering techniques and subtracting them, we can observe artefacts that were present in the scene before and after antialiasing was applied.
 
-Using Supersampled Antialiasing, we can see texture filtering has improved, while multisampling only removes artefacts at polygon boundaries.
+Using Supersampled Antialiasing, we can see texture filtering has improved, while multisampling only removes artefacts at polygon boundaries. Multisampling will also not remove artefacts due to alpha blending inside of polygon boundaries, we can see a great example of this in the tree, where the space between leaves is culled from alpha testing.
 
-\section{Further information}
+\section{Extension 1 Evaluation}
 
-See the Unix Tools notes at
 
-\url{http://www.cl.cam.ac.uk/teaching/current-1/UnixTools/materials.html}
 
+\section{Extension 1.5 Evaluation}
+
+Because of the barrel distortion applied in post-processing Oculus recommends rendering at a resolution \%40 larger than the display permits to achieve an acceptable pixel density in the centre of the image.
+A large problem facing the traditional barrel distortion applied in post-processing is a non-uniform pixel density across the image. Futhermore, pixel density is highest at the extremeties, where gaze is less likely to be fixed and lens astigmatism will have the greatest impact. 
+
+\begin{figure}[tbh]
+\begin{center}
+\includegraphics[width=12cm]{figs/oculus_pixel_density.eps}
+\caption{Shows the pixel density across an oculus DK2 display post barrel distortion}
+\label{epsfig1}
+\end{center}
+\end{figure}
+
+By only rendering at full resolution in the centre of the image, we improve drastically the pixel density at the center, while decreasing the pixel density in the edges of the image. The number of fragments that we shade is reduced by half, compared to the standard, non-supersampled image size that Oculus recommends. However, twice as many vertices need to be processed. Given that the bottleneck in most consumer applications are in the fragment shader stage, and that we generally need to process significantly more fragments that vertices, we should expect a considerable decrease in the time to present a frame using this method. 
+
+\begin{figure}[tbh]
+\begin{center}
+\includegraphics[width=12cm]{figs/oculus_pixel_density_optimisation.eps}
+\caption{Shows the pixel density across an oculus DK2 display post barrel distortion}
+\label{epsfig1}
+\end{center}
+\end{figure}
 
 \chapter{Conclusion}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
