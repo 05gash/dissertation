@@ -20,34 +20,39 @@
 \BOOKMARK [2][-]{subsection.3.5.1}{Orthographic projection}{section.3.5}% 20
 \BOOKMARK [2][-]{subsection.3.5.2}{Perspective projection}{section.3.5}% 21
 \BOOKMARK [2][-]{subsection.3.5.3}{Matrix Initilisation}{section.3.5}% 22
-\BOOKMARK [1][-]{section.3.6}{Drawing the scene}{chapter.3}% 23
-\BOOKMARK [1][-]{section.3.7}{Allocating Textures}{chapter.3}% 24
-\BOOKMARK [1][-]{section.3.8}{MultiSample Resolve}{chapter.3}% 25
-\BOOKMARK [1][-]{section.3.9}{OpenGL optimisations}{chapter.3}% 26
-\BOOKMARK [1][-]{section.3.10}{Amplifying Geometry}{chapter.3}% 27
-\BOOKMARK [2][-]{subsection.3.10.1}{The Geometry Shader}{section.3.10}% 28
-\BOOKMARK [1][-]{section.3.11}{Extension 1: Foveated Rendering}{chapter.3}% 29
-\BOOKMARK [2][-]{subsection.3.11.1}{Recalculating projection}{section.3.11}% 30
-\BOOKMARK [1][-]{section.3.12}{Extension 1.5 Non-uniform Texel Density}{chapter.3}% 31
-\BOOKMARK [2][-]{subsection.3.12.1}{Blending the two textures}{section.3.12}% 32
-\BOOKMARK [1][-]{section.3.13}{Even faster optimisations}{chapter.3}% 33
-\BOOKMARK [0][-]{chapter.4}{Evaluation}{}% 34
-\BOOKMARK [1][-]{section.4.1}{Subjective Assesment}{chapter.4}% 35
-\BOOKMARK [1][-]{section.4.2}{User Study Setup}{chapter.4}% 36
-\BOOKMARK [1][-]{section.4.3}{User study results}{chapter.4}% 37
-\BOOKMARK [1][-]{section.4.4}{Objective Assesment}{chapter.4}% 38
-\BOOKMARK [1][-]{section.4.5}{API calls}{chapter.4}% 39
-\BOOKMARK [1][-]{section.4.6}{Fragment shader invocations}{chapter.4}% 40
-\BOOKMARK [2][-]{subsection.4.6.1}{Multisampling}{section.4.6}% 41
-\BOOKMARK [1][-]{section.4.7}{Removal of artefacts}{chapter.4}% 42
-\BOOKMARK [1][-]{section.4.8}{Extension 1 Evaluation}{chapter.4}% 43
-\BOOKMARK [1][-]{section.4.9}{Extension 1.5 Evaluation}{chapter.4}% 44
-\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 45
-\BOOKMARK [0][-]{chapter.5}{Bibliography}{}% 46
-\BOOKMARK [0][-]{appendix.A}{Latex source}{}% 47
-\BOOKMARK [1][-]{section.A.1}{diss.tex}{appendix.A}% 48
-\BOOKMARK [1][-]{section.A.2}{proposal.tex}{appendix.A}% 49
-\BOOKMARK [0][-]{appendix.B}{Makefile}{}% 50
-\BOOKMARK [1][-]{section.B.1}{makefile}{appendix.B}% 51
-\BOOKMARK [1][-]{section.B.2}{refs.bib}{appendix.B}% 52
-\BOOKMARK [0][-]{appendix.C}{Project Proposal}{}% 53
+\BOOKMARK [1][-]{section.3.6}{Allocating Textures}{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.7}{Drawing the scene}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.7.1}{Modifying The Render Loop}{section.3.7}% 25
+\BOOKMARK [1][-]{section.3.8}{MultiSample Resolve}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.9}{OpenGL optimisations}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.10}{Amplifying Geometry}{chapter.3}% 28
+\BOOKMARK [2][-]{subsection.3.10.1}{The Geometry Shader}{section.3.10}% 29
+\BOOKMARK [1][-]{section.3.11}{Extension 1: Foveated Rendering}{chapter.3}% 30
+\BOOKMARK [2][-]{subsection.3.11.1}{Recalculating projection}{section.3.11}% 31
+\BOOKMARK [1][-]{section.3.12}{Extension 1.5 Non-uniform Texel Density}{chapter.3}% 32
+\BOOKMARK [2][-]{subsection.3.12.1}{Blending the two textures}{section.3.12}% 33
+\BOOKMARK [1][-]{section.3.13}{Limitations}{chapter.3}% 34
+\BOOKMARK [1][-]{section.3.14}{Future Hardware Support}{chapter.3}% 35
+\BOOKMARK [0][-]{chapter.4}{Evaluation}{}% 36
+\BOOKMARK [1][-]{section.4.1}{Subjective Assesment}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.2}{User Study Setup}{chapter.4}% 38
+\BOOKMARK [1][-]{section.4.3}{User study results}{chapter.4}% 39
+\BOOKMARK [1][-]{section.4.4}{Objective Assesment}{chapter.4}% 40
+\BOOKMARK [1][-]{section.4.5}{API calls}{chapter.4}% 41
+\BOOKMARK [1][-]{section.4.6}{Fragment shader invocations}{chapter.4}% 42
+\BOOKMARK [2][-]{subsection.4.6.1}{Multisampling}{section.4.6}% 43
+\BOOKMARK [1][-]{section.4.7}{Fragment Shader Timing}{chapter.4}% 44
+\BOOKMARK [1][-]{section.4.8}{Removal of artefacts}{chapter.4}% 45
+\BOOKMARK [2][-]{subsection.4.8.1}{Subscreen Supersampling}{section.4.8}% 46
+\BOOKMARK [2][-]{subsection.4.8.2}{Subscreen Multisampling}{section.4.8}% 47
+\BOOKMARK [1][-]{section.4.9}{Extension 1 Evaluation}{chapter.4}% 48
+\BOOKMARK [1][-]{section.4.10}{Extension 1.5 Evaluation}{chapter.4}% 49
+\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 50
+\BOOKMARK [0][-]{chapter.5}{Bibliography}{}% 51
+\BOOKMARK [0][-]{appendix.A}{Latex source}{}% 52
+\BOOKMARK [1][-]{section.A.1}{diss.tex}{appendix.A}% 53
+\BOOKMARK [1][-]{section.A.2}{proposal.tex}{appendix.A}% 54
+\BOOKMARK [0][-]{appendix.B}{Makefile}{}% 55
+\BOOKMARK [1][-]{section.B.1}{makefile}{appendix.B}% 56
+\BOOKMARK [1][-]{section.B.2}{refs.bib}{appendix.B}% 57
+\BOOKMARK [0][-]{appendix.C}{Project Proposal}{}% 58

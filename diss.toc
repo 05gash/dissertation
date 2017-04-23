@@ -5,7 +5,7 @@
 \contentsline {chapter}{\numberline {2}Preparation}{13}{chapter.2}
 \contentsline {section}{\numberline {2.1}OpenGL}{13}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}The OpenGL pipeline}{14}{subsection.2.1.1}
-\contentsline {section}{\numberline {2.2}Development}{14}{section.2.2}
+\contentsline {section}{\numberline {2.2}Development}{15}{section.2.2}
 \contentsline {section}{\numberline {2.3}Software libraries}{15}{section.2.3}
 \contentsline {section}{\numberline {2.4}Programming Languages}{15}{section.2.4}
 \contentsline {section}{\numberline {2.5}Development Tools}{15}{section.2.5}
@@ -20,34 +20,39 @@
 \contentsline {subsection}{\numberline {3.5.1}Orthographic projection}{19}{subsection.3.5.1}
 \contentsline {subsection}{\numberline {3.5.2}Perspective projection}{19}{subsection.3.5.2}
 \contentsline {subsection}{\numberline {3.5.3}Matrix Initilisation}{19}{subsection.3.5.3}
-\contentsline {section}{\numberline {3.6}Drawing the scene}{20}{section.3.6}
-\contentsline {section}{\numberline {3.7}Allocating Textures}{21}{section.3.7}
+\contentsline {section}{\numberline {3.6}Allocating Textures}{20}{section.3.6}
+\contentsline {section}{\numberline {3.7}Drawing the scene}{21}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}Modifying The Render Loop}{21}{subsection.3.7.1}
 \contentsline {section}{\numberline {3.8}MultiSample Resolve}{21}{section.3.8}
-\contentsline {section}{\numberline {3.9}OpenGL optimisations}{22}{section.3.9}
+\contentsline {section}{\numberline {3.9}OpenGL optimisations}{23}{section.3.9}
 \contentsline {section}{\numberline {3.10}Amplifying Geometry}{23}{section.3.10}
 \contentsline {subsection}{\numberline {3.10.1}The Geometry Shader}{23}{subsection.3.10.1}
-\contentsline {section}{\numberline {3.11}Extension 1: Foveated Rendering}{24}{section.3.11}
+\contentsline {section}{\numberline {3.11}Extension 1: Foveated Rendering}{25}{section.3.11}
 \contentsline {subsection}{\numberline {3.11.1}Recalculating projection}{25}{subsection.3.11.1}
-\contentsline {section}{\numberline {3.12}Extension 1.5 Non-uniform Texel Density}{25}{section.3.12}
-\contentsline {subsection}{\numberline {3.12.1}Blending the two textures}{25}{subsection.3.12.1}
-\contentsline {section}{\numberline {3.13}Even faster optimisations}{26}{section.3.13}
-\contentsline {chapter}{\numberline {4}Evaluation}{27}{chapter.4}
-\contentsline {section}{\numberline {4.1}Subjective Assesment}{27}{section.4.1}
-\contentsline {section}{\numberline {4.2}User Study Setup}{27}{section.4.2}
-\contentsline {section}{\numberline {4.3}User study results}{27}{section.4.3}
-\contentsline {section}{\numberline {4.4}Objective Assesment}{28}{section.4.4}
-\contentsline {section}{\numberline {4.5}API calls}{28}{section.4.5}
-\contentsline {section}{\numberline {4.6}Fragment shader invocations}{29}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}Multisampling}{29}{subsection.4.6.1}
-\contentsline {section}{\numberline {4.7}Removal of artefacts}{29}{section.4.7}
-\contentsline {section}{\numberline {4.8}Extension 1 Evaluation}{29}{section.4.8}
-\contentsline {section}{\numberline {4.9}Extension 1.5 Evaluation}{29}{section.4.9}
-\contentsline {chapter}{\numberline {5}Conclusion}{31}{chapter.5}
-\contentsline {chapter}{Bibliography}{31}{chapter.5}
-\contentsline {chapter}{\numberline {A}Latex source}{35}{appendix.A}
-\contentsline {section}{\numberline {A.1}diss.tex}{35}{section.A.1}
-\contentsline {section}{\numberline {A.2}proposal.tex}{47}{section.A.2}
-\contentsline {chapter}{\numberline {B}Makefile}{51}{appendix.B}
-\contentsline {section}{\numberline {B.1}makefile}{51}{section.B.1}
-\contentsline {section}{\numberline {B.2}refs.bib}{52}{section.B.2}
-\contentsline {chapter}{\numberline {C}Project Proposal}{53}{appendix.C}
+\contentsline {section}{\numberline {3.12}Extension 1.5 Non-uniform Texel Density}{26}{section.3.12}
+\contentsline {subsection}{\numberline {3.12.1}Blending the two textures}{26}{subsection.3.12.1}
+\contentsline {section}{\numberline {3.13}Limitations}{26}{section.3.13}
+\contentsline {section}{\numberline {3.14}Future Hardware Support}{26}{section.3.14}
+\contentsline {chapter}{\numberline {4}Evaluation}{29}{chapter.4}
+\contentsline {section}{\numberline {4.1}Subjective Assesment}{29}{section.4.1}
+\contentsline {section}{\numberline {4.2}User Study Setup}{29}{section.4.2}
+\contentsline {section}{\numberline {4.3}User study results}{29}{section.4.3}
+\contentsline {section}{\numberline {4.4}Objective Assesment}{30}{section.4.4}
+\contentsline {section}{\numberline {4.5}API calls}{30}{section.4.5}
+\contentsline {section}{\numberline {4.6}Fragment shader invocations}{31}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Multisampling}{31}{subsection.4.6.1}
+\contentsline {section}{\numberline {4.7}Fragment Shader Timing}{31}{section.4.7}
+\contentsline {section}{\numberline {4.8}Removal of artefacts}{32}{section.4.8}
+\contentsline {subsection}{\numberline {4.8.1}Subscreen Supersampling}{32}{subsection.4.8.1}
+\contentsline {subsection}{\numberline {4.8.2}Subscreen Multisampling}{33}{subsection.4.8.2}
+\contentsline {section}{\numberline {4.9}Extension 1 Evaluation}{33}{section.4.9}
+\contentsline {section}{\numberline {4.10}Extension 1.5 Evaluation}{33}{section.4.10}
+\contentsline {chapter}{\numberline {5}Conclusion}{35}{chapter.5}
+\contentsline {chapter}{Bibliography}{35}{chapter.5}
+\contentsline {chapter}{\numberline {A}Latex source}{39}{appendix.A}
+\contentsline {section}{\numberline {A.1}diss.tex}{39}{section.A.1}
+\contentsline {section}{\numberline {A.2}proposal.tex}{52}{section.A.2}
+\contentsline {chapter}{\numberline {B}Makefile}{55}{appendix.B}
+\contentsline {section}{\numberline {B.1}makefile}{55}{section.B.1}
+\contentsline {section}{\numberline {B.2}refs.bib}{56}{section.B.2}
+\contentsline {chapter}{\numberline {C}Project Proposal}{57}{appendix.C}

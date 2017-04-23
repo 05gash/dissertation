@@ -8,6 +8,7 @@
 \usepackage{fancyvrb}
 \usepackage{color}
 \usepackage{amsmath}
+\usepackage{subcaption}
 
 
 \DefineVerbatimEnvironment{blockcode}
@@ -740,21 +741,55 @@ While the user study performed provides a robust assesment of image quality acro
 
 A reduction in the number of API calls we send to the GPU can contribute to better performance of the system. Every API call needs to be send to the GPU and validated, taking hundreds to thousands of instructions.
 
-\begin{figure}[tbh]
-\centerline{\includegraphics[width=10cm]{figs/difftree.png}}
-\caption{Image of the tree scene showing the thresholded difference between Subscreen SSAA and Subscreen MSAA}
-\label{ssaatree}
-\end{figure}
+\begin{center}
+\begin{tabular}{l|c|r}
+No antialiasing      & 402 \\
+Fullscreen Multisampling     & 402 \\
+Subscreen Multisampling    &  802  \\
+Fullscreen Supersampling      &  402   \\
+Subscreen Supersampling    &  403  \\
+\end{tabular}
+\end{center}
+
+Subscreen Multisampling could not be optimised in the same way as Subscreen Supersampling due to the OpenGL constraint that Complete Framebuffers' Layers must have the same number of samples. Therefore it was neccesary to render the scene twice, explaining why it has twice the number of draw calls.
+
+Subscreen Supersampling has one more draw call than the others because the blending of the two imaage in this implementation was performed in a post-processing step. //VERIFY - IT'S NOT
 
 \section{Fragment shader invocations}
 
-Fragment shader invocations generally increase linearly with the size of image, assuming the scene is isotropic. If our application bottleneck is at the fragment shader stage, we will reap performance benefits by shading less fragments.
+Fragment shader invocations generally increase linearly with the size of image. If our application bottleneck is at the fragment shader stage, we will reap performance benefits by shading less fragments.
+
+\begin{tabular}{l|c|r}
+No antialiasing      & 2.3872e+06 \\
+Fullscreen Multisampling     & 3.0753e+06 \\
+Subscreen Multisampling    &  2.8465e+06  \\
+Fullscreen Supersampling      &  7.5106e+06   \\
+Subscreen Supersampling    &  3.7955e+06  \\
+\end{tabular}
+
+As expected, significantly fewer fragments are shaded in subscreen analogues of fullscreen antialiasing techniques. In this instance Subscreen Multisampling shades 7.6\% fewer fragments, while Subscreen Supersampling shades 49.5\% fewer fragments. 
 
 \subsection{Multisampling}
-OpenGL Multisampling will run a fragment shader for every primitive that partially occludes a sample, if we take some Multisample rate per pixel $r, where r>1$ along with the number of pixels being rendered to $n$, we can calculate at what ratio and screen dimension subscreen multisampling will invoke the fragment shader less than fullscreen multisampling. One invocation of the OpenGL rendering pipeline will shade $\frac{1}{4}n*r + n$ fragments in the suscreen case whereas the OpenGL pipeline will shade   
+OpenGL Multisampling will run a fragment shader for every primitive that partially occludes a sample, by taking a sampling rate $r > 1$, which represents the average number of fragment shader invocations per pixel, along with the number of pixels being rendered to $n$, we can calculate at what ratio and screen dimension subscreen multisampling will invoke the fragment shader less than fullscreen multisampling. One invocation of the OpenGL rendering pipeline will shade $\frac{1}{4}n*r + n = (1+\frac{r}{4})n$ fragments in the subcreen case whereas the OpenGL pipeline will shade $n*r$ fragments for fullscreen Multisampling. Using the table in section BRAH, we can calculate a value of $r \approx 1.3$ 
+
+\section{Fragment Shader Timing}
+
+A measurement representing the cumulative time spent processing fragments on the GPU is given below.
+
+\begin{tabular}{l|c|r}
+No antialiasing      & 0.30362 \\
+Fullscreen Multisampling     & 0.30426 \\
+Subscreen Multisampling    &  0.35263  \\
+Fullscreen Supersampling      &  0.52043   \\
+Subscreen Supersampling    &  0.34764  \\
+\end{tabular}
+
+Suprisingly, less time is spent shading fragments in Subscreen Supersampling than in Subscreen Multisampling even though the former invokes the same shader code roughly 1 million times more. This can be attributed to the parralelisation of draw calls in Subscreen Supersampling, whereas Subscreen Multisampling is forced to make double the number of API calls sequentially. It could also be down to the GPU being better able schedule fragment shaders and exploit caches more fully where all invocations happen in one batch.\\
+
+Subscreen Supersampling also outperforms its Fullscreen counterpart, achieving a 33.3\% speedup in the Fragment Shader stage. 
 
 \section{Removal of artefacts}
-By capturing views of a scene using different rendering techniques and subtracting them, we can observe artefacts that were present in the scene before and after antialiasing was applied.
+By capturing views of a scene using different rendering techniques and subtracting them, we can observe artefacts that were present in the scene before and after antialiasing was applied. The image differences below have been thresholded, to make artefacts that have been removed more visible. 
 
 \subsection{Subscreen Supersampling}
 
@@ -769,12 +804,23 @@ Using Supersampled Antialiasing, we can see texture filtering has improved. Whil
 \subsection{Subscreen Multisampling}
 
 \begin{figure}[tbh]
-\centerline{\includegraphics[width=10cm]{figs/fullscreenminussubscreenmsaa.png}}
-\caption{Image of the fountain scene showing the thresholded difference between Fullscreen and Subscreen MSAA}
-\label{ssaatree}
+ 
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\linewidth, height=5cm]{figs/fullscreenminussubscreenmsaa.png} 
+\caption{Caption1}
+\label{fig:subim1}
+\end{subfigure}
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\linewidth, height=5cm]{figs/noantialiasing.png}
+\caption{Caption 2}
+\label{fig:subim2}
+\end{subfigure}
+ 
+\caption{Caption for this figure with two images}
+\label{fig:image2}
 \end{figure}
 
-Subscreen MSAA works as expected here, artefacts at polygon edges do not differ between fullscreen and subscreen. Interestingly, there is a minute difference in texturing between the two approaches. An explaination for this is a small, subpixel jitter applied to the projection matrix for the central area of the screen, thanks to reduced precision in transforming matrices in section
+Subscreen MSAA works as expected here, artefacts at polygon edges do not differ between fullscreen and subscreen. Interestingly, there is a minute difference in texturing between the two approaches. An explaination for this is a small, subpixel jitter applied to the projection matrix for the central area of the screen, thanks to reduced precision in transforming matrices in section WAT.
 
 \section{Extension 1 Evaluation}
 
@@ -802,6 +848,7 @@ By only rendering at full resolution in the centre of the image, we improve dras
 \label{epsfig1}
 \end{center}
 \end{figure}
+
 
 
 
