@@ -1,0 +1,10 @@
+fsMSAA = csvread('fullscreenMSAA.csv', 1, 1);
+fsSSAA = csvread('fullscreenSSAA.csv', 1, 1);
+noantialiasing = csvread('noantialiasing.csv', 1, 1);
+ssMSAA = csvread('subscreenMSAAProfile.csv', 1, 1);
+ssSSAA = csvread('subscreenSSAA.csv', 1, 1);
+
+data = vertcat(fsMSAA, fsSSAA, noantialiasing, ssMSAA, ssSSAA);
+
+drawCalls = data(1,:);
+frameTime = data(2,:);
