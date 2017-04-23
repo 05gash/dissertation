@@ -15,12 +15,12 @@ hold(axes1,'on');
 bar(yvector1);
 
 % Create title
-title({'Time to Render Frame across Antialiasing Techniques'});
+title({'Draw calls for Antialiasi'});
 
 % Create ylabel
-ylabel({'Time (ms)'});
+ylabel({'Votes'});
 
 box(axes1,'on');
 % Set the remaining axes properties
-set(axes1,'XTick',[1 2 3 4 5],'XTickLabel',...
-    {'No Antialiasing','Fullscreen MSAA','Subscreen MSAA','Fullscreen SSAA', 'Subscreen SSAA'});
+set(axes1,'XTick',[1 2 3 4],'XTickLabel',...
+    {'No Antialiasing','Fullscreen MSAA','Partial MSAA','Partial SSAA'});

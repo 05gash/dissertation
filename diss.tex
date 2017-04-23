@@ -732,20 +732,19 @@ Subjects Subscreen Supersampling generally performed poorly here, despite offeri
 
 Fullscreen Multisampling and Subscreen Multisampling were largely indistinguishable, most users had difficulty choosing between them and some made contradictary choices when the image order was reversed. This is might be due to more time fixating on the centre of the screen, but also astigmatism at the edge of the image could help mask artefacts. This seems to be the most promising result from the user study, and backs up the premise on which the project was based.
 
-
-
 \section{Objective Assesment}
 
-While the user study performed provides a robust and reliable assesment of image quality across different approaches, Computational metrics for objective image quality assesment can be essential.The performance of the system can determine how quickly the image resonds to stimulus which can help reduce simulation sickness in the user. Given that implementations of graphics APIs differ dramatically, along with hardware implementations, measuring a framerate directly on a particlar machine cannot be the best indicator of performance as a whole. Though the framerates of different approaches are given, it should be understood that performance can vary dramatically across different hardware vendors, graphics APIs and their implementations, and rendering programs. Given this, a range of other information is given to best represent the antialiasing approaches and given some more meaningful insight into their execution. Information such as: triangle count, fragment and vertex shader invocations, memory fetches, API calls, average instructions per frame on CPU, average instructions per frame on GPU were measured and compared, along with some interpretation of this in a platform independent setting.
+While the user study performed provides a robust assesment of image quality across different approaches, Computational metrics for objective image quality assesment can be essential. The performance of the system determines how quickly the image resonds to stimulus which can help reduce simulation sickness in the user. Given that implementations of graphics APIs differ dramatically, along with hardware implementations, measuring a framerate directly on a particlar machine cannot be the best indicator of performance as a whole. Though the render time per frame of different approaches are given, it should be understood that performance can vary dramatically across different hardware vendors, graphics APIs and their implementations, and rendering programs. Given this, a range of other information is given to best represent the antialiasing approaches and given some more meaningful insight into their execution. Information such as: triangle count, fragment and vertex shader invocations, API calls, GPU usage, CPU usage, along with some interpretation of this in a platform independent setting.
 
 \section{API calls}
 
 A reduction in the number of API calls we send to the GPU can contribute to better performance of the system. Every API call needs to be send to the GPU and validated, taking hundreds to thousands of instructions.
 
-\begin{enumerate}
-\item blah \\
-\end{enumerate}
-
+\begin{figure}[tbh]
+\centerline{\includegraphics[width=10cm]{figs/difftree.png}}
+\caption{Image of the tree scene showing the thresholded difference between Subscreen SSAA and Subscreen MSAA}
+\label{ssaatree}
+\end{figure}
 
 \section{Fragment shader invocations}
 
@@ -803,6 +802,8 @@ By only rendering at full resolution in the centre of the image, we improve dras
 \label{epsfig1}
 \end{center}
 \end{figure}
+
+
 
 \chapter{Conclusion}
 
