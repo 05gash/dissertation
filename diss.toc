@@ -40,19 +40,19 @@
 \contentsline {section}{\numberline {4.4}Objective Assesment}{30}{section.4.4}
 \contentsline {section}{\numberline {4.5}API calls}{30}{section.4.5}
 \contentsline {section}{\numberline {4.6}Fragment shader invocations}{31}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}Multisampling}{31}{subsection.4.6.1}
 \contentsline {section}{\numberline {4.7}Fragment Shader Timing}{31}{section.4.7}
 \contentsline {section}{\numberline {4.8}Removal of artefacts}{32}{section.4.8}
 \contentsline {subsection}{\numberline {4.8.1}Subscreen Supersampling}{32}{subsection.4.8.1}
 \contentsline {subsection}{\numberline {4.8.2}Subscreen Multisampling}{33}{subsection.4.8.2}
-\contentsline {section}{\numberline {4.9}Extension 1 Evaluation}{33}{section.4.9}
-\contentsline {section}{\numberline {4.10}Extension 1.5 Evaluation}{33}{section.4.10}
+\contentsline {section}{\numberline {4.9}Extension 1.5 Evaluation}{34}{section.4.9}
 \contentsline {chapter}{\numberline {5}Conclusion}{35}{chapter.5}
-\contentsline {chapter}{Bibliography}{35}{chapter.5}
+\contentsline {section}{\numberline {5.1}Achievements}{35}{section.5.1}
+\contentsline {section}{\numberline {5.2}Final Remarks}{36}{section.5.2}
+\contentsline {chapter}{Bibliography}{36}{section.5.2}
 \contentsline {chapter}{\numberline {A}Latex source}{39}{appendix.A}
 \contentsline {section}{\numberline {A.1}diss.tex}{39}{section.A.1}
 \contentsline {section}{\numberline {A.2}proposal.tex}{52}{section.A.2}
-\contentsline {chapter}{\numberline {B}Makefile}{55}{appendix.B}
-\contentsline {section}{\numberline {B.1}makefile}{55}{section.B.1}
-\contentsline {section}{\numberline {B.2}refs.bib}{56}{section.B.2}
-\contentsline {chapter}{\numberline {C}Project Proposal}{57}{appendix.C}
+\contentsline {chapter}{\numberline {B}Makefile}{57}{appendix.B}
+\contentsline {section}{\numberline {B.1}makefile}{57}{section.B.1}
+\contentsline {section}{\numberline {B.2}refs.bib}{58}{section.B.2}
+\contentsline {chapter}{\numberline {C}Project Proposal}{59}{appendix.C}
