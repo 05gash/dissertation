@@ -75,18 +75,18 @@ To examine the effect on the image quality and GPU load when applying antialiasi
 
 \section*{Work Completed}
 
-Implementation of a generic, method to antialiase only in the centre of the screen using OpenGL. Examined an implementation to accomodate to Foveated Rendering and multi-resolution rendering.
-A user study was conducted that determined image quality across a range of antialiasing techniques.
+Implementation of two generic, methods to antialiase only in the centre of the screen using OpenGL. Examined an modification to accomodate Foveated Rendering and multi-projection rendering.
+
+An assessment of the image quality across these techniques was carried out, and various measurements taken to determine their performance.   
 
 \section*{Special Difficulties}
 
-Learning to profile accurately GPU software.
-Learning OpenGL in depth.
+None.
  
 \newpage
 \section*{Declaration}
 
-I, [Name] of [College], being a candidate for Part II of the Computer
+I, George of Fitzwilliam College, being a candidate for Part II of the Computer
 Science Tripos [or the Diploma in Computer Science], hereby declare
 that this dissertation and the work described in it are my own work,
 unaided except as may be specified below, and that the dissertation
@@ -102,13 +102,6 @@ extent for a comparable purpose.
 \tableofcontents
 
 \listoffigures
-
-\newpage
-\section*{Acknowledgements}
-
-This document owes much to an earlier version written by Simon Moore
-\cite{Moore95}.  His help, encouragement and advice was greatly 
-appreciated.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % now for the chapters
@@ -678,37 +671,7 @@ The two textures can be blended in post-processing by the same method given in s
 
 \chapter{Evaluation}
 
-\section{Subjective Assesment}
-
-A user study was performed to asses the subjective quality across the techniques implemented. The section BLAH describes the experiment, and section NRAH describes its results.
-
-\section{User Study Setup}
-
-Subjects were given 3 different scenes to observe, each with headtracking disabled, and headtracking enabled, across 3 different antialiasing techniques and a control. They were: no antialiasing (control), Fullscreen multisampling (4x),  Subscreen multisampling (4x), Subscreen Supersampling (2x). The latter two being implemented by myself.\\
-
-Test subjects were presented with two images, one after another, and asked to choose the one with better image quality, though the interpretation of better quality was left to the subject. All permutations of image comparison were presented to users, with each experiment taking around 30 minutes. Subjects were also prompted to give verbal feedback describing the reason for their choice.
-
-The three scenes shown were:
-
-\begin{enumerate}
-\item A scene of green, untextured blocks, moving in a horizontal circle around the user.\\
-
-\item A scene of a courtyard, including downsampled textures and complex geometry.\\
-
-\item A scene from a balcony, facing a tree with alpha culling to implement leaves.\\
-
-\end{enumerate} 
-
-
-\section{User study results}
-
-Results varied slightly when headtracking was disabled, possibly owing to the salience of temporal artefacts at polygon edges (flickering) when headtracking was enabled. 
-
-The first scene of moving cubes showed the best 
-
-Subjects Subscreen Supersampling generally performed poorly here, despite offering the best texture filtering of all the techniques. Users complained that the image was noticably, sharp at the centre, and were able to distinguish between the higher quality texture filtering in the centre of the image and the border, and this was pronounced where headtracking was enabled. However Subscreen Supersampling performed the best at the scene of the tree, with spatial artefacts owing to alpha culling being ameliorated only by supersampling.
-
-Fullscreen Multisampling and Subscreen Multisampling were largely indistinguishable, most users had difficulty choosing between them and some made contradictary choices when the image order was reversed. This is might be due to more time fixating on the centre of the screen, but also astigmatism at the edge of the image could help mask artefacts. This seems to be the most promising result from the user study, and backs up the premise on which the project was based.
+In this chapter I assess the image quality across all techniques developed. I also give a variety of performance metrics to determine the performance across the techniques in a platform independent setting.
 
 \section{Objective Assesment}
 
