@@ -720,6 +720,8 @@ A reduction in the number of API calls we send to the GPU can contribute to bett
 
 \begin{center}
 \begin{tabular}{l|c|r}
+Technique   & No. Draw Calls \\ 
+\hline
 No antialiasing      & 402 \\
 Fullscreen Multisampling     & 402 \\
 Subscreen Multisampling    &  802  \\
@@ -744,6 +746,8 @@ Fragment shader invocations generally increase linearly with the size of image. 
 \end{subfigure}
 \qquad
 \begin{tabular}{l|c}
+Technique   & No. Invocations \\ 
+\hline
 No antialiasing      & 2.3872e+06 \\
 Fullscreen Multisampling     & 3.0753e+06 \\
 Subscreen Multisampling    &  2.8465e+06  \\
@@ -755,6 +759,8 @@ Subscreen Supersampling    &  3.7955e+06  \\
 \end{figure}
 
 As expected, significantly fewer fragments are shaded in subscreen analogues of fullscreen antialiasing techniques. In this instance Subscreen Multisampling shades 7.6\% fewer fragments, while Subscreen Supersampling shades 49.5\% fewer fragments.
+
+\clearpage
 
 \section{Fragment Shader Timing}
 
@@ -768,6 +774,8 @@ A measurement representing the cumulative time spent processing fragments on the
 \end{subfigure}
 \qquad
 \begin{tabular}{l|c}
+Technique   & Time (ms) \\ 
+\hline
 No antialiasing      & 0.30362 \\
 Fullscreen Multisampling     & 0.30426 \\
 Subscreen Multisampling    &  0.35263  \\
@@ -782,23 +790,35 @@ Suprisingly, less time is spent shading fragments in Subscreen Supersampling tha
 
 Subscreen Supersampling also outperforms its Fullscreen counterpart, achieving a 33.3\% speedup in the Fragment Shader stage. 
 
+\clearpage
 \section{Removal of artefacts}
 By capturing views of a scene using different rendering techniques and subtracting them, we can observe artefacts that were present in the scene before and after antialiasing was applied. The image differences below have been thresholded, to make artefacts that have been removed more visible. 
 
 \subsection{Subscreen Supersampling}
 
-\begin{figure}[tbh]
-\centerline{\includegraphics[width=10cm]{figs/difftree.png}}
-\caption{Image of the tree scene showing the thresholded difference between Subscreen SSAA and Subscreen MSAA}
+\begin{figure}
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\linewidth]{figs/tree_msaa.png}
+\caption{The original Scene}
+\label{fig:subim2}
+\end{subfigure}
+\begin{subfigure}{0.5\textwidth}
+\centerline{\includegraphics[width=0.9\linewidth]{figs/difftree.png}}
+\caption{Fullscreen MSAA - Subscreen SSAA}
 \label{ssaatree}
+\end{subfigure}
+ 
+\caption{Image of the tree scene showing the thresholded difference between Subscreen SSAA and Subscreen MSAA}
+\label{fig:supersample}
 \end{figure}
 
-Using Supersampled Antialiasing, we can see texture filtering has improved. While multisampling only removes artefacts at polygon boundaries. Tree leaves inside of polygons are represented using alpha channel. Supersampling will amerliorate artefacts due to alpha culling, whereas multisampling cannot, hence the large difference between supersampling and multisampling in this scene.
+Using Supersampled Antialiasing, we can see in figure \ref{supersample} texture filtering has improved. While multisampling only removes artefacts at polygon boundaries. Tree leaves inside of polygons are represented using alpha channel. Supersampling will amerliorate artefacts due to alpha culling, whereas multisampling cannot, hence the large difference between supersampling and multisampling in this scene.
+
+\clearpage
 
 \subsection{Subscreen Multisampling}
 
 \begin{figure}[tbh]
- 
 
 \begin{subfigure}{0.5\textwidth}
 \includegraphics[width=0.9\linewidth, height=5cm]{figs/noantialiasing.png}
@@ -811,11 +831,11 @@ Using Supersampled Antialiasing, we can see texture filtering has improved. Whil
 \label{fig:subim1}
 \end{subfigure}
  
-\caption{Caption for this figure with two images}
-\label{fig:image2}
+\caption{Highlights aliasing that is removed from both Subscreen MSAA and Fullscreen MSAA}
+\label{fig:multisample}
 \end{figure}
 
-Subscreen MSAA works as expected here, artefacts at polygon edges do not differ between fullscreen and subscreen. Interestingly, there is a minute difference in texturing between the two approaches. An explaination for this is a small, subpixel jitter applied to the projection matrix for the central area of the screen, thanks to reduced precision in transforming matrices in section \ref{matrix}.
+Subscreen MSAA works as expected here in figure \ref{multisample}. Artefacts at polygon edges do not differ between fullscreen and subscreen. Interestingly, there is a minute difference in texturing between the two approaches. An explaination for this is a small, subpixel jitter applied to the projection matrix for the central area of the screen, thanks to reduced precision in transforming matrices in section \ref{matrix}.
 
 \clearpage
 
@@ -838,13 +858,13 @@ A large problem facing the traditional barrel distortion applied in post-process
 \end{subfigure}
  
 \caption{Shows the texel to pixel density across a barrel distorted image.}
-\label{fig:image2}
+\label{fig:barreldensity}
 \end{figure}
 
 \begin{figure}
 \end{figure}
 
-By only rendering at full resolution in the centre of the image, pixel density is improved at the center, while decreasing the pixel density in the edges of the image. The number of fragments that we shade is reduced by half, compared to the standard, non-supersampled image size that Oculus recommends. However, twice as many vertices need to be processed. Given that the bottleneck in most consumer applications are in the fragment shader stage, and that we generally need to process significantly more fragments that vertices, we should expect a considerable decrease in the time to present a frame using this method. 
+As can be seen by part B of figure \ref{barreldensity}, by only rendering at full resolution in the centre of the image, pixel density is improved at the center, while decreasing the pixel density in the edges of the image. The number of fragments that we shade is reduced by half, compared to the standard, non-supersampled image size that Oculus recommends. However, twice as many vertices need to be processed. Given that the bottleneck in most consumer applications are in the fragment shader stage, and that we generally need to process significantly more fragments that vertices, we should expect a considerable decrease in the time to present a frame using this method. 
 
 
 \chapter{Conclusion}
@@ -879,22 +899,7 @@ When asked about the performance gains Foveated Rendering would bring, John Carm
 % the appendices
 \appendix
 
-\chapter{Latex source}
-
-\section{diss.tex}
-{\scriptsize\verbatiminput{diss.tex}}
-
-\section{proposal.tex}
-{\scriptsize\verbatiminput{proposal.tex}}
-
-\chapter{Makefile}
-
-\section{makefile}\label{makefile}
-{\scriptsize\verbatiminput{makefile.txt}}
-
-\section{refs.bib}
-{\scriptsize\verbatiminput{refs.bib}}
-
+\chapter{TODO}
 
 \chapter{Project Proposal}
 
