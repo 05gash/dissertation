@@ -58,15 +58,10 @@ Name:               & \bf George Ash                       \\
 College:            & \bf Fitzwilliam College                     \\
 Project Title:      & \bf Smart Antialiasing for Virtual Reality \\
 Examination:        & \bf Computer Science Tripos -- Part II, July 2017  \\
-Word Count:         & \bf 1587\footnotemark[1] \\
+Word Count:         & \bf /*TODO*/ \\
 Supervisor:         & Dr Rafal Mantiuk                    \\ 
 \end{tabular}
 }
-\footnotetext[1]{This word count was computed
-by \texttt{detex diss.tex | tr -cd '0-9A-Za-z $\tt\backslash$n' | wc -w}
-}
-\stepcounter{footnote}
-
 
 \section*{Original Aims of the Project}
 
@@ -75,7 +70,7 @@ To examine the effect on the image quality and GPU load when applying antialiasi
 
 \section*{Work Completed}
 
-Implementation of two generic, methods to antialiase only in the centre of the screen using OpenGL. Examined an modification to accomodate Foveated Rendering and multi-projection rendering.
+Implementation of two generic methods to apply antialiasing only in the centre of the screen using OpenGL. Examined an modification to accomodate Foveated Rendering and Multi-Projection rendering.
 
 An assessment of the image quality across these techniques was carried out, and various measurements taken to determine their performance.   
 
@@ -94,10 +89,10 @@ does not contain material that has already been used to any substantial
 extent for a comparable purpose.
 
 \bigskip
-\leftline{Signed [signature]}
+\leftline{Signed Greg}
 
 \medskip
-\leftline{Date [date]}
+\leftline{Date Today} /*TODO*/
 
 \tableofcontents
 
@@ -178,15 +173,16 @@ Side effects of the lens used in the Oculus Rift DK2 are chromatic abberation, p
 
 Chromatic abberation refers to the separation of colour due to the different refractive indexes for different wavelengths of light. A Virtual Reality API should correct for this.\\
 
-Pincushion distortion refers to the stretching of the image near the egdes. The inverse of pincushion distortion, barrel disortion, can be applied to reverse the effects of pincushion distortion. The barrel distortion that the Oculus SDK applies results in a varying number of texels per pixel in our final image, a property will be explored in the second extension.
-
-
 \begin{figure}
 \centerline{\includegraphics[width=7cm]{figs/post_distortion.eps}}
 \caption{Barrel distortion applied to a rectangular grid, normalised to the range [-1,1]}
+\label{barreldist}
 \end{figure}
 
-Lens astigmatism is a property of the lenses used in most consumer HMDs. Because of the astigmatism, the image presented to the user is sharp in the center but becomes progressivelly blurrier as you look towards the edges.  It can be corrected for by adding more lenses to the HMD, but this ends up being too expensive and bulky for consumer versions.
+Pincushion distortion refers to the stretching of the image near the egdes. The inverse of pincushion distortion, barrel disortion figure \ref{barreldist}, can be applied to reverse the effects of pincushion distortion. The barrel distortion that the Oculus SDK applies results in a varying number of texels per pixel in our final image, a property will be explored in the second extension.
+
+
+Lens astigmatism is a property of the lenses used in most consumer HMDs. Because of the astigmatism, the image presented to the user is sharp in the center but becomes progressivelly blurrier as you look towards the edges as seen in figure \ref{blurred}. It can be corrected for by adding more lenses to the HMD, but this ends up being too expensive and bulky for consumer versions.
 
 \begin{figure}
 \centerline{\includegraphics[width=5cm]{figs/blur.png}}
@@ -199,6 +195,11 @@ This astigmatism property can be exploited by antialiasing only where the image 
 \chapter{Preparation}
 
 This chapter outlines any preparatory work that was done before implementation of the two antialiasing approaches.
+
+\section{Previous Work}
+
+This project was inspired by the Intel Research's 2015 publication: Using Astigmatism in Wide Angle HMDs to Improve Rendering \cite{Astigpap}. They exploited the astigmatism in an Oculus DK1 headset to decrease sampling at the edges of the image in a raytracer. They managed to improve the performance by a factor of $\approx 2.5$ in that raytracer.
+Ajusting the sampling rate across the image in a raytracer is relatively straightforward. D. Pohl et Al used a \emph{sampling map} to achieve this. However, this may not be so easy or efficient in a rasteriser like OpenGL. In this project I take this idea of reducing sampling at image edges and apply it to a rasteriser. Rasterisers are a faster though less accurate rendering method - and, because of the intense timing constraints on Virtual Reality, are used significantly more in VR applications. 
 
 \section{OpenGL}
 
@@ -274,7 +275,7 @@ Being relatively new to OpenGL I decided to build a toy renderer to teach myself
 This toy renderer proved invaluable to the success of the project, since I knew and understood the source code completely, I could implement and test an idea for optimisation or an implementation strategy quickly. The toy renderer was implemented in C++.
 
 To get an idea of how these implementations would fare in a larger, more computationally intensive renderer I decided to modify the demo provided with the Oculus SDK 5.0.1: OculusWorldDemo.
-The codebase to this was in C++ and the rendering code was written to be extensible - allowing for different graphics APIs to implement lower level rendering calls. The OpenGL implementation was Open Source and under the Apache License.
+The codebase to this was in C++ and the rendering code was written to be extensible - allowing for different graphics APIs to implement higher level rendering calls. The OpenGL implementation was Open Source and under the Apache License.
 
 An agile approach was taken when implementing the antialising methods, stories were broken up into small, managable chunks. After these were implemented - extensions could be written up and implemented on top.
 Unit tests were written for all new methods. However, where methods and classes were extended beyond Oculus' implementation, unit tests were not added due to the high degree of coupling within OculusWorldDemo and OpenGL and the extensive API mocking required. To make up for this, and to ensure correctness, runtime assertions were made on all branches and method calls.
@@ -316,6 +317,8 @@ In the event of failure of my development machine, MCS machines were compatible 
 \chapter{Implementation}
 
 This chapter describes the implementation of antialiasing techniques briefly outlined in Section \ref{vrdisplays}. I first give a brief introduction to OculusWorldDemo's structure - and then describe a general implementation strategy for two antialiasing techniques: Subscreen Multisampling, and Subscreen Supersampling. I also give an optimisation to the latter that is available to OpenGL 4.0 and another that is available on some OpenGL ES implementations. 
+
+Where source code has been modified, I will use the colour \textcolor{green}{green} to reprisent modifications I have made. However code that I have wrote entirely will follow the usual code formatting.
 
 \section{OculusWorldDemo Structure}
 
@@ -364,19 +367,45 @@ Where $(\vec p)$ is some point in the source image, and $\alpha$ is the amount o
 \end{center}
 \end{figure}
 
-The method used implement barrel distortion in a graphics API has evolved over the past few years. Initially, the distortion was calculated as a post-processing step in the fragment shader. Later, the image provided to the post-processing step was used to texture a mesh that had distortion applied to it. The latter approach is adopted by the Oculus SDK 5.0.1. Another approach can be built into the rendering pipeline in the vertex shader, it removes the need for post-processing, but additionally requires the use of tesselation.
+The method used implement barrel distortion in a graphics API has evolved over the past few years. Initially, the distortion was calculated as a post-processing step in the fragment shader. Later, the image provided to the post-processing step was used to texture a mesh that had distortion applied to it as can be seen in figure \ref {fig:meshgrid}. The latter approach is adopted by the Oculus SDK 5.0.1. Another approach can be built into the rendering pipeline in the vertex shader, it removes the need for post-processing, but additionally requires the use of tesselation.
+
+\begin{figure}[tbh]
+\begin{center}
+\includegraphics[width=6cm]{figs/barrelgrid.png}
+\caption{Shows a render of OculusWorldDemo being used to texture a mesh, achieving barrel distortion.}
+\label{fig:meshgrid}
+\end{center}
+\end{figure}
+
 
 \section{Implementation overview} 
 
-To achieve antialiasing in the centre of the image using OpenGL it is are required to draw the scene twice for each eye. Once for the antialiased, low field of view centre, and one for the lower quality border. An implementation is required to set up render targets for each field of view, along with projection matrices for each, and finally some method to blend the two render targets together before presenting the final frame.
+A high level implementation strategy is presented here. Each section will be detailed later on in the chapter.
+To achieve subscreen antialiasing we can:
 
-\section{Projection Transformation}
+\begin{enumerate}
+\item Specify two separate views. One for the low detail peripheral, and one for the low field of view, high detail center. Textures allocation and projections must be dealt with here.
+\item Render to the two separate textures.
+\item Finally, blend these textures onto the texture presented to the Oculus SDK. 
+\end{enumerate}
+
+Each of these steps can be generalised to handle both Subscreen Supersampling and Subscreen Multisampling. Section \ref{projections} handles step 1, section \ref{texturealloc} handles step 2, and section \ref{resolving} handles the final step.
+
+\begin{figure}[tbh]
+\begin{center}
+\includegraphics[width=10cm]{figs/highlevelprocess.eps}
+\caption{Shows a high level process of achieving subscreen antialiasing.}
+\label{fig:meshgrid}
+\end{center}
+\end{figure}
+
+\section{Projection Transformation} \label{projections}
 
 An essential component to 3D graphics is the projection transformation. It takes as input 3D coordinates and maps them to 2D window coordinates.
 Two types of projection must be dealt with in the implementation. 
 
 \subsection{Orthographic projection}
-The orthographic projection is a form of parralel projection, where all projection lines are parralel to the \texttt{lookAt} vector /*TODO*/ define. 
+The orthographic projection is a form of parralel projection, where all projection lines are parralel to the \texttt{lookAt} vector. 
 
 \[
 \begin{pmatrix}
@@ -428,7 +457,7 @@ Matrix4f centeredSmallMatrix(Matrix4f m, float ratio){
 
 The above returns a projection matrix whose near planes dimensions are $\frac{1}{\texttt{ratio}}$ of the input projection matrix's near plane. This small matrix will correspond to the smaller field of view whose render target will have higher quality antialiasing applied. 
 
-\section{Allocating Textures}
+\section{Allocating Textures}\label{texturealloc}
 
 The framebuffer that is used must be complete before we begin rendering to it, so textures must be allocated and formatted properly beforehand. This section will describe texture allocation in OpenGL, and how the implementation in OculusWorldDemo was modified to permit the approach outlined before. 
  
@@ -596,7 +625,7 @@ Given eye-tracking information at the beginning of the frame, ideally a fixation
 
 \subsection{Recalculating projection}
 
-SASDASD defines the perspective projection matrix, given the frustrum parameters $(near, far, top, bottom, left, right)$ of the full field of view, a new projection can be used to render around our fixation point $(fix_x, fix_y)$, it is defined by the following parameters:
+Section \ref{matrix} defines the perspective projection matrix, given the frustrum parameters $(near, far, top, bottom, left, right)$ of the full field of view, a new projection can be used to render around our fixation point $(fix_x, fix_y)$, it is defined by the following parameters:
 
 \[
 \begin{matrix}
@@ -775,7 +804,7 @@ By capturing views of a scene using different rendering techniques and subtracti
 \label{fig:supersample}
 \end{figure}
 
-Using Supersampled Antialiasing, we can see in figure \ref{supersample} texture filtering has improved. While multisampling only removes artefacts at polygon boundaries. Tree leaves inside of polygons are represented using alpha channel. Supersampling will amerliorate artefacts due to alpha culling, whereas multisampling cannot, hence the large difference between supersampling and multisampling in this scene.
+Using Supersampled Antialiasing, we can see in figure \ref{fig:supersample} texture filtering has improved. While multisampling only removes artefacts at polygon boundaries. Tree leaves inside of polygons are represented using alpha channel. Supersampling will amerliorate artefacts due to alpha culling, whereas multisampling cannot, hence the large difference between supersampling and multisampling in this scene.
 
 \clearpage
 
@@ -798,7 +827,7 @@ Using Supersampled Antialiasing, we can see in figure \ref{supersample} texture 
 \label{fig:multisample}
 \end{figure}
 
-Subscreen MSAA works as expected here in figure \ref{multisample}. Artefacts at polygon edges do not differ between fullscreen and subscreen. Interestingly, there is a minute difference in texturing between the two approaches. An explaination for this is a small, subpixel jitter applied to the projection matrix for the central area of the screen, thanks to reduced precision in transforming matrices in section \ref{matrix}.
+Subscreen MSAA works as expected here in figure \ref{fig:multisample}. Artefacts at polygon edges do not differ between fullscreen and subscreen. Interestingly, there is a minute difference in texturing between the two approaches. An explaination for this is a small, subpixel jitter applied to the projection matrix for the central area of the screen, thanks to reduced precision in transforming matrices in section \ref{matrix}.
 
 \clearpage
 
@@ -827,7 +856,7 @@ A large problem facing the traditional barrel distortion applied in post-process
 \begin{figure}
 \end{figure}
 
-As can be seen by part B of figure \ref{barreldensity}, by only rendering at full resolution in the centre of the image, pixel density is improved at the center, while decreasing the pixel density in the edges of the image. The number of fragments that we shade is reduced by half, compared to the standard, non-supersampled image size that Oculus recommends. However, twice as many vertices need to be processed. Given that the bottleneck in most consumer applications are in the fragment shader stage, and that we generally need to process significantly more fragments that vertices, we should expect a considerable decrease in the time to present a frame using this method. 
+As can be seen by part B of figure \ref{fig:barreldensity}, by only rendering at full resolution in the centre of the image, pixel density is improved at the center, while decreasing the pixel density in the edges of the image. The number of fragments that we shade is reduced by half, compared to the standard, non-supersampled image size that Oculus recommends. However, twice as many vertices need to be processed. Given that the bottleneck in most consumer applications are in the fragment shader stage, and that we generally need to process significantly more fragments that vertices, we should expect a considerable decrease in the time to present a frame using this method. 
 
 
 \chapter{Conclusion}
@@ -861,7 +890,6 @@ When asked about the performance gains Foveated Rendering would bring, John Carm
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % the appendices
 \appendix
-
 \chapter{TODO}
 
 \chapter{Project Proposal}

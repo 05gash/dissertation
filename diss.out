@@ -3,51 +3,49 @@
 \BOOKMARK [1][-]{section.1.2}{Common Antialiasing Approaches}{chapter.1}% 3
 \BOOKMARK [1][-]{section.1.3}{Virtual Reality Headmounted Displays}{chapter.1}% 4
 \BOOKMARK [0][-]{chapter.2}{Preparation}{}% 5
-\BOOKMARK [1][-]{section.2.1}{OpenGL}{chapter.2}% 6
-\BOOKMARK [2][-]{subsection.2.1.1}{The OpenGL pipeline}{section.2.1}% 7
-\BOOKMARK [1][-]{section.2.2}{Development}{chapter.2}% 8
-\BOOKMARK [1][-]{section.2.3}{Software libraries}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.4}{Programming Languages}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.5}{Development Tools}{chapter.2}% 11
-\BOOKMARK [2][-]{subsection.2.5.1}{Version Control}{section.2.5}% 12
-\BOOKMARK [2][-]{subsection.2.5.2}{Failsafes}{section.2.5}% 13
-\BOOKMARK [0][-]{chapter.3}{Implementation}{}% 14
-\BOOKMARK [1][-]{section.3.1}{OculusWorldDemo Structure}{chapter.3}% 15
-\BOOKMARK [1][-]{section.3.2}{The Render Loop}{chapter.3}% 16
-\BOOKMARK [1][-]{section.3.3}{Barrel Distortion}{chapter.3}% 17
-\BOOKMARK [1][-]{section.3.4}{Implementation overview}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.5}{Projection Transformation}{chapter.3}% 19
-\BOOKMARK [2][-]{subsection.3.5.1}{Orthographic projection}{section.3.5}% 20
-\BOOKMARK [2][-]{subsection.3.5.2}{Perspective projection}{section.3.5}% 21
-\BOOKMARK [2][-]{subsection.3.5.3}{Matrix Initilisation}{section.3.5}% 22
-\BOOKMARK [1][-]{section.3.6}{Allocating Textures}{chapter.3}% 23
-\BOOKMARK [1][-]{section.3.7}{Drawing the scene}{chapter.3}% 24
-\BOOKMARK [2][-]{subsection.3.7.1}{Modifying The Render Loop}{section.3.7}% 25
-\BOOKMARK [1][-]{section.3.8}{MultiSample Resolve}{chapter.3}% 26
-\BOOKMARK [1][-]{section.3.9}{OpenGL optimisations}{chapter.3}% 27
-\BOOKMARK [1][-]{section.3.10}{Amplifying Geometry}{chapter.3}% 28
-\BOOKMARK [2][-]{subsection.3.10.1}{The Geometry Shader}{section.3.10}% 29
-\BOOKMARK [1][-]{section.3.11}{Extension 1: Foveated Rendering}{chapter.3}% 30
-\BOOKMARK [2][-]{subsection.3.11.1}{Recalculating projection}{section.3.11}% 31
-\BOOKMARK [1][-]{section.3.12}{Extension 1.5 Non-uniform Texel Density}{chapter.3}% 32
-\BOOKMARK [2][-]{subsection.3.12.1}{Blending the two textures}{section.3.12}% 33
-\BOOKMARK [1][-]{section.3.13}{Limitations}{chapter.3}% 34
-\BOOKMARK [1][-]{section.3.14}{Future Hardware Support}{chapter.3}% 35
-\BOOKMARK [0][-]{chapter.4}{Evaluation}{}% 36
-\BOOKMARK [1][-]{section.4.1}{Subjective Assesment}{chapter.4}% 37
-\BOOKMARK [1][-]{section.4.2}{User Study Setup}{chapter.4}% 38
-\BOOKMARK [1][-]{section.4.3}{User study results}{chapter.4}% 39
-\BOOKMARK [1][-]{section.4.4}{Objective Assesment}{chapter.4}% 40
-\BOOKMARK [1][-]{section.4.5}{API calls}{chapter.4}% 41
-\BOOKMARK [1][-]{section.4.6}{Fragment shader invocations}{chapter.4}% 42
-\BOOKMARK [1][-]{section.4.7}{Fragment Shader Timing}{chapter.4}% 43
-\BOOKMARK [1][-]{section.4.8}{Removal of artefacts}{chapter.4}% 44
-\BOOKMARK [2][-]{subsection.4.8.1}{Subscreen Supersampling}{section.4.8}% 45
-\BOOKMARK [2][-]{subsection.4.8.2}{Subscreen Multisampling}{section.4.8}% 46
-\BOOKMARK [1][-]{section.4.9}{Extension 1.5 Evaluation}{chapter.4}% 47
-\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 48
-\BOOKMARK [1][-]{section.5.1}{Achievements}{chapter.5}% 49
-\BOOKMARK [1][-]{section.5.2}{Final Remarks}{chapter.5}% 50
-\BOOKMARK [0][-]{section.5.2}{Bibliography}{}% 51
-\BOOKMARK [0][-]{appendix.A}{TODO}{}% 52
-\BOOKMARK [0][-]{appendix.B}{Project Proposal}{}% 53
+\BOOKMARK [1][-]{section.2.1}{Previous Work}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.2}{OpenGL}{chapter.2}% 7
+\BOOKMARK [2][-]{subsection.2.2.1}{The OpenGL pipeline}{section.2.2}% 8
+\BOOKMARK [1][-]{section.2.3}{Development}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.4}{Software libraries}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.5}{Programming Languages}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.6}{Development Tools}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.6.1}{Version Control}{section.2.6}% 13
+\BOOKMARK [2][-]{subsection.2.6.2}{Failsafes}{section.2.6}% 14
+\BOOKMARK [0][-]{chapter.3}{Implementation}{}% 15
+\BOOKMARK [1][-]{section.3.1}{OculusWorldDemo Structure}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.2}{The Render Loop}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.3}{Barrel Distortion}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.4}{Implementation overview}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.5}{Projection Transformation}{chapter.3}% 20
+\BOOKMARK [2][-]{subsection.3.5.1}{Orthographic projection}{section.3.5}% 21
+\BOOKMARK [2][-]{subsection.3.5.2}{Perspective projection}{section.3.5}% 22
+\BOOKMARK [2][-]{subsection.3.5.3}{Matrix Initilisation}{section.3.5}% 23
+\BOOKMARK [1][-]{section.3.6}{Allocating Textures}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.7}{Drawing the scene}{chapter.3}% 25
+\BOOKMARK [2][-]{subsection.3.7.1}{Modifying The Render Loop}{section.3.7}% 26
+\BOOKMARK [1][-]{section.3.8}{MultiSample Resolve}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.9}{OpenGL optimisations}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.10}{Amplifying Geometry}{chapter.3}% 29
+\BOOKMARK [2][-]{subsection.3.10.1}{The Geometry Shader}{section.3.10}% 30
+\BOOKMARK [1][-]{section.3.11}{Extension 1: Foveated Rendering}{chapter.3}% 31
+\BOOKMARK [2][-]{subsection.3.11.1}{Recalculating projection}{section.3.11}% 32
+\BOOKMARK [1][-]{section.3.12}{Extension 1.5 Non-uniform Texel Density}{chapter.3}% 33
+\BOOKMARK [2][-]{subsection.3.12.1}{Blending the two textures}{section.3.12}% 34
+\BOOKMARK [1][-]{section.3.13}{Limitations}{chapter.3}% 35
+\BOOKMARK [1][-]{section.3.14}{Future Hardware Support}{chapter.3}% 36
+\BOOKMARK [0][-]{chapter.4}{Evaluation}{}% 37
+\BOOKMARK [1][-]{section.4.1}{Objective Assesment}{chapter.4}% 38
+\BOOKMARK [1][-]{section.4.2}{API calls}{chapter.4}% 39
+\BOOKMARK [1][-]{section.4.3}{Fragment shader invocations}{chapter.4}% 40
+\BOOKMARK [1][-]{section.4.4}{Fragment Shader Timing}{chapter.4}% 41
+\BOOKMARK [1][-]{section.4.5}{Removal of artefacts}{chapter.4}% 42
+\BOOKMARK [2][-]{subsection.4.5.1}{Subscreen Supersampling}{section.4.5}% 43
+\BOOKMARK [2][-]{subsection.4.5.2}{Subscreen Multisampling}{section.4.5}% 44
+\BOOKMARK [1][-]{section.4.6}{Extension 1.5 Evaluation}{chapter.4}% 45
+\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 46
+\BOOKMARK [1][-]{section.5.1}{Achievements}{chapter.5}% 47
+\BOOKMARK [1][-]{section.5.2}{Final Remarks}{chapter.5}% 48
+\BOOKMARK [0][-]{section.5.2}{Bibliography}{}% 49
+\BOOKMARK [0][-]{appendix.A}{TODO}{}% 50
+\BOOKMARK [0][-]{appendix.B}{Project Proposal}{}% 51
