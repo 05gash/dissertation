@@ -17,6 +17,7 @@
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \bibstyle{plain}
+\citation{MotionToPhoton}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{9}{chapter.1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -25,13 +26,14 @@
 \newlabel{supersampling}{{1.2}{9}{Common Antialiasing Approaches}{section.1.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces An example of 4x Supersampling for a single pixel.\relax }}{10}{figure.caption.8}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{latexpic1}{{1.1}{10}{An example of 4x Supersampling for a single pixel.\relax }{figure.caption.8}{}}
+\newlabel{downsample}{{1.1}{10}{An example of 4x Supersampling for a single pixel.\relax }{figure.caption.8}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.3}Virtual Reality Headmounted Displays}{10}{section.1.3}}
 \newlabel{vrdisplays}{{1.3}{10}{Virtual Reality Headmounted Displays}{section.1.3}{}}
+\citation{oculus}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Barrel distortion applied to a rectangular grid, normalised to the range [-1,1]\relax }}{11}{figure.caption.9}}
 \newlabel{barreldist}{{1.2}{11}{Barrel distortion applied to a rectangular grid, normalised to the range [-1,1]\relax }{figure.caption.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces A depiction of lens astigmatism. The percieved image blurs as you move away from the sharp center.\relax }}{11}{figure.caption.10}}
-\newlabel{blurred}{{1.3}{11}{A depiction of lens astigmatism. The percieved image blurs as you move away from the sharp center.\relax }{figure.caption.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces A depiction of lens astigmatism. The perceived image blurs as you move away from the sharp center.\relax }}{11}{figure.caption.10}}
+\newlabel{blurred}{{1.3}{11}{A depiction of lens astigmatism. The perceived image blurs as you move away from the sharp center.\relax }{figure.caption.10}{}}
 \citation{Astigpap}
 \@writefile{toc}{\contentsline {chapter}{\numberline {2}Preparation}{13}{chapter.2}}
 \@writefile{lof}{\addvspace {10\p@ }}
@@ -43,7 +45,7 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}The OpenGL pipeline}{14}{subsection.2.2.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.3}Development}{15}{section.2.3}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.4}Software libraries}{15}{section.2.4}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.5}Programming Languages}{16}{section.2.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.5}Programming Languages}{15}{section.2.5}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.6}Development Tools}{16}{section.2.6}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.6.1}Version Control}{16}{subsection.2.6.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.6.2}Failsafes}{16}{subsection.2.6.2}}
@@ -51,23 +53,25 @@
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}OculusWorldDemo Structure}{17}{section.3.1}}
+\citation{vertexDisplacement}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}The Render Loop}{18}{section.3.2}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}Barrel Distortion}{18}{section.3.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Shows a regular pixel grid pre and post brown distortion. Coordinates are normalised to the range $[-1,1]$\relax }}{18}{figure.caption.12}}
-\newlabel{epsfig1}{{3.1}{18}{Shows a regular pixel grid pre and post brown distortion. Coordinates are normalised to the range $[-1,1]$\relax }{figure.caption.12}{}}
+\newlabel{barSection}{{3.3}{18}{Barrel Distortion}{section.3.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Shows a regular pixel grid pre and post brown distortion, with $\alpha = 0.35 $.\relax }}{18}{figure.caption.12}}
+\newlabel{epsfig1}{{3.1}{18}{Shows a regular pixel grid pre and post brown distortion, with $\alpha = 0.35 $.\relax }{figure.caption.12}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Shows a render of OculusWorldDemo being used to texture a mesh, achieving barrel distortion.\relax }}{19}{figure.caption.13}}
 \newlabel{fig:meshgrid}{{3.2}{19}{Shows a render of OculusWorldDemo being used to texture a mesh, achieving barrel distortion.\relax }{figure.caption.13}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.4}Implementation overview}{19}{section.3.4}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.5}Projection Transformation}{19}{section.3.5}}
 \newlabel{projections}{{3.5}{19}{Projection Transformation}{section.3.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Shows a high level process of achieving subscreen antialiasing.\relax }}{20}{figure.caption.14}}
-\newlabel{fig:meshgrid}{{3.3}{20}{Shows a high level process of achieving subscreen antialiasing.\relax }{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Shows a high level process of achieving Subscreen Antialiasing.\relax }}{20}{figure.caption.14}}
+\newlabel{fig:meshgrid}{{3.3}{20}{Shows a high level process of achieving Subscreen Antialiasing.\relax }{figure.caption.14}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Orthographic projection}{20}{subsection.3.5.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}Perspective projection}{20}{subsection.3.5.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3}Matrix Initilisation}{21}{subsection.3.5.3}}
-\newlabel{matrix}{{3.5.3}{21}{Matrix Initilisation}{subsection.3.5.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Shows the field of view for each eye. Not shown are the fov\_Up and fov\_Down parameters\relax }}{21}{figure.caption.15}}
-\newlabel{epsfig1}{{3.4}{21}{Shows the field of view for each eye. Not shown are the fov\_Up and fov\_Down parameters\relax }{figure.caption.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3}Matrix Initialisation}{21}{subsection.3.5.3}}
+\newlabel{matrix}{{3.5.3}{21}{Matrix Initialisation}{subsection.3.5.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Shows the field of view for each eye. Not shown are the fov\_Up and fov\_Down parameters. IPD represents the Inter Pupillary Distance of the user - The distance between the center of each eye $\approx 66mm$.\relax }}{21}{figure.caption.15}}
+\newlabel{epsfig1}{{3.4}{21}{Shows the field of view for each eye. Not shown are the fov\_Up and fov\_Down parameters. IPD represents the Inter Pupillary Distance of the user - The distance between the center of each eye $\approx 66mm$.\relax }{figure.caption.15}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.6}Allocating Textures}{22}{section.3.6}}
 \newlabel{texturealloc}{{3.6}{22}{Allocating Textures}{section.3.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.7}Drawing the scene}{22}{section.3.7}}
@@ -75,60 +79,76 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3.8}MultiSample Resolve}{23}{section.3.8}}
 \newlabel{resolving}{{3.8}{23}{MultiSample Resolve}{section.3.8}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.9}OpenGL optimisations}{24}{section.3.9}}
+\newlabel{optimisations}{{3.9}{24}{OpenGL optimisations}{section.3.9}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.10}Amplifying Geometry}{24}{section.3.10}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.10.1}The Geometry Shader}{25}{subsection.3.10.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.10.1}The Geometry Shader}{24}{subsection.3.10.1}}
+\citation{arbViewport}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Shows the high level process of rendering to two resolutions with one draw call\relax }}{25}{figure.caption.16}}
 \newlabel{epsfig1}{{3.5}{25}{Shows the high level process of rendering to two resolutions with one draw call\relax }{figure.caption.16}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.11}Extension 1: Foveated Rendering}{26}{section.3.11}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.11.1}Recalculating projection}{26}{subsection.3.11.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.12}Extension 1.5 Non-uniform Texel Density}{27}{section.3.12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.12.1}Blending the two textures}{27}{subsection.3.12.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.11}Extension 1: Non-uniform Texel Density}{26}{section.3.11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.11.1}Blending the two textures}{26}{subsection.3.11.1}}
+\newlabel{blending}{{3.11.1}{26}{Blending the two textures}{subsection.3.11.1}{}}
+\citation{armDeveloper}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Shows the texture coordinates for the low field of view texture given on the outer rectangle. The low field of view texture can then be sampled correctly in the fragment shader.\relax }}{27}{figure.caption.17}}
+\newlabel{fig:texblend}{{3.6}{27}{Shows the texture coordinates for the low field of view texture given on the outer rectangle. The low field of view texture can then be sampled correctly in the fragment shader.\relax }{figure.caption.17}{}}
+\citation{multiResShading}
+\citation{OVRmultiview}
+\citation{OVRmultiview2}
+\@writefile{toc}{\contentsline {section}{\numberline {3.12}Stereoscopic rendering}{28}{section.3.12}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.13}Limitations}{28}{section.3.13}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.14}Future Hardware Support}{28}{section.3.14}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Evaluation}{29}{chapter.4}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Evaluation}{31}{chapter.4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Objective Assesment}{29}{section.4.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}API calls}{29}{section.4.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Fragment shader invocations}{30}{section.4.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Shows the number fragment shader invocations across the different techniques.\relax }}{30}{figure.caption.17}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Fragment Shader Timing}{31}{section.4.4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Shows the time taken to process fragments across the techniques.\relax }}{31}{figure.caption.18}}
-\newlabel{fig:subim2}{{4.3a}{32}{The original Scene\relax }{figure.caption.19}{}}
-\newlabel{sub@fig:subim2}{{a}{32}{The original Scene\relax }{figure.caption.19}{}}
-\newlabel{ssaatree}{{4.3b}{32}{Fullscreen MSAA - Subscreen SSAA\relax }{figure.caption.19}{}}
-\newlabel{sub@ssaatree}{{b}{32}{Fullscreen MSAA - Subscreen SSAA\relax }{figure.caption.19}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Image of the tree scene showing the thresholded difference between Subscreen SSAA and Subscreen MSAA\relax }}{32}{figure.caption.19}}
-\newlabel{fig:supersample}{{4.3}{32}{Image of the tree scene showing the thresholded difference between Subscreen SSAA and Subscreen MSAA\relax }{figure.caption.19}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Removal of artefacts}{32}{section.4.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Subscreen Supersampling}{32}{subsection.4.5.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}Subscreen Multisampling}{33}{subsection.4.5.2}}
-\newlabel{fig:subim2}{{4.4a}{33}{The original Scene\relax }{figure.caption.20}{}}
-\newlabel{sub@fig:subim2}{{a}{33}{The original Scene\relax }{figure.caption.20}{}}
-\newlabel{fig:subim1}{{4.4b}{33}{Fullscreen MSAA - Subscreen MSAA\relax }{figure.caption.20}{}}
-\newlabel{sub@fig:subim1}{{b}{33}{Fullscreen MSAA - Subscreen MSAA\relax }{figure.caption.20}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Highlights aliasing that is removed from both Subscreen MSAA and Fullscreen MSAA\relax }}{33}{figure.caption.20}}
-\newlabel{fig:multisample}{{4.4}{33}{Highlights aliasing that is removed from both Subscreen MSAA and Fullscreen MSAA\relax }{figure.caption.20}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.6}Extension 1.5 Evaluation}{34}{section.4.6}}
-\newlabel{epsfig1}{{4.5a}{34}{Original pixel density\relax }{figure.caption.21}{}}
-\newlabel{sub@epsfig1}{{a}{34}{Original pixel density\relax }{figure.caption.21}{}}
-\newlabel{epsfig1}{{4.5b}{34}{Proposed pixel density\relax }{figure.caption.21}{}}
-\newlabel{sub@epsfig1}{{b}{34}{Proposed pixel density\relax }{figure.caption.21}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Shows the texel to pixel density across a barrel distorted image.\relax }}{34}{figure.caption.21}}
-\newlabel{fig:barreldensity}{{4.5}{34}{Shows the texel to pixel density across a barrel distorted image.\relax }{figure.caption.21}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusion}{35}{chapter.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Objective Assessment}{31}{section.4.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}API calls}{31}{section.4.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Fragment shader invocations}{32}{section.4.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Shows the number fragment shader invocations across the different techniques.\relax }}{32}{figure.caption.18}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Fragment Shader Timing}{33}{section.4.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Shows the time taken to process fragments across the techniques.\relax }}{33}{figure.caption.19}}
+\newlabel{fig:subim2}{{4.3a}{34}{The original Scene\relax }{figure.caption.20}{}}
+\newlabel{sub@fig:subim2}{{a}{34}{The original Scene\relax }{figure.caption.20}{}}
+\newlabel{ssaatree}{{4.3b}{34}{Fullscreen MSAA - Subscreen SSAA\relax }{figure.caption.20}{}}
+\newlabel{sub@ssaatree}{{b}{34}{Fullscreen MSAA - Subscreen SSAA\relax }{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Image of the tree scene showing the thresholded difference between Subscreen SSAA and Subscreen MSAA\relax }}{34}{figure.caption.20}}
+\newlabel{fig:supersample}{{4.3}{34}{Image of the tree scene showing the thresholded difference between Subscreen SSAA and Subscreen MSAA\relax }{figure.caption.20}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Removal of artefacts}{34}{section.4.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Subscreen Supersampling}{34}{subsection.4.5.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}Subscreen Multisampling}{35}{subsection.4.5.2}}
+\newlabel{fig:subim2}{{4.4a}{35}{The original Scene\relax }{figure.caption.21}{}}
+\newlabel{sub@fig:subim2}{{a}{35}{The original Scene\relax }{figure.caption.21}{}}
+\newlabel{fig:subim1}{{4.4b}{35}{Fullscreen MSAA - Subscreen MSAA\relax }{figure.caption.21}{}}
+\newlabel{sub@fig:subim1}{{b}{35}{Fullscreen MSAA - Subscreen MSAA\relax }{figure.caption.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Highlights aliasing that is removed from both Subscreen MSAA and Fullscreen MSAA\relax }}{35}{figure.caption.21}}
+\newlabel{fig:multisample}{{4.4}{35}{Highlights aliasing that is removed from both Subscreen MSAA and Fullscreen MSAA\relax }{figure.caption.21}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.6}Extension 1.5 Evaluation}{36}{section.4.6}}
+\newlabel{epsfig1}{{4.5a}{36}{Original texel density\relax }{figure.caption.22}{}}
+\newlabel{sub@epsfig1}{{a}{36}{Original texel density\relax }{figure.caption.22}{}}
+\newlabel{epsfig1}{{4.5b}{36}{Proposed texel density\relax }{figure.caption.22}{}}
+\newlabel{sub@epsfig1}{{b}{36}{Proposed texel density\relax }{figure.caption.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Shows the texel to pixel density across a barrel distorted image.\relax }}{36}{figure.caption.22}}
+\newlabel{fig:barreldensity}{{4.5}{36}{Shows the texel to pixel density across a barrel distorted image.\relax }{figure.caption.22}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusion}{37}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Achievements}{35}{section.5.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Achievements}{37}{section.5.1}}
 \bibdata{refs}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Final Remarks}{36}{section.5.2}}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{36}{section.5.2}}
-\bibcite{Astigpap}{1}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}TODO}{39}{appendix.A}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Final Remarks}{38}{section.5.2}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{38}{section.5.2}}
+\bibcite{armDeveloper}{1}
+\bibcite{oculus}{2}
+\bibcite{OVRmultiview}{3}
+\bibcite{OVRmultiview2}{4}
+\bibcite{vertexDisplacement}{5}
+\bibcite{multiResShading}{6}
+\bibcite{Astigpap}{7}
+\bibcite{arbViewport}{8}
+\bibcite{MotionToPhoton}{9}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}TODO}{41}{appendix.A}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {B}Project Proposal}{41}{appendix.B}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}Project Proposal}{43}{appendix.B}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lof}{\contentsline {figure}{\numberline {B.1}{\ignorespaces The center of the perceived image is sharp, while the edges get progressively blurrier\relax }}{42}{figure.caption.25}}
-\newlabel{blurfig}{{B.1}{42}{The center of the perceived image is sharp, while the edges get progressively blurrier\relax }{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {B.1}{\ignorespaces The center of the perceived image is sharp, while the edges get progressively blurrier\relax }}{44}{figure.caption.26}}
+\newlabel{blurfig}{{B.1}{44}{The center of the perceived image is sharp, while the edges get progressively blurrier\relax }{figure.caption.26}{}}

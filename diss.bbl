@@ -1,8 +1,48 @@
 \begin{thebibliography}{1}
 
+\bibitem{armDeveloper}
+{ARM Mali Virtual Reality SDK}.
+\newblock \url{http://malideveloper.arm.com/resources/sdks/mali-vr-sdk/}.
+
+\bibitem{oculus}
+{Oculus VR}.
+\newblock \url{http://www.oculus.com}, 2014.
+
+\bibitem{OVRmultiview}
+Cass Everitt.
+\newblock {OVR\_Multiview}.
+\newblock
+  \url{https://www.khronos.org/registry/OpenGL/extensions/OVR/OVR\_multiview.txt}.
+
+\bibitem{OVRmultiview2}
+Cass Everitt.
+\newblock {OVR\_Multiview2}.
+\newblock
+  \url{https://www.khronos.org/registry/OpenGL/extensions/OVR/OVR\_multiview2.txt}.
+
+\bibitem{vertexDisplacement}
+Brian Kehrer.
+\newblock {Cardboard Design Lab}.
+\newblock \url{https://developers.google.com/vr/unity/}.
+
+\bibitem{multiResShading}
+{NVIDIA} Nathan~Reed.
+\newblock Multi-res shading.
+\newblock \url{https://developer.nvidia.com/vrworks/graphics/multiresshading}.
+
 \bibitem{Astigpap}
 Daniel Pohl, Timo Bolkart, Stefan Nickels, and Oliver Grau.
 \newblock Using astigmatism in wide angle hmds to improve rendering.
 \newblock 2015.
+
+\bibitem{arbViewport}
+Graham Sellers.
+\newblock {ARB\_viewport\_array}.
+\newblock
+  \url{https://www.khronos.org/registry/OpenGL/extensions/ARB/ARB\_viewport\_array.txt}.
+
+\bibitem{MotionToPhoton}
+Jingbo Zhao, Robert~S. Allison, Margarita Vinnikov, and Sion Jennings.
+\newblock Estimating the motion-to-photon latency in head mounted displays.
 
 \end{thebibliography}

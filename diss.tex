@@ -20,6 +20,16 @@
 \clubpenalty1000%
 \widowpenalty1000%
 
+
+\DefineVerbatimEnvironment{smallcode}
+	{Verbatim}
+	{fontsize=\scriptsize}
+
+\DefineVerbatimEnvironment{footcode}
+	{Verbatim}
+	{fontsize=\footnotesize}
+
+
 \renewcommand{\baselinestretch}{1.1}    % adjust line spacing to make
                                         % more readable
 
@@ -65,12 +75,12 @@ Supervisor:         & Dr Rafal Mantiuk                    \\
 
 \section*{Original Aims of the Project}
 
-To examine the effect on the image quality and GPU load when applying antialiasing only to a small field of view in a consumer Virtual Reality (VR) Headmounted Display (HMD).
+To examine the effect on the image quality and GPU load when applying anti-aliasing only to a small field of view in a consumer Virtual Reality (VR) Headmounted Display (HMD).
 
 
 \section*{Work Completed}
 
-Implementation of two generic methods to apply antialiasing only in the centre of the screen using OpenGL. Examined an modification to accomodate Foveated Rendering and Multi-Projection rendering.
+Implementation of two generic methods to apply anti-aliasing only in the center of the screen using OpenGL. Examined an modification to accommodate Foveated Rendering and Multi-Projection rendering.
 
 An assessment of the image quality across these techniques was carried out, and various measurements taken to determine their performance.   
 
@@ -107,7 +117,7 @@ extent for a comparable purpose.
 
 \section{Background}
 
-Through the affordability of display panels and cheap wide-angle lenses, Virtual Reality Displays are beggining to flood the consumer market. To meet this demand, efficient rendering software and practices will need to be adopted.
+Through the affordability of display panels and cheap wide-angle lenses, Virtual Reality Displays are beginning to flood the consumer market. To meet this demand, efficient rendering software and practices will need to be adopted.
 
 Graphics rendering pipelines take good advantage of available GPU power. But the constraints of realistic, immersive virtual reality present a huge challenge to engineers. They must output a high resolution, wide field of view, antialiased image, with a response to stimulus time under 20ms.
 
@@ -115,17 +125,14 @@ As this technology progresses and matures, it will become increasingly important
 
 Aliasing in graphics refers to spatial and temporal artefacts present in a rendered image. They are the result of sampling a higher frequency signal component at a lower freqency.
 
-Antialising is the process of removing such artefacts, but this has to be done efficiently or we will sacrifice frame drops and potential motion sickness for the end-user.
-There are a multitude of antialiasing approaches, though most sample at a higher frequency than will be presented in the final image, then downsampling through some filter. 
+Antialiasing is the process of removing such artefacts, but this has to be executed within a strict latency budget, a motion-to-photon time of about 20ms needs to be achieved or the end-user can suffer simulation sickness. \cite{MotionToPhoton}.
+There are a multitude of real-time anti-aliasing approaches, though most sample at a higher frequency than will be presented in the final image, then down-sampling through some filter. 
 
 \section{Common Antialiasing Approaches}\label{supersampling}
 
-There are a multitude of antialising approaches, one of the most common is Supersampled Anti-alising (SSAA).
-First the scene is sampled at an integer multiple higher resolution than we intend to present it.
-Then, before presenting, this image is downsampled by taking for each pixel in the presented image, a linear combination of its closest neighbors in the higher resolution image. In the figure below, to calculate the final pixels colour, 4 samples per pixel are computed, each run through some downsampling filter, each providing a quarter of the color for the final, presented image. The formula for for determining the final colour of the pixel is the simple mean average for each colour (Red, Green and Blue):
-$$ c = \frac{1}{n}\displaystyle\sum_{i=1}^n c_i $$ where n is the number of samples per pixels we take.
-
-
+There are a multitude of anti-aliasing approaches, one of the most common in real-time graphics is Supersampled Anti-aliasing (SSAA). To remove higher frequencies than a lower resolution image can reproduce, the scene is sampled at an integer multiple higher resolution than we intend to present it.
+Then, before presenting, these samples are filtered by taking a linear combination of each to obtain the final pixel colour. An example is shown in figure \ref{downsample}. To calculate the final pixels colour, 4 samples per pixel are computed, each run through some down-sampling filter, each providing a quarter of the color for the final, presented image. The formula for for determining the final colour of the pixel in this case is the simple mean average for each colour (Red, Green and Blue):
+$$ c = \frac{1}{n}\displaystyle\sum_{i=1}^n c_i $$ where n is the number of samples per pixels we take. Supersampling remains one of the highest quality anti-aliasing approaches for real-time graphics, though it is also one of the most expensive. 
 
 \begin{figure}
 \setlength{\unitlength}{1mm}-
@@ -160,18 +167,18 @@ $$ c = \frac{1}{n}\displaystyle\sum_{i=1}^n c_i $$ where n is the number of samp
 \end{picture}
 \end{center}
 \caption{An example of 4x Supersampling for a single pixel.}
-\label{latexpic1}
+\label{downsample}
 \end{figure}
 
-Another common approach, that is built into the OpenGL API, is Multisampled Anti-aliasing (MSAA). As before, the scene is sampled at a higher resolution than we intend to present it, forming a coverage mask for each pixel. If any of the samples in this coverage mask are covered by a triangle, we need to run a fragment shader for this pixel. The result of the fragment shader is applied to all relevant subsamples in the coverage mask. We therefore don't have to run a fragment shader for every subsample in the pixel, only those that are covered by multiple triangles.
+Another common approach, that is built into the OpenGL API, is Multisampled Anti-aliasing (MSAA). As before, the scene is sampled at a higher resolution than we intend to present it, forming a coverage mask for each pixel. If any of the samples in this coverage mask are covered by a triangle, a fragment shader is run for this pixel. The result of the fragment shader is written to all subsamples that are covered by the triangle. We therefore don't have to run a fragment shader for every subsample in the pixel, only those that are covered by multiple triangles.
 MSAA provides a significant speedup over SSAA and is widely employed in practice, but only removes spatial artefacts at polygon edges. SSAA can remove artefacts within polygons, an example of which will be presented later.
 
 \section{Virtual Reality Headmounted Displays}\label{vrdisplays}
 
 A typical virtual Reality Headmounted Display (HMD) is comprised of 2 main components: The screen - to which our rendered image is presented and a wide-angle lens - to project the displayed image into the eye. The lens allows for the user to focus on a screen that is normally too close for the eye to focus on by itself. 
-Side effects of the lens used in the Oculus Rift DK2 are chromatic abberation, pincushion distortion, and astigmatism.\\
+Side effects of the lens used in the Oculus Rift DK2 are chromatic aberration, pincushion distortion, and astigmatism. \par
 
-Chromatic abberation refers to the separation of colour due to the different refractive indexes for different wavelengths of light. A Virtual Reality API should correct for this.\\
+Chromatic aberration refers to the separation of colour due to the different refractive indexes for different wavelengths of light. A Virtual Reality API should correct for this.
 
 \begin{figure}
 \centerline{\includegraphics[width=7cm]{figs/post_distortion.eps}}
@@ -179,31 +186,30 @@ Chromatic abberation refers to the separation of colour due to the different ref
 \label{barreldist}
 \end{figure}
 
-Pincushion distortion refers to the stretching of the image near the egdes. The inverse of pincushion distortion, barrel disortion figure \ref{barreldist}, can be applied to reverse the effects of pincushion distortion. The barrel distortion that the Oculus SDK applies results in a varying number of texels per pixel in our final image, a property will be explored in the second extension.
+Pincushion distortion refers to the stretching of the image, particularly at the edges. It can be modelled with Brown's distortion model, the model and an example is given in section \ref{barSection}.  The inverse of pincushion distortion, barrel distortion, shown in figure \ref{barreldist}, can be applied to reverse the effects of pincushion distortion. The barrel distortion that the Oculus SDK\cite{oculus} applies results in a varying number of texels per pixel in our final image, a property will be explored in the second extension.
 
-
-Lens astigmatism is a property of the lenses used in most consumer HMDs. Because of the astigmatism, the image presented to the user is sharp in the center but becomes progressivelly blurrier as you look towards the edges as seen in figure \ref{blurred}. It can be corrected for by adding more lenses to the HMD, but this ends up being too expensive and bulky for consumer versions.
+Lens astigmatism is a property of the lenses used in most consumer HMDs. Because of the astigmatism, the image presented to the user is sharp in the center but becomes progressively blurrier as you look towards the edges as seen in figure \ref{blurred}. It can be corrected for by adding more lenses to the HMD, but this ends up being too expensive and bulky for consumer versions.
 
 \begin{figure}
 \centerline{\includegraphics[width=5cm]{figs/blur.png}}
-\caption{A depiction of lens astigmatism. The percieved image blurs as you move away from the sharp center.}
+\caption{A depiction of lens astigmatism. The perceived image blurs as you move away from the sharp center.}
 \label{blurred}
 \end{figure}
 
-This astigmatism property can be exploited by antialiasing only where the image is sharpest, in the center. Graphical artefacts at the edges should be blurred enough to be unnoticable. It is this principle that I'll develop the following antialiasing approaches on top of.
+This astigmatism property can be exploited by anti-aliasing only where the image is sharpest, in the center. Graphical artefacts at the edges should be blurred enough to be unnoticeable. It is this principle that I'll develop the following anti-aliasing approaches on top of.
 
 \chapter{Preparation}
 
-This chapter outlines any preparatory work that was done before implementation of the two antialiasing approaches.
+This chapter outlines any preparatory work that was done before implementation of the two anti-aliasing approaches.
 
 \section{Previous Work}
 
 This project was inspired by the Intel Research's 2015 publication: Using Astigmatism in Wide Angle HMDs to Improve Rendering \cite{Astigpap}. They exploited the astigmatism in an Oculus DK1 headset to decrease sampling at the edges of the image in a raytracer. They managed to improve the performance by a factor of $\approx 2.5$ in that raytracer.
-Ajusting the sampling rate across the image in a raytracer is relatively straightforward. D. Pohl et Al used a \emph{sampling map} to achieve this. However, this may not be so easy or efficient in a rasteriser like OpenGL. In this project I take this idea of reducing sampling at image edges and apply it to a rasteriser. Rasterisers are a faster though less accurate rendering method - and, because of the intense timing constraints on Virtual Reality, are used significantly more in VR applications. 
+Adjusting the sampling rate across the image in a raytracer is relatively straightforward. D. Pohl et Al used a \emph{sampling map} to achieve this. However, this may not be so easy or efficient in a rasteriser like OpenGL. In this project I take this idea of reducing sampling at image edges and apply it to a rasteriser. Rasterisers are a faster though less accurate rendering method - and, because of the intense timing constraints on Virtual Reality, are used significantly more in VR applications. 
 
 \section{OpenGL}
 
-The OpenGL API provides an interface to render 3D graphics. It's cross language, with native C/C++ bindings, well documented, and the most widely adopted open source graphics API. As a bonus it supports some efficient antialising standards.
+The OpenGL API provides an interface to render 3D graphics. It's cross language, with native C bindings, well documented, and the most widely adopted open source graphics API. As a bonus it supports some efficient anti-aliasing standards.
 
 Below I describe some OpenGL terminology that will be used lots later.
 
@@ -216,15 +222,15 @@ Below I describe some OpenGL terminology that will be used lots later.
   The process of moving image data between framebuffers.
 
 \item\texttt{Front Buffer} \\
-  The buffer containing the image that is presented onscreen now. This buffer is contained within the Default Framebuffer.
+  The buffer containing the image that is presented on-screen now. This buffer is contained within the Default Framebuffer.
 
 \item\texttt{Back Buffer} \\
-  The buffer containing the image that will be presented onscreen in the next frame, is contained within the Default Framebuffer. 
+  The buffer containing the image that will be presented on-screen in the next frame, is contained within the Default Framebuffer. 
 
 \item\texttt{Primitive} \\
-  An interpretive scheme used to determine what a stream of vertices represents when being rendered. For example \texttt{GL\_POINTS} causes each vertex to be interpreted as a point. Other primitive types include \texttt{GL\_TRIANGLES} amd \texttt{GL\_LINES}
+  An interpretive scheme used to determine what a stream of vertices represents when being rendered. For example \texttt{GL\_POINTS} causes each vertex to be interpreted as a point. Other primitive types include \texttt{GL\_TRIANGLES} and \texttt{GL\_LINES}
 \item\texttt{Fragment} \\
-  Collection of values produced by the rasterizer. A fragment represents a sample-sized segment of a rasterized primitive. These are processed by the fragment shader. 
+  Collection of values produced by the rasteriser. A fragment represents a sample-sized segment of a rasterized primitive. These are processed by the fragment shader. 
 \end{description}
 
 \subsection{The OpenGL pipeline}
@@ -252,19 +258,16 @@ OpenGL provides a pipeline through which data about the rendered scene is proces
 \put(40,80){\vector(0,-1){10}}
 \put(40,100){\vector(0,-1){10}}
 
-
-
-
 \end{picture}
 \end{center}
 \caption{A glimpse at the OpenGL rendering pipeline}
 \label{latexpic2}
 \end{figure}
 
-Vertex data enters the pipeline, typically it has been uploaded to the GPU through a \texttt{Vertex Buffer Object}. Each vertex usually has associated data such as a colour, a normal vector, and texture coordinates.\\
-The Vertex Shader is run for every vertex in the scene. In the typical case it transforms vertexes in 3d world space to window space coordinates. Vertex data from the previous scene is bound in through named variables.\\
+Vertex data enters the pipeline, typically it has been uploaded to the GPU through a \texttt{Vertex Buffer Object}. Each vertex usually has associated data such as a colour, a normal vector, and texture coordinates.
+The Vertex Shader is run for every vertex in the scene. In the typical case it transforms vertexes in 3d world space to window space coordinates. Vertex data from the previous scene is bound in through named variables.
 
-The Geometry Shader is run for every primitive in the scene (in all of the implementations here I've simplified these to triangles as a general case). It is an unusual stage in that it can amplify geometry, outputting more primitives than it takes as input. This stage is optional, but it's used later on.\\
+The Geometry Shader is run for every primitive in the scene (in all of the implementations here I've simplified these to triangles as a general case). It is an unusual stage in that it can amplify geometry, outputting more primitives than it takes as input. This stage is optional, but it's used later on.
 
 The Fragment shader is run for every fragment in the window space, it is typically used to perform lighting and texturing for the scene.
 
@@ -272,27 +275,27 @@ The Fragment shader is run for every fragment in the window space, it is typical
 
 Being relatively new to OpenGL I decided to build a toy renderer to teach myself the basics of the API.
 
-This toy renderer proved invaluable to the success of the project, since I knew and understood the source code completely, I could implement and test an idea for optimisation or an implementation strategy quickly. The toy renderer was implemented in C++.
+This toy renderer proved invaluable to the success of the project, since I knew and understood the source code completely, I could implement and test an idea for optimization or an implementation strategy quickly. The toy renderer was implemented in C++.
 
 To get an idea of how these implementations would fare in a larger, more computationally intensive renderer I decided to modify the demo provided with the Oculus SDK 5.0.1: OculusWorldDemo.
 The codebase to this was in C++ and the rendering code was written to be extensible - allowing for different graphics APIs to implement higher level rendering calls. The OpenGL implementation was Open Source and under the Apache License.
 
-An agile approach was taken when implementing the antialising methods, stories were broken up into small, managable chunks. After these were implemented - extensions could be written up and implemented on top.
+An agile approach was taken when implementing the anti-aliasing methods, stories were broken up into small, manageable chunks. After these were implemented - extensions could be written up and implemented on top.
 Unit tests were written for all new methods. However, where methods and classes were extended beyond Oculus' implementation, unit tests were not added due to the high degree of coupling within OculusWorldDemo and OpenGL and the extensive API mocking required. To make up for this, and to ensure correctness, runtime assertions were made on all branches and method calls.
 
 \section{Software libraries}
 
-The OculusVR SDK was used in the Demo to interface with the Oculus Rift DK2 HMD. An outdated version 0.5.0.1 was used being the last version to support linux.
-The SDK provided vector and matrix math modules, runtime assertions, and allowed barrel distortion and chromatic abberation to be performed.
+The OculusVR SDK was used in the Demo to interface with the Oculus Rift DK2 HMD. An outdated version 0.5.0.1 was used being the last version to support Linux.
+The SDK provided vector and matrix math modules, runtime assertions, and allowed barrel distortion and chromatic aberration to be performed.
 
 GLFW was used for context creation in the toy renderer.
 GLM was used for matrix math in the toy renderer.
 
 \section{Programming Languages}
 
-C++ was used in both the toy renderer and OculusWorldDemo. It has native OpenGL bindings and has extensive compiler support allowing for performance to be maximised.
+C++ was used in both the toy renderer and OculusWorldDemo. It integrates well with the OpenGL C bindings and has extensive compiler support allowing for performance to be maximised.
 
-GLSL is the OpenGL C-like shader language that is run on the GPU. It was used to implement the first and second extensions. It's syntax is very similar to C. Learning it was not particularly time-consuming.
+GLSL is the OpenGL C-like shader language that is run on the GPU. It was used to write the geometry shader in section \ref{optimisation} and the fragment shader in section \ref{blending}. It's syntax is very similar to C. Learning it was not particularly time-consuming.
 
 \section{Development Tools}
 
@@ -308,7 +311,7 @@ GLSL is the OpenGL C-like shader language that is run on the GPU. It was used to
 \end{itemize}
 \subsection{Version Control}
 
-Git was used as a version control system due to its flexibility and my familiarity with it. Remote repositories were placed both on a separate harddrive and Github. These remotes were updated on every commit. Commits were made after every development story was completed.
+Git was used as a version control system due to its flexibility and my familiarity with it. Remote repositories were placed both on a separate hard-drive and Github. These remotes were updated on every commit. Commits were made after every development story was completed.
 
 \subsection{Failsafes}
 
@@ -316,58 +319,58 @@ In the event of failure of my development machine, MCS machines were compatible 
 
 \chapter{Implementation}
 
-This chapter describes the implementation of antialiasing techniques briefly outlined in Section \ref{vrdisplays}. I first give a brief introduction to OculusWorldDemo's structure - and then describe a general implementation strategy for two antialiasing techniques: Subscreen Multisampling, and Subscreen Supersampling. I also give an optimisation to the latter that is available to OpenGL 4.0 and another that is available on some OpenGL ES implementations. 
+This chapter describes the implementation of anti-aliasing techniques briefly outlined in Section \ref{vrdisplays}. I first give a brief introduction to OculusWorldDemo's structure - and then describe a general implementation strategy for two anti-aliasing techniques: Subscreen Multisampling, and Subscreen Supersampling. I also give an optimization to the latter that is available to OpenGL 4.0 and another that is available on some OpenGL ES implementations. 
 
-Where source code has been modified, I will use the colour \textcolor{green}{green} to reprisent modifications I have made. However code that I have wrote entirely will follow the usual code formatting.
+Where source code has been modified, I will use the colour \textcolor{green}{green} to represent modifications I have made. However blocks of code that I have written entirely will follow the usual code formatting.
 
 \section{OculusWorldDemo Structure}
 
-Given that the implementation of two antialiasing techniques is built on top of Oculus' existing work, it was first neccesary to understand a large portion of their codebase.
+Given that the implementation of two anti-aliasing techniques is built on top of Oculus' existing work, it was first necessary to understand a large portion of their codebase.
 Here I give a brief overview of system components that will be modified and used later on. I also give a brief overview of Oculus' SDK before detailing components that were added and modified to OculusWorldDemo.
 
 \begin{itemize}
 \item OculusWorldDemoApp \\
-  The class describing the application OculusWorldDemo, contains high level rendering instructions, calculcation of HMD values, user input (Mouse, Keyboard), state initilisation and more.
+  The class describing the application OculusWorldDemo, contains high level rendering instructions, calculation of HMD values, user input (Mouse, Keyboard), state initialization and more.
 
 \item RenderDevice \\
-  The module containing rendering state and methods, called by OculusWorldDemoApp. Provides several implentations of its methods in DirextX and OpenGL. Handles shader compilation, linking, GPU memory allocation for vertex \& texture data and more.
+  The module containing rendering state and methods, called by OculusWorldDemoApp. Provides several implementations of its methods in DirextX and OpenGL. Handles shader compilation, linking, GPU memory allocation for vertex \& texture data and more.
 
 \end{itemize}
 \section{The Render Loop}
-At every frame, the Oculus SDK provides headtracking information that must be used to maintain the appropriate user position and orientation in the program.
+At every frame, the Oculus SDK provides head-tracking information that must be used to maintain the appropriate user position and orientation in the program.
 
-The bulk of rendering code is done within the OculusWorldDemoApp::OnIdle() method, which determines if and when a frame should be drawn, along with other bookeeping.
+The bulk of rendering code is done within the OculusWorldDemoApp::OnIdle() method, which determines if and when a frame should be drawn, along with other bookkeeping.
 For each frame the following must be done:
 
 \begin{itemize}
   \item The SDK call \texttt{ovrHmd\_BeginFrame()} should be called to mark the beginning of the frame.
-  \item Update headtracking state.
+  \item Update head-tracking state.
   \item Draw the scene to some texture(s) $\tau$.
   \item Call \texttt{ovrHmd\_EndFrame($\tau$)}.
 \end{itemize}
 
-The Oculus SDK then takes $\tau$ and applies barrel distortion and chromatic abberation through a post-processing stage. 
+The Oculus SDK then takes $\tau$ and applies barrel distortion and chromatic aberration through a post-processing stage. 
 
-\section{Barrel Distortion}
+\section{Barrel Distortion}\label{barSection}
 
 A common model used to model barrel distortion is Brown's distortion model. 
 
 \[
 f(\vec p) = \frac{(\vec p)}{1-\alpha(\vec p)}
 \]
-Where $(\vec p)$ is some point in the source image, and $\alpha$ is the amount of disortion applied to the image, and is a property of the lens.
+Where $(\vec p)$ represents some point in the source image, and $p_i\in[-1,1]$. The constant $\alpha$ represents the amount of distortion applied to the image and is a property of the lens.
 
 
 \begin{figure}[tbh]
 \begin{center}
 \includegraphics[width=6cm]{figs/pre_distortion.eps}
 \includegraphics[width=6cm]{figs/post_distortion.eps}
-\caption{Shows a regular pixel grid pre and post brown distortion. Coordinates are normalised to the range $[-1,1]$}
+\caption{Shows a regular pixel grid pre and post brown distortion, with $\alpha = 0.35 $.}
 \label{epsfig1}
 \end{center}
 \end{figure}
 
-The method used implement barrel distortion in a graphics API has evolved over the past few years. Initially, the distortion was calculated as a post-processing step in the fragment shader. Later, the image provided to the post-processing step was used to texture a mesh that had distortion applied to it as can be seen in figure \ref {fig:meshgrid}. The latter approach is adopted by the Oculus SDK 5.0.1. Another approach can be built into the rendering pipeline in the vertex shader, it removes the need for post-processing, but additionally requires the use of tesselation.
+The method used to combat pincushion distortion in VR has evolved over the past few years. Initially, barrel distortion was calculated per fragment as a post-processing step in the fragment shader. Later, the image provided to the post-processing step was used to texture a mesh whose vertices have the distortion applied, as can be seen in figure \ref {fig:meshgrid}. The latter approach is adopted by the Oculus SDK 5.0.1. Another approach, Vertex Displacement, involves distorting the scene into 'lens space'. It can be built into the rendering pipeline in the vertex shader, it removes the need for post-processing, but additionally requires the use of tessellation. \cite{vertexDisplacement}
 
 \begin{figure}[tbh]
 \begin{center}
@@ -381,7 +384,7 @@ The method used implement barrel distortion in a graphics API has evolved over t
 \section{Implementation overview} 
 
 A high level implementation strategy is presented here. Each section will be detailed later on in the chapter.
-To achieve subscreen antialiasing we can:
+To achieve Subscreen Antialiasing we can:
 
 \begin{enumerate}
 \item Specify two separate views. One for the low detail peripheral, and one for the low field of view, high detail center. Textures allocation and projections must be dealt with here.
@@ -394,7 +397,7 @@ Each of these steps can be generalised to handle both Subscreen Supersampling an
 \begin{figure}[tbh]
 \begin{center}
 \includegraphics[width=10cm]{figs/highlevelprocess.eps}
-\caption{Shows a high level process of achieving subscreen antialiasing.}
+\caption{Shows a high level process of achieving Subscreen Antialiasing.}
 \label{fig:meshgrid}
 \end{center}
 \end{figure}
@@ -405,7 +408,7 @@ An essential component to 3D graphics is the projection transformation. It takes
 Two types of projection must be dealt with in the implementation. 
 
 \subsection{Orthographic projection}
-The orthographic projection is a form of parralel projection, where all projection lines are parralel to the \texttt{lookAt} vector. 
+The orthographic projection is a form of parallel projection, where all projection lines are parallel to the \texttt{lookAt} vector. 
 
 \[
 \begin{pmatrix}
@@ -429,15 +432,15 @@ The perspective projection is also used to render 3D scenes.
 \end{pmatrix}
 \]
 
-To project onto a smaller portion of the screen it's neccesary to specify alternate orthographic and perspective projection matrices that correspond to the smaller viewing frustrum in the center of the screen. In OculusWorldDemo I specify new matrices: \texttt{OrthoProjectionSmall} and \texttt{OrthoProjection} corresponding to the center and peripheral view respectively. 
+To project onto a smaller portion of the screen it's necessary to specify alternate orthographic and perspective projection matrices that correspond to the smaller viewing frustum in the center of the screen. In OculusWorldDemo I specify new matrices: \texttt{OrthoProjectionSmall} and \texttt{OrthoProjection} corresponding to the center and peripheral view respectively. 
 
-\subsection{Matrix Initilisation}\label{matrix}
+\subsection{Matrix Initialisation}\label{matrix}
 
 The Oculus SDK will provide to the programmer the estimated field of view from the vector going from the eye to the center of the image. This information can be used to construct a frustum and projection matrix use in rendering.
 
 \begin{figure}[tbh]
 \centerline{\includegraphics[scale=0.6]{figs/asymmetrical_fov.png}}
-\caption{Shows the field of view for each eye. Not shown are the fov\_Up and fov\_Down parameters}
+\caption{Shows the field of view for each eye. Not shown are the fov\_Up and fov\_Down parameters. IPD represents the Inter Pupillary Distance of the user - The distance between the center of each eye $\approx66mm$.}
 \label{epsfig1}
 \end{figure}
 
@@ -455,13 +458,13 @@ Matrix4f centeredSmallMatrix(Matrix4f m, float ratio){
 }
 \end{blockcode}
 
-The above returns a projection matrix whose near planes dimensions are $\frac{1}{\texttt{ratio}}$ of the input projection matrix's near plane. This small matrix will correspond to the smaller field of view whose render target will have higher quality antialiasing applied. 
+The above returns a projection matrix whose near planes dimensions are $\frac{1}{\texttt{ratio}}$ of the input projection matrix's near plane. This small matrix will correspond to the smaller field of view whose render target will have higher quality anti-aliasing applied. 
 
 \section{Allocating Textures}\label{texturealloc}
 
 The framebuffer that is used must be complete before we begin rendering to it, so textures must be allocated and formatted properly beforehand. This section will describe texture allocation in OpenGL, and how the implementation in OculusWorldDemo was modified to permit the approach outlined before. 
  
-The Oculus SDK provides a method \texttt{ovrHmd\_GetFovTextureSize()} that returns a reccomended texture size for a given Field of View and pixel density at the centre of the screen.
+The Oculus SDK provides a method \texttt{ovrHmd\_GetFovTextureSize()} that returns a reccomended texture size for a given Field of View and texel to pixel density at the center of the screen.
 
 The process for allocating a framebuffer in OpenGL that contain render target textures that are $\frac{1}{r}$ the size of the destination texture is the same as normal framebuffer generation. Render target sizes must be divided by $r$, and implementations should take care of integer division here.
 
@@ -484,7 +487,7 @@ Nothing else needs altering in the draw call for this implementation.
 
 \subsection{Modifying The Render Loop}
 
-Before beginning to render to each view with corresponding framebuffer $F$, OpenGL state needs to be set up. Therefore for each framebuffer $F$ the following steps are needed inside of the render loop. 4 Framebuffers can be used to achieve a stereoscopic view with subscreen multisampling or supersampling.
+Before beginning to render to each view with corresponding framebuffer $F$, OpenGL state needs to be set up. Therefore for each framebuffer $F$ the following steps are needed inside of the render loop. 4 Framebuffers can be used to achieve a stereoscopic view with subscreen multi-sampling or super-sampling.
 
 \begin{enumerate}
 
@@ -494,14 +497,14 @@ Before beginning to render to each view with corresponding framebuffer $F$, Open
 
 \end{enumerate}
 
-As I will describe later on, this process can be handled on the GPU side with the use of the geometry shader, freeing up the CPU and reducing the number of draw calls to a half (or a quarter if stereoscopic rendering is used).
+As I will describe later on, this process can be handled on the GPU side with the use of the geometry shader, freeing up the CPU and reducing the number of draw calls to a half.
 
 \section{MultiSample Resolve}\label{resolving}
 
-With a multisampled or supersampled texture along with a single sampled border texture, a resolve from the multisampled or supersampled texture to the destination buffer needs to be performed to merge the two together before presenting onscreen. This can be achieved with a blit operation or blending in a post-processing stage.
-The function below takes as arguments a multisampled or supersampled texture along with an output texture. It then resolves the samples from the source texture to the target texture. The method doesn't care whether the source texture is multisampled or supersampled, these cases will be identified from the source texture's flags.
+With a multi-sampled or super-sampled texture along with a single sampled border texture, a resolve from the multi-sampled or super-sampled texture to the destination buffer needs to be performed to merge the two together before presenting on-screen. This can be achieved with a blit operation or blending in a post-processing stage.
+The function below takes as arguments a multi-sampled or super-sampled texture along with an output texture. It then resolves the samples from the source texture to the target texture. The method doesn't care whether the source texture is multi-sampled or super-sampled, these cases will be identified from the source texture's flags.
 
-\begin{blockcode}[commandchars=\\\{\}, numbers=left]
+\begin{smallcode}[commandchars=\\\{\}, numbers=left]
 void RenderDevice::ResolveMsaa(OVR::Render::Texture* msaaTex, OVR::Render::Texture* outputTex, float ratio)
 \{
     bool isMsaaTarget = msaaTex->GetSamples() > 1;
@@ -518,8 +521,8 @@ void RenderDevice::ResolveMsaa(OVR::Render::Texture* msaaTex, OVR::Render::Textu
 
     OVR_ASSERT(glCheckFramebufferStatus(GL_DRAW_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE);
 
-\color{green}    int off_x = (outputTex->GetWidth() - outputTex->GetWidth()/ratio)/2; //Offset from bottom left of the target texture we wish to blit the source to. 
-\color{green}    int off_y = (outputTex->GetHeight() - outputTex->GetHeight()/ratio)/2; // ditto
+\color{green}    int off_x = (outputTex->GetWidth() - outputTex->GetWidth()/ratio)/2; //Offset from bottom left of the target texture. 
+\color{green}    int off_y = (outputTex->GetHeight() - outputTex->GetHeight()/ratio)/2; // ditto for height
 \color{green}    glBlitFramebuffer( 0, 0, msaaTex->GetWidth(), msaaTex->GetHeight(), off_x, off_y,
 \color{green}                             off_x + outputTex->GetWidth()/ ratio,
 \color{green}                             off_y + outputTex->GetHeight()/ ratio,
@@ -529,12 +532,12 @@ void RenderDevice::ResolveMsaa(OVR::Render::Texture* msaaTex, OVR::Render::Textu
     GLint err = glGetError();
     OVR_ASSERT_AND_UNUSED(!err, err);
 \}
-\end{blockcode}
+\end{smallcode}
 
-The method needs to set up the OpenGL state machine for the \texttt{glBlitFramebuffer} on line 21. First a multisampled framebuffer is set up to be read in line 2. Next we associate this framebuffer with \texttt{msaaTex} in lines 3-4. 
+The method needs to set up the OpenGL state machine for the \texttt{glBlitFramebuffer} on line 21. First a multi-sampled framebuffer is set up to be read in line 2. Next we associate this framebuffer with \texttt{msaaTex} in lines 3-4. 
 We then set up the destination texture in its own framebuffer, and set the GL state to draw to this buffer in the blit in lines 11-13.
 
-Note that assertions are made to check for framebuffer completeness. An imcomplete framebuffer cannot be drawn to.
+Note that assertions are made to check for framebuffer completeness. An incomplete framebuffer cannot be drawn to.
 
 Lines 19-24 implement the last stage of the downsampling method given in Y. It's enough to only blit the color buffer and do a linear downsample. 
 
@@ -542,7 +545,7 @@ The GL\_LINEAR filter will perform a supersample resolve by taking a weighted li
 
 If the input texture is multisampled, and if the source and destination rectangles are the same size, OpenGL will perform a multisample resolve onto the destination framebuffer in hardware.
 
-\section{OpenGL optimisations}
+\section{OpenGL optimisations} \label{optimisations}
 
 As a summary of the implementation so far, each frame has to be rendered in the following way:
 
@@ -560,11 +563,11 @@ For each frame:
   \item Many near identical draw calls are made, where only user perspective and position changes.
 \end{itemize}
 
-This situation can be improved twofold (or fourfold if rendering a stereoscopic image) by taking advantage of the geometry shader.
+This situation can be improved twofold by taking advantage of the geometry shader.
 
 \section{Amplifying Geometry}
 
-Instead of submitting a draw call for each viewport, it's possible to provide projection and view information to the geometry shader, which can decide which projection matrix to apply to which view. It can then, for each primitive it recieves, send one to each specified view in a single draw call. This can be used to render to the four views needed in a stereoscopic image in a single draw call.
+Instead of submitting a draw call for each viewport, it's possible to provide projection and view information to the geometry shader, which can decide which projection matrix to apply to which view. It can then, for each primitive it receives, send one to each specified view in a single draw call. This can be used to render to the two views needed to achieve Subscreen Supersampling, or as explained in section \ref{stereoScopic}, can be used to render two stereoscopic images in one draw call.
 
 \subsection{The Geometry Shader}
 
@@ -579,7 +582,7 @@ Then, the geometry shader can handle the perspective projection.
 
 It's possible to either simultaneously render to separate layers of a layered texture, or simultaneously render to two separate viewports within the same, large texture. I use the latter approach for simplicity, and to allow the two textures to be easily resized, a property that will be useful when tuning the 2nd extension. I also assume 4 samples per pixel in this implementation, though it's not difficult to apply this to higher or lower levels of sampling. 
 
-This optimisation requires the OpenGL extension \texttt{ARB\_viewport\_array} though it is ubiqitous across modern implementations.
+This optimisation requires the OpenGL extension \texttt{ARB\_viewport\_array} \cite{arbViewport} though it is ubiquitous across modern implementations.
 
 First, we must specify our viewports' dimensions:
 
@@ -617,82 +620,88 @@ Line 5 selects the projection matrix based on the looping variable \texttt{i}. T
 The resulting wide framebuffer can then be resolved in the same way given in section \ref{resolving}. The right half of the screen can be blitted onto the left half.
 Alternatively, you could perform a downsample in the barrel distortion shader, though this alternative wasn't implemented.  
 
-\section{Extension 1: Foveated Rendering}
+\section{Extension 1: Non-uniform Texel Density}
 
-Foveated rendering refers to the technique of tracking users fovea, so that sampling can be dynamically increased at a fixation point, reducing resolution in the users peripheral. The technique shows promise because only a small field of view around a given fixation point can be percieved in high resolution owing to the number of cones in the fovea.
+Because of the barrel distortion, the number of texels per pixel as we move away from the center of the image increases. And because of the nature of graphics APIs, typical applications render to a higher resolution than needed in the edge of the image, even though this high resolution is only needed in the center, where texel density is relatively uniform and lowest.
 
-Given eye-tracking information at the beginning of the frame, ideally a fixation point $(fix_x,fix_y)$ in normalised window coordinates, the technique using the geomtry shader in BRAH can be modified to perform foveated rendering. The fixation point here is assumed to be in the predistorted window space. 
+Using the same technique for foveated rendering for a fixation point at the center of the screen, it is possible to reduce the number of fragments shaded, while still maintaining at least a texel per pixel density as a threshold.
 
-\subsection{Recalculating projection}
+It's possible to render below a single texel per pixel threshold near the image edge, exploiting astigmatism in the lens. My implementation renders to two views of the same size, which should reduce fragment shading by half. Note that this goes slightly below the 1 texel per pixel threshold in the peripheral. However, it's possible to increase the resolution here to achieve a similar, more visually appealing result and still make savings in fragment processing.
 
-Section \ref{matrix} defines the perspective projection matrix, given the frustrum parameters $(near, far, top, bottom, left, right)$ of the full field of view, a new projection can be used to render around our fixation point $(fix_x, fix_y)$, it is defined by the following parameters:
+\subsection{Blending the two textures}\label{blending}
 
-\[
-\begin{matrix}
-top_{fove}: top \cdot r + fix_y \\
-bottom_{fove}: bottom \cdot r + fix_y \\
-left_{fove}: left \cdot r + fix_x \\
-right_{fove}: right \dot r + fix_x 
-\end{matrix}
-\]
-Where $r$ is a parameter that denotes the ratio of the screen space rendered at high resolution to the space rendered at a lower one. It should be small enough such that the field of view around the fovea is rendered to full resolution, though its value differs based on a large number of factors, including the users proximity to the screen and the size of the screen.
+A blit operation between the low and high resolution texture might be wasteful, given that the rendertarget is not antialiased, and would require an upscale of the lower resolution texture, wasting GPU memory and forcing an unnecessary blit operation. So a better method would be to blend the two textures in a post-processing stage. Given that barrel distortion is performed as post-processing, we can blend there. Access to the render buffer texture can be modified using the following method:
 
-It's then possible to render to two separate viewports simulatneously. One for a supersampled image around the fovea, and the other for the low resolution peripheral. A method of blending the two images together needs to be made, a blit operation onto the texture passed to the Oculus SDK here will work. 
+\begin{figure}[tbh]
+\centerline{\includegraphics[width=8cm]{figs/textureblend.eps}}
+\caption{Shows the texture coordinates for the low field of view texture given on the outer rectangle. The low field of view texture can then be sampled correctly in the fragment shader.}
+\label{fig:texblend}
+\end{figure}
 
-To reduce artefacts introduced by foveated rendering, extra processing - gaussian blur, increased contrast should be applied to the peripheral image. These weren't implemented, but this extension shows that foveated rendering and subscreen antialiasing can have a close to identical implementation in OpenGL.
-
-\section{Extension 1.5 Non-uniform Texel Density}
-
-Thanks to the barrel distortion, the number of texels per pixel as we move away from the center of the image increases. And because of the nature of graphics APIs, typical applications render to a higher resolution than needed in the edge of the image, even though this high resolution is only needed in the center, where texel density is relatively uniform and lowest.
-
-Using the same technique for foveated rendering for a fixation point at the centre of the screen, it is possible to reduce the number of fragments shaded, while still maintaining at least a texel per pixel density as a threshold.
-
-This approach can be taken even further and render below the single texel per pixel threshold, exploiting astigmasitm in the lens. My implementation renders to two views of the same size, which should reduce fragment shading by half. Note that this goes slightly below the 1 texel per pixel threshold in the peripheral, however, it's possible to increase the resolution here to achieve a similar, more visually appealing result.
-
-\subsection{Blending the two textures}
-
-A blit operation here might be wasteful, given that the rendertarget is not antialiased, and would require an upscale of the lower resolution texture, wasting GPU memory. So a better method would be to blend the two textures in a post-processing stage. Given that barrel distortion is performed as post-processing, we can blend there. Given access to the fragment shader portion of the barrel distortion shader, every access to the texture provided to the SDK can be modified in the following way:
-
+\begin{enumerate}
+\item For the rectangle used for texturing onto, we can provide two texture coordinates, one for the low field of view image, and one for the high field of view. An example for my implementation is given in figure \ref{fig:texblend}. This is done to avoid unnecessary texture coordinate arithmetic inside of the fragment shader.
+\item Sample both the low field of view texture and high field of view in the fragment shader of post-processing using the respective varying texture coordinates.
 \begin{blockcode}
-insert texture things here.
+	vec4 lowFovSample = texture(texFramebufferLowFov, lowFovTexCoord);
+	vec4 highFovSample = texture(texFramebufferHighFov, highFovTexCoord);
 \end{blockcode}
+
+\item Based on the low field of view texture coordinates, choose either the low field of view, or high field of view sample.
+
+\begin{blockcode}	
+	outColour = greaterThan(vec2(0.0,0.0), lowFovTextureCoord) && 
+				lessThan(lowFovTextureCoord, vec2(1.0,1.0)) 
+				? lowFovSample : highFovSample;
+
+	//selects the lowFovSample if it's within 
+	//the correct texture bounds (0,0), (1,1) 
+\end{blockcode}
+\end{enumerate}
+
+The texture coordinates for the post-processing step were taken from the ARM Mali VR Documentation\cite{armDeveloper}, though the fragment shader was written by myself. 
+
+\section{Stereoscopic rendering}
+
+The situation described in section \ref{optimisations} also describes a typical stereoscopic rendering loop. That is, we need to duplicate render calls between eyes even though only uniform matrices (Model, View, Projection) differ between the eyes. It's possible use the exact same code to render both eyes of a stereoscopic image in one call. Instead of providing Model, View, and Projection (MVP) matrices that correspond to a low field of view and a high field of view, We can instead provide MVP matrices that correspond to each eye. All that remains is attaching them to the shader program with a call to \texttt{glUniformMatrix4fv()}. With this optimisation and the optimisation given in section \ref{optimisations} it's possible to achieve a fourfold reduction in the number of draw calls and scene traversals than in the na\"ive implementation.
 
 \section{Limitations}
 
-While some optimisation was allowed for Subscreen Supersampling through the use of the geometry shader, harware support is needed to perform Subscreen Multisampling efficiently.
+While some optimisation was allowed for Subscreen Supersampling through the use of the geometry shader, hardware support is needed to perform Subscreen Multisampling efficiently.
 An API extension that allowed for simultaneous drawing to two targets could help to perform Subscreen Multisampling much more efficiently.
-Multi-projection hardware is available for some GPU vendors, and this would give a considerable speedup to most of the techniques given here. 
+Multi-projection hardware is available for some GPU vendors\cite{multiResShading}, and this would give a considerable speedup to most of the techniques given here. 
 
 \section{Future Hardware Support}
 
 The disadvantage of the geometry shader approach to multi-resolution shading is the incurred cost of invoking the optional geometry shader stage.
-Two extensions to OpenGL have been proposed by Oculus, \texttt{OVR\_MULTIEW}, and \texttt{OVR\_MULTIVIEW2}. These extensions will allow multiple elements of a 2D texture array to be rendered to simultaneously. Allowing rendering both to the high resolution central image and lower resolution peripheral in one call, without the need for invoking the geometry shader and without intrusive modifications to the vertex shader. The only implementations of these extensions are in GLES currently - perhaps because of the vendor specific multi-projection hardware in modern GPUs.
+Two extensions to OpenGL have been proposed by Oculus, \texttt{OVR\_MULTIEW} \cite{OVRmultiview}, and \texttt{OVR\_MULTIVIEW2} \cite{OVRmultiview2}. These extensions will allow multiple elements of a 2D texture array to be rendered to simultaneously. Allowing rendering both to the high resolution central image and lower resolution peripheral in one call, without the need for invoking the geometry shader and without intrusive modifications to the vertex shader. The only implementations of these extensions are in GLES currently - perhaps because of the vendor specific multi-projection hardware in modern GPUs.
 
-Regardless, a brief explaination of multi-resolution rendering usign \texttt{OVR\_MULTIVIEW} will be given here.
+Regardless, a brief explanation of multi-resolution rendering using \texttt{OVR\_MULTIVIEW} will be given here.
 
 \begin{itemize}
 
 \item First we need to set up a layered texture.
 
 \item Then, a framebuffer must be generated, and the layered texture attached to it. This can be done using the new function \texttt{glFramebufferTextureMultiviewOVR}
-\begin{blockcode}
-glFramebufferTextureMultiviewOVR(GL_DRAW_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, frameBufferTextureId, 0, 0, 2); attach layered texture
-\end{blockcode}
-
+\begin{footcode}
+glFramebufferTextureMultiviewOVR(GL_DRAW_FRAMEBUFFER, GL_COLOR_ATTACHMENT0,
+				 frameBufferTextureId, 0, 0, 2); // attach layered texture
+\end{footcode}
 \item Then, we can generate depth buffers for each layer, and attach them to the framebuffer:
-\begin{blockcode}
-glFramebufferTextureMultiviewOVR(GL_DRAW_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, frameBufferDepthTextureId, 0, 0, 2); //attach layered depth texture
-\end{blockcode}
-\item Finally, an assertion on framebuffer comepleteness should be made.
-\begin{blockcode}
-OVR_ASSERT(glCheckFramebufferStatus(GL_DRAW_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE); //assert framebuffer is complete
-\end{blockcode}
+\begin{footcode}
+glFramebufferTextureMultiviewOVR(GL_DRAW_FRAMEBUFFER, GL_DEPTH_ATTACHMENT,
+				 frameBufferDepthTextureId, 0, 0, 2); //attach layered depth
+\end{footcode}
+\item Finally, an assertion on framebuffer completeness should be made.
+\begin{footcode}
+//assert framebuffer is complete
+OVR_ASSERT(glCheckFramebufferStatus(GL_DRAW_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE);
+\end{footcode}
 
 Then, in a manner similar to selecting a projection matrix based on viewport before, a projection can be selected based on the variable \texttt{gl\_ViewID\_OVR} in the vertex shader like so.
 
-\begin{blockcode}
+\begin{footcode}
 currentProj = gl_ViewID_OVR == 0 ? proj : projSmall; //select currentProj based on gl_ViewID 
-\end{blockcode}
+\end{footcode}
 
 \end{itemize}
 
@@ -702,9 +711,9 @@ The two textures can be blended in post-processing by the same method given in s
 
 In this chapter I assess the image quality across all techniques developed. I also give a variety of performance metrics to determine the performance across the techniques in a platform independent setting.
 
-\section{Objective Assesment}
+\section{Objective Assessment}
 
-While a user study performes provides a robust assesment of image quality across different approaches, Computational metrics for objective image quality assesment can be essential. The performance of the system determines how quickly the image resonds to stimulus which can help reduce simulation sickness in the user. Given that implementations of graphics APIs differ dramatically, along with hardware implementations, measuring a framerate directly on a particlar machine cannot be the best indicator of performance as a whole. Though the render time per frame of different approaches are given, it should be understood that performance can vary dramatically across different hardware vendors, graphics APIs and their implementations, and rendering programs. Given this, a range of other information is given to best represent the antialiasing approaches and given some more meaningful insight into their execution. Information such as: triangle count, fragment and vertex shader invocations, API calls, GPU usage, CPU usage, along with some interpretation of this in a platform independent setting.
+While a user study performs provides a robust assessment of image quality across different approaches, Computational metrics for objective image quality assessment can be essential. The performance of the system determines how quickly the image responds to stimulus which can help reduce simulation sickness in the user. Given that implementations of graphics APIs differ dramatically, along with hardware implementations, measuring a framerate directly on a particular machine cannot be the best indicator of performance as a whole. Though the render time per frame of different approaches are given, it should be understood that performance can vary dramatically across different hardware vendors, graphics APIs and their implementations, and rendering programs. Given this, a range of other information is given to best represent the antialiasing approaches and given some more meaningful insight into their execution. Information such as: triangle count, fragment and vertex shader invocations, API calls, GPU usage, CPU usage, along with some interpretation of this in a platform independent setting. Profiling information was gathered using the tool AMD GPUPerfStudio.
 
 \section{API calls}
 
@@ -722,7 +731,7 @@ Subscreen Supersampling    &  403  \\
 \end{tabular}
 \end{center}
 
-Subscreen Multisampling could not be optimised in the same way as Subscreen Supersampling due to the OpenGL constraint that Complete Framebuffers' Layers must have the same number of samples. Therefore it was neccesary to render the scene twice, explaining why it has twice the number of draw calls.
+Subscreen Multisampling could not be optimised in the same way as Subscreen Supersampling due to the OpenGL constraint that Complete Framebuffers' Layers must have the same number of samples. Therefore it was necessary to render the scene twice, explaining why it has twice the number of draw calls.
 
 Subscreen Supersampling has one more draw call than the others because the blending of the two image in this implementation was performed via an extra blit operation.
 
@@ -750,7 +759,7 @@ Subscreen Supersampling    &  3.7955e+06  \\
 \caption{Shows the number fragment shader invocations across the different techniques.}
 \end{figure}
 
-As expected, significantly fewer fragments are shaded in subscreen analogues of fullscreen antialiasing techniques. In this instance Subscreen Multisampling shades 7.6\% fewer fragments, while Subscreen Supersampling shades 49.5\% fewer fragments.
+As expected, significantly fewer fragments are shaded in subscreen analogues of fullscreen antialiasing techniques. In this instance Subscreen Multisampling shades 7.6\% fewer fragments, while Subscreen Supersampling shades 49.5\% fewer fragments. This is as expected, and fulfils the main success criterion of the project.
 
 \clearpage
 
@@ -778,9 +787,9 @@ Subscreen Supersampling    &  0.34764  \\
 \caption{Shows the time taken to process fragments across the techniques.}
 \end{figure}
 
-Suprisingly, less time is spent shading fragments in Subscreen Supersampling than in Subscreen Multisampling even though the former invokes the same shader code roughly 1 million times more. This can be attributed to the parralelisation of draw calls in Subscreen Supersampling, whereas Subscreen Multisampling is forced to make double the number of API calls sequentially. It could also be down to the GPU being better able schedule fragment shaders and exploit caches more fully where all invocations happen in one batch.\\
+Surprisingly, less time is spent shading fragments in Subscreen Supersampling than in Subscreen Multisampling even though the former invokes the same shader code roughly 1 million times more. This can be attributed to the parallelisation of draw calls in Subscreen Supersampling, whereas Subscreen Multisampling is forced to make double the number of API calls sequentially. It could also be down to the GPU being better able schedule fragment shaders, hide memory latency, and exploit caches more fully where all invocations are made available to the GPU in one batch. This result shows that the optimisation made in section \ref{optimisation} makes a considerable improvement in the time processing fragments per frame, again fulfilling a success criterion of the project. \\
 
-Subscreen Supersampling also outperforms its Fullscreen counterpart, achieving a 33.3\% speedup in the Fragment Shader stage. 
+As expected, Subscreen Supersampling also outperforms its Fullscreen counterpart, achieving a 33.3\% speedup in the Fragment Shader stage. 
 
 \clearpage
 \section{Removal of artefacts}
@@ -804,7 +813,7 @@ By capturing views of a scene using different rendering techniques and subtracti
 \label{fig:supersample}
 \end{figure}
 
-Using Supersampled Antialiasing, we can see in figure \ref{fig:supersample} texture filtering has improved. While multisampling only removes artefacts at polygon boundaries. Tree leaves inside of polygons are represented using alpha channel. Supersampling will amerliorate artefacts due to alpha culling, whereas multisampling cannot, hence the large difference between supersampling and multisampling in this scene.
+Using Supersampled Antialiasing, we can see in figure \ref{fig:supersample} texture filtering has improved. While multisampling only removes artefacts at polygon boundaries. Tree leaves inside of polygons are represented using alpha channel. Supersampling will ameliorate artefacts due to alpha testing, whereas multisampling cannot, hence the large difference between supersampling and multisampling in this scene.
 
 \clearpage
 
@@ -827,25 +836,25 @@ Using Supersampled Antialiasing, we can see in figure \ref{fig:supersample} text
 \label{fig:multisample}
 \end{figure}
 
-Subscreen MSAA works as expected here in figure \ref{fig:multisample}. Artefacts at polygon edges do not differ between fullscreen and subscreen. Interestingly, there is a minute difference in texturing between the two approaches. An explaination for this is a small, subpixel jitter applied to the projection matrix for the central area of the screen, thanks to reduced precision in transforming matrices in section \ref{matrix}.
+Subscreen MSAA works as expected here in figure \ref{fig:multisample}. Artefacts at polygon edges do not differ between fullscreen and subscreen. Interestingly, there is a minute difference in texturing between the two approaches. An explanation for this is a small, sub-pixel jitter applied to the projection matrix for the central area of the screen, thanks to reduced precision in transforming matrices in section \ref{matrix}.
 
 \clearpage
 
 \section{Extension 1.5 Evaluation}
 
-Because of the barrel distortion applied in post-processing Oculus recommends rendering at a resolution \%40 larger than the display permits to achieve an acceptable pixel density in the centre of the image.
-A large problem facing the traditional barrel distortion applied in post-processing is a non-uniform pixel density across the image. Futhermore, pixel density is highest at the extremeties, where gaze is less likely to be fixed and lens astigmatism will have the greatest impact. 
+Because of the barrel distortion applied in post-processing Oculus recommends rendering at a resolution \%40 larger than the display resolution to achieve an acceptable texel density in the center of the image.
+A large problem facing the traditional barrel distortion applied in post-processing is a non-uniform texel density across the image. Furthermore, texel density is highest at the extremities, where gaze is less likely to be fixed and lens astigmatism will have the greatest impact. 
 
 \begin{figure}[tbh]
 
 \begin{subfigure}{0.5\textwidth}
 \includegraphics[width=1.2\linewidth]{figs/oculus_pixel_density.eps}
-\caption{Original pixel density}
+\caption{Original texel density}
 \label{epsfig1}
 \end{subfigure}
 \begin{subfigure}{0.5\textwidth}
 \includegraphics[width=1.2\linewidth]{figs/oculus_pixel_density_optimisation.eps}
-\caption{Proposed pixel density}
+\caption{Proposed texel density}
 \label{epsfig1}
 \end{subfigure}
  
@@ -856,26 +865,25 @@ A large problem facing the traditional barrel distortion applied in post-process
 \begin{figure}
 \end{figure}
 
-As can be seen by part B of figure \ref{fig:barreldensity}, by only rendering at full resolution in the centre of the image, pixel density is improved at the center, while decreasing the pixel density in the edges of the image. The number of fragments that we shade is reduced by half, compared to the standard, non-supersampled image size that Oculus recommends. However, twice as many vertices need to be processed. Given that the bottleneck in most consumer applications are in the fragment shader stage, and that we generally need to process significantly more fragments that vertices, we should expect a considerable decrease in the time to present a frame using this method. 
+As can be seen by part B of figure \ref{fig:barreldensity}, by only rendering at full resolution in the center of the image, texel density is improved at the center, while decreasing the texel density in the edges of the image. The number of fragments that we shade is reduced by half, compared to the standard, non-supersampled image size that Oculus recommends. However, twice as many vertices need to be processed. Given that the bottleneck in most consumer applications are in the fragment shader stage, and that we generally need to process significantly more fragments that vertices, we should expect a considerable decrease in the time to present a frame using this method. 
 
 
 \chapter{Conclusion}
 
-This project's aim was to investigate common antialiasing techniques in the context of Virtual Reality. Two antialiasing techniques were developed and tested in a production demo, and one of these techniques was extended to implement Foveated Rendering. As another extension, I modified one of these techniques to allow for pixel density across the display to be efficiently increased at areas that are percieved as sharp, while decreasing it at blurrier areas. These techniques were profiled to assess their performance and image quality was assessed objectively.  
+This project's aim was to investigate common antialiasing techniques in the context of Virtual Reality. Two antialiasing techniques were developed and tested in a production demo, and one of these techniques was extended to perform more efficient stereoscopic rendering. As an extension, I modified one of these techniques to allow for texel density across the display to be efficiently increased at areas that are perceived as sharp, while decreasing it at blurrier areas. These techniques were profiled to assess their performance and image quality was assessed objectively.  
 
 \section{Achievements}
 
 All the implementations succeeded in shading fewer fragments than their respective usual implementations.
-This shows promise where fragment shaders are becoming more complex and resolutions in Virtual Reality displays increase.\\
+This shows promise where fragment shaders are becoming more complex and resolutions in Virtual Reality displays increase. \par
 
-Though Subscreen Multisampling was almost indistinguishable from its fullscreen counterpart, implementation was not parallelisable because of limitations of the OpenGL API, and would be more inefficient for most applications. Though it would offer a speedup in applications where fragment processing is particularly time consuming.\\
+Though Subscreen Multisampling was almost indistinguishable from its fullscreen counterpart, implementation was not parallelisable because of limitations of the OpenGL API, and would be more inefficient for most applications. Though it would offer a speedup in applications where fragment processing is particularly time consuming.
+Subscreen Supersampling was more visibly jarring, increased texture filtering in the center of the image along with noticeable alpha testing improvement meant that this technique was usually distinguishable from its fullscreen counterpart.
+However, it's implementation shaded 49.5\% fewer fragments and was parallelisable allowing for processing time to be cut significantly. \par
 
-Subscreen Supersampling was more visibly jarring, increased texture filtering in the centre of the image along with noticable alpha culling improvement meant that this technique was usually distinguishable from its fullscreen counterpart.
-However, it's implementation shaded 49.5\% fewer fragments and was parralelisable allowing for processing time to be cut significantly.\\
+The second extension allowed for 49.5\% fewer fragments to be shaded than standard rendering, while improving the texel density in the center of the image, where it is usually lowest and decreasing texel density at the edges where it is usually highest. The resolutions of both peripheral and central vision can be both tuned to achieve a more visually appealing result. - this does allow for fragment processing to be decreased significantly and gives a more texel density distribution that better represents the properties of the lenses. \par
 
-The second extension allowed for 49.5\% fewer fragments to be shaded than standard rendering, while improving the pixel density in the centre of the image, where it is usually lowest and decreasing pixel density at the edges where it is usually highest. The resolutions of both peripheral and central vision can be both tuned to achieve a more visually appealing result. - this does allow for fragment processing to be decreased significantly and gives a more pixel density distribution that better represents the properties of the lenses.\\
-
-These techniques were written to be applicable to any OpenGL forward renderer. They were first written in a toy renderer and then applied to a production demo.\\
+These techniques were written to be applicable to any OpenGL forward renderer. They were first written in a toy renderer and then applied to a production demo.
 While the method using the geometry shader is somewhat invasive to the vertex shader - I gave an example of future API functionality that can implement the same method, while being almost transparent to the vertex shader, and without the need of invoking the geometry shader stage.
 
 \section{Final Remarks}

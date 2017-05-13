@@ -20,7 +20,7 @@
 \BOOKMARK [1][-]{section.3.5}{Projection Transformation}{chapter.3}% 20
 \BOOKMARK [2][-]{subsection.3.5.1}{Orthographic projection}{section.3.5}% 21
 \BOOKMARK [2][-]{subsection.3.5.2}{Perspective projection}{section.3.5}% 22
-\BOOKMARK [2][-]{subsection.3.5.3}{Matrix Initilisation}{section.3.5}% 23
+\BOOKMARK [2][-]{subsection.3.5.3}{Matrix Initialisation}{section.3.5}% 23
 \BOOKMARK [1][-]{section.3.6}{Allocating Textures}{chapter.3}% 24
 \BOOKMARK [1][-]{section.3.7}{Drawing the scene}{chapter.3}% 25
 \BOOKMARK [2][-]{subsection.3.7.1}{Modifying The Render Loop}{section.3.7}% 26
@@ -28,24 +28,23 @@
 \BOOKMARK [1][-]{section.3.9}{OpenGL optimisations}{chapter.3}% 28
 \BOOKMARK [1][-]{section.3.10}{Amplifying Geometry}{chapter.3}% 29
 \BOOKMARK [2][-]{subsection.3.10.1}{The Geometry Shader}{section.3.10}% 30
-\BOOKMARK [1][-]{section.3.11}{Extension 1: Foveated Rendering}{chapter.3}% 31
-\BOOKMARK [2][-]{subsection.3.11.1}{Recalculating projection}{section.3.11}% 32
-\BOOKMARK [1][-]{section.3.12}{Extension 1.5 Non-uniform Texel Density}{chapter.3}% 33
-\BOOKMARK [2][-]{subsection.3.12.1}{Blending the two textures}{section.3.12}% 34
-\BOOKMARK [1][-]{section.3.13}{Limitations}{chapter.3}% 35
-\BOOKMARK [1][-]{section.3.14}{Future Hardware Support}{chapter.3}% 36
-\BOOKMARK [0][-]{chapter.4}{Evaluation}{}% 37
-\BOOKMARK [1][-]{section.4.1}{Objective Assesment}{chapter.4}% 38
-\BOOKMARK [1][-]{section.4.2}{API calls}{chapter.4}% 39
-\BOOKMARK [1][-]{section.4.3}{Fragment shader invocations}{chapter.4}% 40
-\BOOKMARK [1][-]{section.4.4}{Fragment Shader Timing}{chapter.4}% 41
-\BOOKMARK [1][-]{section.4.5}{Removal of artefacts}{chapter.4}% 42
-\BOOKMARK [2][-]{subsection.4.5.1}{Subscreen Supersampling}{section.4.5}% 43
-\BOOKMARK [2][-]{subsection.4.5.2}{Subscreen Multisampling}{section.4.5}% 44
-\BOOKMARK [1][-]{section.4.6}{Extension 1.5 Evaluation}{chapter.4}% 45
-\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 46
-\BOOKMARK [1][-]{section.5.1}{Achievements}{chapter.5}% 47
-\BOOKMARK [1][-]{section.5.2}{Final Remarks}{chapter.5}% 48
-\BOOKMARK [0][-]{section.5.2}{Bibliography}{}% 49
-\BOOKMARK [0][-]{appendix.A}{TODO}{}% 50
-\BOOKMARK [0][-]{appendix.B}{Project Proposal}{}% 51
+\BOOKMARK [1][-]{section.3.11}{Extension 1: Non-uniform Texel Density}{chapter.3}% 31
+\BOOKMARK [2][-]{subsection.3.11.1}{Blending the two textures}{section.3.11}% 32
+\BOOKMARK [1][-]{section.3.12}{Stereoscopic rendering}{chapter.3}% 33
+\BOOKMARK [1][-]{section.3.13}{Limitations}{chapter.3}% 34
+\BOOKMARK [1][-]{section.3.14}{Future Hardware Support}{chapter.3}% 35
+\BOOKMARK [0][-]{chapter.4}{Evaluation}{}% 36
+\BOOKMARK [1][-]{section.4.1}{Objective Assessment}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.2}{API calls}{chapter.4}% 38
+\BOOKMARK [1][-]{section.4.3}{Fragment shader invocations}{chapter.4}% 39
+\BOOKMARK [1][-]{section.4.4}{Fragment Shader Timing}{chapter.4}% 40
+\BOOKMARK [1][-]{section.4.5}{Removal of artefacts}{chapter.4}% 41
+\BOOKMARK [2][-]{subsection.4.5.1}{Subscreen Supersampling}{section.4.5}% 42
+\BOOKMARK [2][-]{subsection.4.5.2}{Subscreen Multisampling}{section.4.5}% 43
+\BOOKMARK [1][-]{section.4.6}{Extension 1.5 Evaluation}{chapter.4}% 44
+\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 45
+\BOOKMARK [1][-]{section.5.1}{Achievements}{chapter.5}% 46
+\BOOKMARK [1][-]{section.5.2}{Final Remarks}{chapter.5}% 47
+\BOOKMARK [0][-]{section.5.2}{Bibliography}{}% 48
+\BOOKMARK [0][-]{appendix.A}{TODO}{}% 49
+\BOOKMARK [0][-]{appendix.B}{Project Proposal}{}% 50

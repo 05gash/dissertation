@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.30)  26 APR 2017 11:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.30)  13 MAY 2017 23:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -313,22 +313,22 @@ LaTeX Warning: Label `sub@epsfig1' multiply defined.
 )
 \openout1 = `diss.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
 \AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring OFF on input line 26.
+Package hyperref Info: Link coloring OFF on input line 36.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -337,9 +337,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count120
 )
-LaTeX Info: Redefining \ref on input line 26.
-LaTeX Info: Redefining \pageref on input line 26.
-LaTeX Info: Redefining \nameref on input line 26.
+LaTeX Info: Redefining \ref on input line 36.
+LaTeX Info: Redefining \pageref on input line 36.
+LaTeX Info: Redefining \nameref on input line 36.
 
 (./diss.out) (./diss.out)
 \@outlinefile=\write4
@@ -434,20 +434,11 @@ Package caption Info: End \AtBeginDocument code.
 ]
 Chapter 1.
 [9]
-Overfull \hbox (199.16824pt too wide) detected at line 148
+Overfull \hbox (199.16824pt too wide) detected at line 155
 []
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 171--173
-
- []
-
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 174--175
-
- []
-
 Package epstopdf Info: Source file: <figs/post_distortion.eps>
 (epstopdf)                    date: 2017-04-05 22:22:03
 (epstopdf)                    size: 105049 bytes
@@ -457,43 +448,39 @@ Package epstopdf Info: Source file: <figs/post_distortion.eps>
 (epstopdf)                    size: 29053 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/post_distortion-eps-c
 onverted-to.pdf figs/post_distortion.eps>
-(epstopdf)             \includegraphics on input line 177.
+(epstopdf)             \includegraphics on input line 184.
 Package epstopdf Info: Output file is already uptodate.
-<figs/post_distortion-eps-converted-to.pdf, id=358, 421.575pt x 316.18124pt>
+
+<figs/post_distortion-eps-converted-to.pdf, id=360, 421.575pt x 316.18124pt>
 File: figs/post_distortion-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/post_distortion-eps-converted-to.pdf>
 Package pdftex.def Info: figs/post_distortion-eps-converted-to.pdf used on inpu
-t line 177.
+t line 184.
 (pdftex.def)             Requested size: 199.16928pt x 149.37712pt.
 
-<figs/blur.png, id=361, 642.4pt x 642.4pt>
+<figs/blur.png, id=365, 642.4pt x 642.4pt>
 File: figs/blur.png Graphic file (type png)
  <use figs/blur.png>
-Package pdftex.def Info: figs/blur.png used on input line 188.
+Package pdftex.def Info: figs/blur.png used on input line 194.
 (pdftex.def)             Requested size: 142.26378pt x 142.25964pt.
- [11 <./figs/post_distortion-eps-converted-to.pdf> <./figs/blur.png>] [12
-
-]
+ [11 <./figs/post_distortion-eps-converted-to.pdf> <./figs/blur.png>] [12]
 Chapter 2.
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 264--266
+[13
 
- []
+] [14]
 
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 267--268
+LaTeX Warning: Reference `optimisation' on page 15 undefined on input line 298.
 
- []
 
 [15]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 300.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 303.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 300.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 303.
  [16]
 Chapter 3.
 [17
@@ -507,15 +494,15 @@ Package epstopdf Info: Source file: <figs/pre_distortion.eps>
 (epstopdf)                    size: 20901 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/pre_distortion-eps-co
 nverted-to.pdf figs/pre_distortion.eps>
-(epstopdf)             \includegraphics on input line 363.
+(epstopdf)             \includegraphics on input line 366.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/pre_distortion-eps-converted-to.pdf, id=403, 421.575pt x 316.18124pt>
+<figs/pre_distortion-eps-converted-to.pdf, id=409, 421.575pt x 316.18124pt>
 File: figs/pre_distortion-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/pre_distortion-eps-converted-to.pdf>
 Package pdftex.def Info: figs/pre_distortion-eps-converted-to.pdf used on input
- line 363.
+ line 366.
 (pdftex.def)             Requested size: 170.71652pt x 128.03822pt.
 Package epstopdf Info: Source file: <figs/post_distortion.eps>
 (epstopdf)                    date: 2017-04-05 22:22:03
@@ -526,20 +513,20 @@ Package epstopdf Info: Source file: <figs/post_distortion.eps>
 (epstopdf)                    size: 29053 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/post_distortion-eps-c
 onverted-to.pdf figs/post_distortion.eps>
-(epstopdf)             \includegraphics on input line 364.
+(epstopdf)             \includegraphics on input line 367.
 Package epstopdf Info: Output file is already uptodate.
 File: figs/post_distortion-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/post_distortion-eps-converted-to.pdf>
 Package pdftex.def Info: figs/post_distortion-eps-converted-to.pdf used on inpu
-t line 364.
+t line 367.
 (pdftex.def)             Requested size: 170.71652pt x 128.03822pt.
 
-<figs/barrelgrid.png, id=405, 706.89093pt x 735.49782pt>
+<figs/barrelgrid.png, id=412, 706.89093pt x 735.49782pt>
 File: figs/barrelgrid.png Graphic file (type png)
 
 <use figs/barrelgrid.png>
-Package pdftex.def Info: figs/barrelgrid.png used on input line 374.
+Package pdftex.def Info: figs/barrelgrid.png used on input line 377.
 (pdftex.def)             Requested size: 170.71652pt x 177.62291pt.
  [18 <./figs/pre_distortion-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figs/highlevelprocess.eps>
@@ -551,40 +538,44 @@ Package epstopdf Info: Source file: <figs/highlevelprocess.eps>
 (epstopdf)                    size: 1269846 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/highlevelprocess-eps-
 converted-to.pdf figs/highlevelprocess.eps>
-(epstopdf)             \includegraphics on input line 396.
+(epstopdf)             \includegraphics on input line 399.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/highlevelprocess-eps-converted-to.pdf, id=418, 732.7375pt x 617.30624pt>
+<figs/highlevelprocess-eps-converted-to.pdf, id=425, 732.7375pt x 617.30624pt>
 File: figs/highlevelprocess-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/highlevelprocess-eps-converted-to.pdf>
 Package pdftex.def Info: figs/highlevelprocess-eps-converted-to.pdf used on inp
-ut line 396.
+ut line 399.
 (pdftex.def)             Requested size: 284.52756pt x 239.70291pt.
  [19 <./figs/barrelgrid.png>]
 [20 <./figs/highlevelprocess-eps-converted-to.pdf>]
-<figs/asymmetrical_fov.png, id=442, 470.558pt x 327.624pt>
+<figs/asymmetrical_fov.png, id=451, 470.558pt x 327.624pt>
 File: figs/asymmetrical_fov.png Graphic file (type png)
 
 <use figs/asymmetrical_fov.png>
-Package pdftex.def Info: figs/asymmetrical_fov.png used on input line 439.
+Package pdftex.def Info: figs/asymmetrical_fov.png used on input line 442.
 (pdftex.def)             Requested size: 282.33698pt x 196.5759pt.
  [21 <./figs/asymmetrical_fov.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 470--472
+Underfull \hbox (badness 10000) in paragraph at lines 473--475
 
  []
 
 [22]
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 506
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 509
 .
-LaTeX Font Info:    No file OMScmtt.fd. on input line 506.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 509.
 
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 506.
+(Font)              for symbol `textbraceleft' on input line 509.
 
-[23] [24]
+[23]
+
+LaTeX Warning: Reference `stereoScopic' on page 24 undefined on input line 570.
+
+
 Package epstopdf Info: Source file: <figs/geoshader.eps>
 (epstopdf)                    date: 2017-03-29 18:07:15
 (epstopdf)                    size: 170623 bytes
@@ -593,26 +584,44 @@ Package epstopdf Info: Source file: <figs/geoshader.eps>
 (epstopdf)                    size: 102457 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/geoshader-eps-convert
 ed-to.pdf figs/geoshader.eps>
-(epstopdf)             \includegraphics on input line 575.
+(epstopdf)             \includegraphics on input line 578.
 Package epstopdf Info: Output file is already uptodate.
-
-<figs/geoshader-eps-converted-to.pdf, id=468, 424.58624pt x 380.42125pt>
+<figs/geoshader-eps-converted-to.pdf, id=473, 424.58624pt x 380.42125pt>
 File: figs/geoshader-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/geoshader-eps-converted-to.pdf>
 Package pdftex.def Info: figs/geoshader-eps-converted-to.pdf used on input line
- 575.
+ 578.
 (pdftex.def)             Requested size: 254.75371pt x 228.2545pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 592--593
+ [24]
+Underfull \hbox (badness 10000) in paragraph at lines 595--596
 
  []
 
-[25 <./figs/geoshader-eps-converted-to.pdf>] [26] [27] [28]
-Chapter 4.
-[29
+[25 <./figs/geoshader-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <figs/textureblend.eps>
+(epstopdf)                    date: 2017-05-04 20:14:02
+(epstopdf)                    size: 6698116 bytes
+(epstopdf)             Output file: <figs/textureblend-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-05-04 20:17:44
+(epstopdf)                    size: 382043 bytes
+(epstopdf)             Command: <repstopdf --outfile=figs/textureblend-eps-conv
+erted-to.pdf figs/textureblend.eps>
+(epstopdf)             \includegraphics on input line 636.
+Package epstopdf Info: Output file is already uptodate.
+
+<figs/textureblend-eps-converted-to.pdf, id=500, 497.86pt x 519.9425pt>
+File: figs/textureblend-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figs/textureblend-eps-converted-to.pdf>
+Package pdftex.def Info: figs/textureblend-eps-converted-to.pdf used on input l
+ine 636.
+(pdftex.def)             Requested size: 227.62204pt x 237.7246pt.
+ [26] [27 <./figs/textureblend-eps-converted-to.pdf>] [28] [29] [30
 
 ]
+Chapter 4.
+[31]
 Package epstopdf Info: Source file: <figs/fsInvocations.eps>
 (epstopdf)                    date: 2017-04-23 16:50:18
 (epstopdf)                    size: 78394 bytes
@@ -621,27 +630,27 @@ Package epstopdf Info: Source file: <figs/fsInvocations.eps>
 (epstopdf)                    size: 10069 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/fsInvocations-eps-con
 verted-to.pdf figs/fsInvocations.eps>
-(epstopdf)             \includegraphics on input line 737.
+(epstopdf)             \includegraphics on input line 746.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/fsInvocations-eps-converted-to.pdf, id=507, 669.50125pt x 542.025pt>
+<figs/fsInvocations-eps-converted-to.pdf, id=558, 669.50125pt x 542.025pt>
 File: figs/fsInvocations-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/fsInvocations-eps-converted-to.pdf>
 Package pdftex.def Info: figs/fsInvocations-eps-converted-to.pdf used on input 
-line 737.
+line 746.
 (pdftex.def)             Requested size: 246.00555pt x 199.16928pt.
 
-Overfull \hbox (18.3835pt too wide) in paragraph at lines 737--738
+Overfull \hbox (18.3835pt too wide) in paragraph at lines 746--747
 [][] 
  []
 
 
-Overfull \hbox (34.6616pt too wide) in paragraph at lines 736--749
+Overfull \hbox (34.6616pt too wide) in paragraph at lines 745--758
 []$[]$  [] 
  []
 
-[30 <./figs/fsInvocations-eps-converted-to.pdf>]
+[32 <./figs/fsInvocations-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figs/timeToRenderFrame.eps>
 (epstopdf)                    date: 2017-04-23 16:50:18
 (epstopdf)                    size: 16534 bytes
@@ -651,74 +660,78 @@ f>
 (epstopdf)                    size: 9406 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/timeToRenderFrame-eps
 -converted-to.pdf figs/timeToRenderFrame.eps>
-(epstopdf)             \includegraphics on input line 765.
+(epstopdf)             \includegraphics on input line 774.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/timeToRenderFrame-eps-converted-to.pdf, id=524, 683.55376pt x 294.09875pt
+<figs/timeToRenderFrame-eps-converted-to.pdf, id=576, 683.55376pt x 294.09875pt
 >
 File: figs/timeToRenderFrame-eps-converted-to.pdf Graphic file (type pdf)
  <use figs/timeToRenderFrame-eps-converted-to.pdf>
 Package pdftex.def Info: figs/timeToRenderFrame-eps-converted-to.pdf used on in
-put line 765.
+put line 774.
 (pdftex.def)             Requested size: 273.14577pt x 117.52074pt.
 
-Overfull \hbox (45.52371pt too wide) in paragraph at lines 765--766
+Overfull \hbox (45.52371pt too wide) in paragraph at lines 774--775
 [][] 
  []
 
 
-Overfull \hbox (7.25356pt too wide) in paragraph at lines 764--777
+Overfull \hbox (7.25356pt too wide) in paragraph at lines 773--786
 []$[]$  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 781--782
+LaTeX Warning: Reference `optimisation' on page 33 undefined on input line 790.
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 790--791
 
  []
 
-[31
+[33
 
  <./figs/timeToRenderFrame-eps-converted-to.pdf>]
-<figs/tree_msaa.png, id=538, 676.77844pt x 763.35187pt>
+<figs/tree_msaa.png, id=589, 676.77844pt x 763.35187pt>
 File: figs/tree_msaa.png Graphic file (type png)
 
 <use figs/tree_msaa.png>
-Package pdftex.def Info: figs/tree_msaa.png used on input line 793.
+Package pdftex.def Info: figs/tree_msaa.png used on input line 802.
 (pdftex.def)             Requested size: 204.85846pt x 231.05734pt.
 
-<figs/difftree.png, id=539, 902.37125pt x 1017.8025pt>
+<figs/difftree.png, id=590, 902.37125pt x 1017.8025pt>
 File: figs/difftree.png Graphic file (type png)
  <use figs/difftree.png>
-Package pdftex.def Info: figs/difftree.png used on input line 798.
+Package pdftex.def Info: figs/difftree.png used on input line 807.
 (pdftex.def)             Requested size: 204.85846pt x 231.06122pt.
 
-Overfull \hbox (2.61108pt too wide) in paragraph at lines 792--802
+Overfull \hbox (2.61108pt too wide) in paragraph at lines 801--811
 []$[]$ $[]$ 
  []
 
-[32
+[34
 
  <./figs/tree_msaa.png> <./figs/difftree.png (PNG copy)>]
-<figs/noantialiasing.png, id=547, 676.77844pt x 763.35187pt>
+<figs/noantialiasing.png, id=598, 676.77844pt x 763.35187pt>
 File: figs/noantialiasing.png Graphic file (type png)
 
 <use figs/noantialiasing.png>
-Package pdftex.def Info: figs/noantialiasing.png used on input line 816.
+Package pdftex.def Info: figs/noantialiasing.png used on input line 825.
 (pdftex.def)             Requested size: 204.85262pt x 142.25453pt.
 
-<figs/fullscreenminussubscreenmsaa.png, id=548, 902.37125pt x 1017.8025pt>
+<figs/fullscreenminussubscreenmsaa.png, id=599, 902.37125pt x 1017.8025pt>
 File: figs/fullscreenminussubscreenmsaa.png Graphic file (type png)
 
 <use figs/fullscreenminussubscreenmsaa.png>
 Package pdftex.def Info: figs/fullscreenminussubscreenmsaa.png used on input li
-ne 821.
+ne 830.
 (pdftex.def)             Requested size: 204.85605pt x 142.25842pt.
 
-Overfull \hbox (2.61108pt too wide) in paragraph at lines 815--825
+Overfull \hbox (2.61108pt too wide) in paragraph at lines 824--834
 []$[]$ $[]$ 
  []
 
-[33
+[35
 
  <./figs/noantialiasing.png> <./figs/fullscreenminussubscreenmsaa.png (PNG copy
 )>]
@@ -731,18 +744,18 @@ Package epstopdf Info: Source file: <figs/oculus_pixel_density.eps>
 (epstopdf)                    size: 1631883 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/oculus_pixel_density-
 eps-converted-to.pdf figs/oculus_pixel_density.eps>
-(epstopdf)             \includegraphics on input line 842.
+(epstopdf)             \includegraphics on input line 851.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/oculus_pixel_density-eps-converted-to.pdf, id=556, 1396.21625pt x 753.816
+<figs/oculus_pixel_density-eps-converted-to.pdf, id=607, 1396.21625pt x 753.816
 25pt>
 File: figs/oculus_pixel_density-eps-converted-to.pdf Graphic file (type pdf)
  <use figs/oculus_pixel_density-eps-converted-to.pdf>
 Package pdftex.def Info: figs/oculus_pixel_density-eps-converted-to.pdf used on
- input line 842.
+ input line 851.
 (pdftex.def)             Requested size: 273.14577pt x 147.47092pt.
 
-Overfull \hbox (45.52371pt too wide) in paragraph at lines 842--843
+Overfull \hbox (45.52371pt too wide) in paragraph at lines 851--852
 [][] 
  []
 
@@ -756,62 +769,48 @@ Package epstopdf Info: Source file: <figs/oculus_pixel_density_optimisation.eps
 (epstopdf)                    size: 1693730 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/oculus_pixel_density_
 optimisation-eps-converted-to.pdf figs/oculus_pixel_density_optimisation.eps>
-(epstopdf)             \includegraphics on input line 847.
+(epstopdf)             \includegraphics on input line 856.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/oculus_pixel_density_optimisation-eps-converted-to.pdf, id=557, 1396.2162
+<figs/oculus_pixel_density_optimisation-eps-converted-to.pdf, id=608, 1396.2162
 5pt x 753.81625pt>
 File: figs/oculus_pixel_density_optimisation-eps-converted-to.pdf Graphic file 
 (type pdf)
 
 <use figs/oculus_pixel_density_optimisation-eps-converted-to.pdf>
 Package pdftex.def Info: figs/oculus_pixel_density_optimisation-eps-converted-t
-o.pdf used on input line 847.
+o.pdf used on input line 856.
 (pdftex.def)             Requested size: 273.14577pt x 147.47092pt.
 
-Overfull \hbox (45.52371pt too wide) in paragraph at lines 847--848
+Overfull \hbox (45.52371pt too wide) in paragraph at lines 856--857
 [][] 
  []
 
 
-Overfull \hbox (2.61108pt too wide) in paragraph at lines 841--851
+Overfull \hbox (2.61108pt too wide) in paragraph at lines 850--860
 []$[]$ $[]$ 
  []
 
-[34
+[36
 
  <./figs/oculus_pixel_density-eps-converted-to.pdf> <./figs/oculus_pixel_densit
 y_optimisation-eps-converted-to.pdf>]
 Chapter 5.
+[37
 
-Underfull \hbox (badness 10000) in paragraph at lines 868--870
-
+] (./diss.bbl [38]
+Underfull \hbox (badness 1259) in paragraph at lines 39--43
+[]\OT1/cmr/m/n/12 Graham Sell-ers.  ARB[]viewport[]array.  []$\OT1/cmtt/m/n/12 
+https : / / www . khronos . org / registry /
  []
 
+) [39
 
-Underfull \hbox (badness 10000) in paragraph at lines 871--872
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 873--875
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--877
-
- []
-
-[35
-
-] (./diss.bbl [36]) [37
-
-] [38
+] [40
 
 ]
 Appendix A.
-[39] [40
+[41] [42
 
 ]
 Appendix B.
@@ -820,38 +819,41 @@ File: figs/blur.png Graphic file (type png)
  <use figs/blur.png>
 Package pdftex.def Info: figs/blur.png used on input line 42.
 (pdftex.def)             Requested size: 136.57462pt x 136.57436pt.
- [41] [42]
+ [43] [44]
 Underfull \hbox (badness 1521) in paragraph at lines 104--105
 []\OT1/cmr/m/n/12 Further re-duce the re-quire-ment to super-sample by de-ter-m
 in-ing which ob-
  []
 
-[43])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 899.
- [44]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 899.
+[45])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 907.
+ [46]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 907.
  (./diss.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 899.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 899.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 907.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 907.
 Package rerunfilecheck Info: File `diss.out' has not changed.
-(rerunfilecheck)             Checksum: 90B16EAF8318EB6C4CA5ABA3682E47FF;3346.
+(rerunfilecheck)             Checksum: 8A167BB637391D1B16787E086F1AC659;3258.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 899.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 907.
  ) 
 Here is how much of TeX's memory you used:
- 7989 strings out of 493029
- 120814 string characters out of 6136234
- 217323 words of memory out of 5000000
- 11277 multiletter control sequences out of 15000+600000
- 12775 words of font info for 47 fonts, out of 8000000 for 9000
+ 8029 strings out of 493029
+ 121441 string characters out of 6136234
+ 218155 words of memory out of 5000000
+ 11303 multiletter control sequences out of 15000+600000
+ 12686 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,10n,40p,1113b,490s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,10n,40p,1185b,568s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
@@ -862,15 +864,16 @@ type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on diss.pdf (44 pages, 10770097 bytes).
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
+Output written on diss.pdf (46 pages, 11167724 bytes).
 PDF statistics:
- 742 PDF objects out of 1000 (max. 8388607)
- 627 compressed objects within 7 object streams
- 157 named destinations out of 1000 (max. 500000)
- 484 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 810 PDF objects out of 1000 (max. 8388607)
+ 685 compressed objects within 7 object streams
+ 170 named destinations out of 1000 (max. 500000)
+ 481 words of extra memory for PDF output out of 10000 (max. 10000000)
 
