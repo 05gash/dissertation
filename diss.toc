@@ -15,15 +15,15 @@
 \contentsline {section}{\numberline {3.1}OculusWorldDemo Structure}{17}{section.3.1}
 \contentsline {section}{\numberline {3.2}The Render Loop}{17}{section.3.2}
 \contentsline {section}{\numberline {3.3}Barrel Distortion}{18}{section.3.3}
-\contentsline {section}{\numberline {3.4}Implementation overview}{18}{section.3.4}
+\contentsline {section}{\numberline {3.4}Implementation overview}{19}{section.3.4}
 \contentsline {section}{\numberline {3.5}Projection Transformation}{19}{section.3.5}
 \contentsline {subsection}{\numberline {3.5.1}Orthographic projection}{19}{subsection.3.5.1}
 \contentsline {subsection}{\numberline {3.5.2}Perspective projection}{19}{subsection.3.5.2}
-\contentsline {subsection}{\numberline {3.5.3}Matrix Initilisation}{19}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.3}Matrix Initilisation}{20}{subsection.3.5.3}
 \contentsline {section}{\numberline {3.6}Allocating Textures}{20}{section.3.6}
 \contentsline {section}{\numberline {3.7}Drawing the scene}{21}{section.3.7}
 \contentsline {subsection}{\numberline {3.7.1}Modifying The Render Loop}{21}{subsection.3.7.1}
-\contentsline {section}{\numberline {3.8}MultiSample Resolve}{21}{section.3.8}
+\contentsline {section}{\numberline {3.8}MultiSample Resolve}{22}{section.3.8}
 \contentsline {section}{\numberline {3.9}OpenGL optimisations}{23}{section.3.9}
 \contentsline {section}{\numberline {3.10}Amplifying Geometry}{23}{section.3.10}
 \contentsline {subsection}{\numberline {3.10.1}The Geometry Shader}{23}{subsection.3.10.1}
@@ -32,7 +32,7 @@
 \contentsline {section}{\numberline {3.12}Extension 1.5 Non-uniform Texel Density}{26}{section.3.12}
 \contentsline {subsection}{\numberline {3.12.1}Blending the two textures}{26}{subsection.3.12.1}
 \contentsline {section}{\numberline {3.13}Limitations}{26}{section.3.13}
-\contentsline {section}{\numberline {3.14}Future Hardware Support}{26}{section.3.14}
+\contentsline {section}{\numberline {3.14}Future Hardware Support}{27}{section.3.14}
 \contentsline {chapter}{\numberline {4}Evaluation}{29}{chapter.4}
 \contentsline {section}{\numberline {4.1}Subjective Assesment}{29}{section.4.1}
 \contentsline {section}{\numberline {4.2}User Study Setup}{29}{section.4.2}

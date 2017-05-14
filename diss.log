@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.30)  24 APR 2017 15:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.10)  2 MAY 2017 10:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -443,11 +443,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 186--187
  []
 
 Package epstopdf Info: Source file: <figs/post_distortion.eps>
-(epstopdf)                    date: 2017-04-05 22:22:03
+(epstopdf)                    date: 2017-04-01 15:58:00
 (epstopdf)                    size: 105049 bytes
 (epstopdf)             Output file: <figs/post_distortion-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2017-04-23 08:44:37
+(epstopdf)                    date: 2017-04-01 16:00:34
 (epstopdf)                    size: 29053 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/post_distortion-eps-c
 onverted-to.pdf figs/post_distortion.eps>
@@ -494,97 +494,90 @@ Chapter 3.
 
 ]
 Package epstopdf Info: Source file: <figs/pre_distortion.eps>
-(epstopdf)                    date: 2017-04-05 22:22:03
+(epstopdf)                    date: 2017-04-01 15:58:28
 (epstopdf)                    size: 103094 bytes
 (epstopdf)             Output file: <figs/pre_distortion-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-04-23 08:44:36
+(epstopdf)                    date: 2017-04-01 16:00:33
 (epstopdf)                    size: 20901 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/pre_distortion-eps-co
 nverted-to.pdf figs/pre_distortion.eps>
-(epstopdf)             \includegraphics on input line 365.
+(epstopdf)             \includegraphics on input line 367.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/pre_distortion-eps-converted-to.pdf, id=432, 421.575pt x 316.18124pt>
+<figs/pre_distortion-eps-converted-to.pdf, id=433, 421.575pt x 316.18124pt>
 File: figs/pre_distortion-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/pre_distortion-eps-converted-to.pdf>
 Package pdftex.def Info: figs/pre_distortion-eps-converted-to.pdf used on input
- line 365.
+ line 367.
 (pdftex.def)             Requested size: 170.71652pt x 128.03822pt.
 Package epstopdf Info: Source file: <figs/post_distortion.eps>
-(epstopdf)                    date: 2017-04-05 22:22:03
+(epstopdf)                    date: 2017-04-01 15:58:00
 (epstopdf)                    size: 105049 bytes
 (epstopdf)             Output file: <figs/post_distortion-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2017-04-23 08:44:37
+(epstopdf)                    date: 2017-04-01 16:00:34
 (epstopdf)                    size: 29053 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/post_distortion-eps-c
 onverted-to.pdf figs/post_distortion.eps>
-(epstopdf)             \includegraphics on input line 366.
+(epstopdf)             \includegraphics on input line 368.
 Package epstopdf Info: Output file is already uptodate.
 File: figs/post_distortion-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/post_distortion-eps-converted-to.pdf>
 Package pdftex.def Info: figs/post_distortion-eps-converted-to.pdf used on inpu
-t line 366.
+t line 368.
 (pdftex.def)             Requested size: 170.71652pt x 128.03822pt.
- [18 <./figs/pre_distortion-eps-converted-to.pdf>] <figs/asymmetrical_fov.png, 
-id=442, 470.558pt x 327.624pt>
+ [18 <./figs/pre_distortion-eps-converted-to.pdf>] [19]
+<figs/asymmetrical_fov.png, id=448, 470.558pt x 327.624pt>
 File: figs/asymmetrical_fov.png Graphic file (type png)
 
 <use figs/asymmetrical_fov.png>
-Package pdftex.def Info: figs/asymmetrical_fov.png used on input line 415.
+Package pdftex.def Info: figs/asymmetrical_fov.png used on input line 417.
 (pdftex.def)             Requested size: 282.33698pt x 196.5759pt.
- [19]
-Underfull \hbox (badness 10000) in paragraph at lines 446--448
+ [20 <./figs/asymmetrical_fov.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 448--450
 
  []
 
-[20 <./figs/asymmetrical_fov.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 482
+[21]
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 484
 .
-LaTeX Font Info:    No file OMScmtt.fd. on input line 482.
-
-
-LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 482.
-
-[21] [22]
+ (/usr/share/texmf/tex/latex/R/tex/latex/omscmtt.fd
+File: omscmtt.fd 
+)
+LaTeX Font Info:    Font shape `OMS/cmtt/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 484.
+ [22]
 Package epstopdf Info: Source file: <figs/geoshader.eps>
-(epstopdf)                    date: 2017-03-29 18:07:15
+(epstopdf)                    date: 2017-04-01 12:07:21
 (epstopdf)                    size: 170623 bytes
 (epstopdf)             Output file: <figs/geoshader-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-03-29 18:07:20
+(epstopdf)                    date: 2017-04-01 12:09:56
 (epstopdf)                    size: 102457 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/geoshader-eps-convert
 ed-to.pdf figs/geoshader.eps>
-(epstopdf)             \includegraphics on input line 551.
+(epstopdf)             \includegraphics on input line 553.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/geoshader-eps-converted-to.pdf, id=468, 424.58624pt x 380.42125pt>
+<figs/geoshader-eps-converted-to.pdf, id=469, 424.58624pt x 380.42125pt>
 File: figs/geoshader-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/geoshader-eps-converted-to.pdf>
 Package pdftex.def Info: figs/geoshader-eps-converted-to.pdf used on input line
- 551.
+ 553.
 (pdftex.def)             Requested size: 254.75371pt x 228.2545pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 568--569
+ [23]
+Underfull \hbox (badness 10000) in paragraph at lines 570--571
 
  []
 
-[23] [24 <./figs/geoshader-eps-converted-to.pdf>] [25] [26] [27] [28
+[24 <./figs/geoshader-eps-converted-to.pdf>] [25] [26] [27] [28
 
 ]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 685--686
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 692--693
+Underfull \hbox (badness 10000) in paragraph at lines 687--688
 
  []
 
@@ -598,146 +591,151 @@ Underfull \hbox (badness 10000) in paragraph at lines 696--697
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 698--699
+
+ []
+
 [29] [30]
 Package epstopdf Info: Source file: <figs/fsInvocations.eps>
-(epstopdf)                    date: 2017-04-23 16:50:18
+(epstopdf)                    date: 2017-04-23 16:24:25
 (epstopdf)                    size: 78394 bytes
 (epstopdf)             Output file: <figs/fsInvocations-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-04-24 14:46:20
+(epstopdf)                    date: 2017-05-02 10:23:04
 (epstopdf)                    size: 10069 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/fsInvocations-eps-con
 verted-to.pdf figs/fsInvocations.eps>
-(epstopdf)             \includegraphics on input line 741.
+(epstopdf)             \includegraphics on input line 743.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/fsInvocations-eps-converted-to.pdf, id=521, 669.50125pt x 542.025pt>
+<figs/fsInvocations-eps-converted-to.pdf, id=522, 669.50125pt x 542.025pt>
 File: figs/fsInvocations-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/fsInvocations-eps-converted-to.pdf>
 Package pdftex.def Info: figs/fsInvocations-eps-converted-to.pdf used on input 
-line 741.
+line 743.
 (pdftex.def)             Requested size: 246.00555pt x 199.16928pt.
 
-Overfull \hbox (18.3835pt too wide) in paragraph at lines 741--742
+Overfull \hbox (18.3835pt too wide) in paragraph at lines 743--744
 [][] 
  []
 
 
-Overfull \hbox (11.75768pt too wide) in paragraph at lines 740--751
+Overfull \hbox (11.75768pt too wide) in paragraph at lines 742--753
 []$[]$  [] 
  []
 
 Package epstopdf Info: Source file: <figs/timeToRenderFrame.eps>
-(epstopdf)                    date: 2017-04-23 16:50:18
+(epstopdf)                    date: 2017-04-23 16:28:56
 (epstopdf)                    size: 16534 bytes
 (epstopdf)             Output file: <figs/timeToRenderFrame-eps-converted-to.pd
 f>
-(epstopdf)                    date: 2017-04-24 14:55:35
+(epstopdf)                    date: 2017-05-02 10:23:20
 (epstopdf)                    size: 9406 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/timeToRenderFrame-eps
 -converted-to.pdf figs/timeToRenderFrame.eps>
-(epstopdf)             \includegraphics on input line 765.
+(epstopdf)             \includegraphics on input line 767.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/timeToRenderFrame-eps-converted-to.pdf, id=522, 683.55376pt x 294.09875pt
+<figs/timeToRenderFrame-eps-converted-to.pdf, id=523, 683.55376pt x 294.09875pt
 >
 File: figs/timeToRenderFrame-eps-converted-to.pdf Graphic file (type pdf)
  <use figs/timeToRenderFrame-eps-converted-to.pdf>
 Package pdftex.def Info: figs/timeToRenderFrame-eps-converted-to.pdf used on in
-put line 765.
+put line 767.
 (pdftex.def)             Requested size: 273.14577pt x 117.52074pt.
 
-Overfull \hbox (45.52371pt too wide) in paragraph at lines 765--766
+Overfull \hbox (45.52371pt too wide) in paragraph at lines 767--768
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 779--780
+Underfull \hbox (badness 10000) in paragraph at lines 781--782
 
  []
 
 [31 <./figs/fsInvocations-eps-converted-to.pdf>]
-<figs/difftree.png, id=540, 902.37125pt x 1017.8025pt>
+<figs/difftree.png, id=541, 902.37125pt x 1017.8025pt>
 File: figs/difftree.png Graphic file (type png)
  <use figs/difftree.png>
-Package pdftex.def Info: figs/difftree.png used on input line 789.
+Package pdftex.def Info: figs/difftree.png used on input line 791.
 (pdftex.def)             Requested size: 284.52756pt x 320.92009pt.
 
 [32 <./figs/timeToRenderFrame-eps-converted-to.pdf> <./figs/difftree.png (PNG c
-opy)>] <figs/noantialiasing.png, id=553, 676.77844pt x 763.35187pt>
+opy)>] <figs/noantialiasing.png, id=554, 676.77844pt x 763.35187pt>
 File: figs/noantialiasing.png Graphic file (type png)
 
 <use figs/noantialiasing.png>
-Package pdftex.def Info: figs/noantialiasing.png used on input line 802.
+Package pdftex.def Info: figs/noantialiasing.png used on input line 804.
 (pdftex.def)             Requested size: 204.85262pt x 142.25453pt.
 
-<figs/fullscreenminussubscreenmsaa.png, id=554, 902.37125pt x 1017.8025pt>
+<figs/fullscreenminussubscreenmsaa.png, id=555, 902.37125pt x 1017.8025pt>
 File: figs/fullscreenminussubscreenmsaa.png Graphic file (type png)
 
 <use figs/fullscreenminussubscreenmsaa.png>
 Package pdftex.def Info: figs/fullscreenminussubscreenmsaa.png used on input li
-ne 807.
+ne 809.
 (pdftex.def)             Requested size: 204.85605pt x 142.25842pt.
 
-Overfull \hbox (2.61108pt too wide) in paragraph at lines 801--811
+Overfull \hbox (2.61108pt too wide) in paragraph at lines 803--813
 []$[]$ $[]$ 
  []
 
 [33 <./figs/noantialiasing.png> <./figs/fullscreenminussubscreenmsaa.png (PNG c
 opy)>]
 Package epstopdf Info: Source file: <figs/oculus_pixel_density.eps>
-(epstopdf)                    date: 2017-04-16 21:44:17
+(epstopdf)                    date: 2017-04-13 22:52:43
 (epstopdf)                    size: 1138839 bytes
 (epstopdf)             Output file: <figs/oculus_pixel_density-eps-converted-to
 .pdf>
-(epstopdf)                    date: 2017-04-23 08:44:37
+(epstopdf)                    date: 2017-04-14 12:08:34
 (epstopdf)                    size: 1631883 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/oculus_pixel_density-
 eps-converted-to.pdf figs/oculus_pixel_density.eps>
-(epstopdf)             \includegraphics on input line 828.
+(epstopdf)             \includegraphics on input line 830.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/oculus_pixel_density-eps-converted-to.pdf, id=562, 1396.21625pt x 753.816
+<figs/oculus_pixel_density-eps-converted-to.pdf, id=563, 1396.21625pt x 753.816
 25pt>
 File: figs/oculus_pixel_density-eps-converted-to.pdf Graphic file (type pdf)
  <use figs/oculus_pixel_density-eps-converted-to.pdf>
 Package pdftex.def Info: figs/oculus_pixel_density-eps-converted-to.pdf used on
- input line 828.
+ input line 830.
 (pdftex.def)             Requested size: 273.14577pt x 147.47092pt.
 
-Overfull \hbox (45.52371pt too wide) in paragraph at lines 828--829
+Overfull \hbox (45.52371pt too wide) in paragraph at lines 830--831
 [][] 
  []
 
 Package epstopdf Info: Source file: <figs/oculus_pixel_density_optimisation.eps
 >
-(epstopdf)                    date: 2017-04-16 21:44:17
+(epstopdf)                    date: 2017-04-14 10:52:28
 (epstopdf)                    size: 895647 bytes
 (epstopdf)             Output file: <figs/oculus_pixel_density_optimisation-eps
 -converted-to.pdf>
-(epstopdf)                    date: 2017-04-23 08:44:38
+(epstopdf)                    date: 2017-05-02 10:23:22
 (epstopdf)                    size: 1693730 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/oculus_pixel_density_
 optimisation-eps-converted-to.pdf figs/oculus_pixel_density_optimisation.eps>
-(epstopdf)             \includegraphics on input line 833.
+(epstopdf)             \includegraphics on input line 835.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/oculus_pixel_density_optimisation-eps-converted-to.pdf, id=563, 1396.2162
+<figs/oculus_pixel_density_optimisation-eps-converted-to.pdf, id=564, 1396.2162
 5pt x 753.81625pt>
 File: figs/oculus_pixel_density_optimisation-eps-converted-to.pdf Graphic file 
 (type pdf)
 
 <use figs/oculus_pixel_density_optimisation-eps-converted-to.pdf>
 Package pdftex.def Info: figs/oculus_pixel_density_optimisation-eps-converted-t
-o.pdf used on input line 833.
+o.pdf used on input line 835.
 (pdftex.def)             Requested size: 273.14577pt x 147.47092pt.
 
-Overfull \hbox (45.52371pt too wide) in paragraph at lines 833--834
+Overfull \hbox (45.52371pt too wide) in paragraph at lines 835--836
 [][] 
  []
 
 
-Overfull \hbox (2.61108pt too wide) in paragraph at lines 827--837
+Overfull \hbox (2.61108pt too wide) in paragraph at lines 829--839
 []$[]$ $[]$ 
  []
 
@@ -747,22 +745,22 @@ Overfull \hbox (2.61108pt too wide) in paragraph at lines 827--837
 y_optimisation-eps-converted-to.pdf>]
 Chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 854--856
+Underfull \hbox (badness 10000) in paragraph at lines 856--858
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 857--858
+Underfull \hbox (badness 10000) in paragraph at lines 859--860
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 859--861
+Underfull \hbox (badness 10000) in paragraph at lines 861--863
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 862--863
+Underfull \hbox (badness 10000) in paragraph at lines 864--865
 
  []
 
@@ -776,21 +774,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 862--863
 Appendix A.
 File: diss.tex  (verbatim)
 [39]
-Overfull \hbox (284.26651pt too wide) in paragraph at lines 883--883
+Overfull \hbox (284.26651pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 To examine the effect on the image quality and GPU load when 
 applying antialiasing only to a small field of view in a consumer Virtual Reali
 ty (VR) Headmounted Display (HMD).[] 
  []
 
 
-Overfull \hbox (356.51755pt too wide) in paragraph at lines 883--883
+Overfull \hbox (356.51755pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Implementation of a generic, method to antialiase only in the
  centre of the screen using OpenGL. Examined an implementation to accomodate to
  Foveated Rendering and multi-resolution rendering.[] 
  []
 
 [40]
-Overfull \hbox (522.26993pt too wide) in paragraph at lines 883--883
+Overfull \hbox (522.26993pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Through the affordability of display panels and cheap wide-an
 gle lenses, Virtual Reality Displays are beggining to flood the consumer market
 . To meet this demand, efficient rendering software and practices will need to 
@@ -798,7 +796,7 @@ be adopted.[]
  []
 
 
-Overfull \hbox (781.52365pt too wide) in paragraph at lines 883--883
+Overfull \hbox (781.52365pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Graphics rendering pipelines take good advantage of available
  GPU power. But the constraints of realistic, immersive virtual reality present
  a huge challenge to engineers. They must output a high resolution, wide field 
@@ -806,7 +804,7 @@ of view, antialiased image, with a response to stimulus time under 20ms.[]
  []
 
 
-Overfull \hbox (654.02182pt too wide) in paragraph at lines 883--883
+Overfull \hbox (654.02182pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 As this technology progresses and matures, it will become inc
 reasingly important to provide low-latency response times. Resolutions will nee
 d to increase to around 8K*8K, but to achieve this our graphics processing hard
@@ -814,34 +812,34 @@ ware and software will have to evolve too.[]
  []
 
 
-Overfull \hbox (305.51682pt too wide) in paragraph at lines 883--883
+Overfull \hbox (305.51682pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Aliasing in graphics refers to spatial and temporal artefacts
  present in a rendered image. They are the result of sampling a higher frequenc
 y signal component at a lower freqency.[] 
  []
 
 
-Overfull \hbox (271.51633pt too wide) in paragraph at lines 883--883
+Overfull \hbox (271.51633pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Antialising is the process of removing such artefacts, but th
 is has to be done efficiently or we will sacrifice frame drops and potential mo
 tion sickness for the end-user.[] 
  []
 
 
-Overfull \hbox (275.76639pt too wide) in paragraph at lines 883--883
+Overfull \hbox (275.76639pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 There are a multitude of antialiasing approaches, though most
  sample at a higher frequency than will be presented in the final image, then d
 ownsampling through some filter.[] 
  []
 
 
-Overfull \hbox (3.76248pt too wide) in paragraph at lines 883--883
+Overfull \hbox (3.76248pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 There are a multitude of antialising approaches, one of the m
 ost common is Supersampled Anti-alising (SSAA).[] 
  []
 
 
-Overfull \hbox (1716.53708pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1716.53708pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Then, before presenting, this image is downsampled by taking 
 for each pixel in the presented image, a linear combination of its closest neig
 hbors in the higher resolution image. In the figure below, to calculate the fin
@@ -852,7 +850,7 @@ ple mean average for each colour (Red, Green and Blue):[]
  []
 
 
-Overfull \hbox (1967.29068pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1967.29068pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Another common approach, that is built into the OpenGL API, i
 s Multisampled Anti-aliasing (MSAA). As before, the scene is sampled at a highe
 r resolution than we intend to present it, forming a coverage mask for each pix
@@ -864,7 +862,7 @@ have to run a fragment shader for every subsample in the pixel, only those that
  []
 
 
-Overfull \hbox (488.26944pt too wide) in paragraph at lines 883--883
+Overfull \hbox (488.26944pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 MSAA provides a significant speedup over SSAA and is widely e
 mployed in practice, but only removes spatial artefacts at polygon edges. SSAA 
 can remove artefacts within polygons, an example of which will be presented lat
@@ -872,7 +870,7 @@ er.[]
  []
 
 [41]
-Overfull \hbox (909.02548pt too wide) in paragraph at lines 883--883
+Overfull \hbox (909.02548pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 A typical virtual Reality Headmounted Display (HMD) is compri
 sed of 2 main components: The screen - to which our rendered image is presented
  and a wide-angle lens - to project the displayed image into the eye. The lens 
@@ -881,20 +879,20 @@ allows for the user to focus on a screen that is normally too close for the eye
  []
 
 
-Overfull \hbox (54.76321pt too wide) in paragraph at lines 883--883
+Overfull \hbox (54.76321pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Side effects of the lens used in the Oculus Rift DK2 are chro
 matic abberation, pincushion distortion, and astigmatism.\\[] 
  []
 
 
-Overfull \hbox (309.76688pt too wide) in paragraph at lines 883--883
+Overfull \hbox (309.76688pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Chromatic abberation refers to the separation of colour due t
 o the different refractive indexes for different wavelengths of light. A Virtua
 l Reality API should correct for this.\\[] 
  []
 
 
-Overfull \hbox (1100.27823pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1100.27823pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Pincushion distortion refers to the stretching of the image n
 ear the egdes. The inverse of pincushion distortion, barrel disortion, can be a
 pplied to reverse the effects of pincushion distortion. The barrel distortion t
@@ -903,7 +901,7 @@ ur final image, a property will be explored in the second extension.[]
  []
 
 
-Overfull \hbox (1036.52731pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1036.52731pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Lens astigmatism is a property of the lenses used in most con
 sumer HMDs. Because of the astigmatism, the image presented to the user is shar
 p in the center but becomes progressivelly blurrier as you look towards the edg
@@ -912,13 +910,13 @@ es.  It can be corrected for by adding more lenses to the HMD, but this ends up
  []
 
 
-Overfull \hbox (3.76248pt too wide) in paragraph at lines 883--883
+Overfull \hbox (3.76248pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 \caption{A depiction of lens astigmatism. The percieved image
  blurs as you move away from the sharp center.}[] 
  []
 
 
-Overfull \hbox (700.77249pt too wide) in paragraph at lines 883--883
+Overfull \hbox (700.77249pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 This astigmatism property can be exploited by antialiasing on
 ly where the image is sharpest, in the center. Graphical artefacts at the edges
  should be blurred enough to be unnoticable. It is this principle that I'll dev
@@ -926,13 +924,13 @@ elop the following antialiasing approaches on top of.[]
  []
 
 
-Overfull \hbox (29.26285pt too wide) in paragraph at lines 883--883
+Overfull \hbox (29.26285pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 This chapter outlines any preparatory work that was done befo
 re implementation of the two antialiasing approaches.[] 
  []
 
 
-Overfull \hbox (564.77054pt too wide) in paragraph at lines 883--883
+Overfull \hbox (564.77054pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The OpenGL API provides an interface to render 3D graphics. I
 t's cross language, with native C/C++ bindings, well documented, and the most w
 idely adopted open source graphics API. As a bonus it supports some efficient a
@@ -940,19 +938,19 @@ ntialising standards.[]
  []
 
 
-Overfull \hbox (63.26334pt too wide) in paragraph at lines 883--883
+Overfull \hbox (63.26334pt too wide) in paragraph at lines 885--885
 []  \OT1/cmtt/m/n/8 The buffer containing the image that is presented onscreen 
 now. This buffer is contained within the Default Framebuffer.[] 
  []
 
 
-Overfull \hbox (93.01376pt too wide) in paragraph at lines 883--883
+Overfull \hbox (93.01376pt too wide) in paragraph at lines 885--885
 []  \OT1/cmtt/m/n/8 The buffer containing the image that will be presented onsc
 reen in the next frame, is contained within the Default Framebuffer.[] 
  []
 
 
-Overfull \hbox (637.02158pt too wide) in paragraph at lines 883--883
+Overfull \hbox (637.02158pt too wide) in paragraph at lines 885--885
 []  \OT1/cmtt/m/n/8 An interpretive scheme used to determine what a stream of v
 ertices represents when being rendered. For example \texttt{GL\_POINTS} causes 
 each vertex to be interpreted as a point. Other primitive types include \texttt
@@ -960,21 +958,21 @@ each vertex to be interpreted as a point. Other primitive types include \texttt
  []
 
 
-Overfull \hbox (250.26602pt too wide) in paragraph at lines 883--883
+Overfull \hbox (250.26602pt too wide) in paragraph at lines 885--885
 []  \OT1/cmtt/m/n/8 Collection of values produced by the rasterizer. A fragment
  represents a sample-sized segment of a rasterized primitive. These are process
 ed by the fragment shader.[] 
  []
 
 
-Overfull \hbox (390.51804pt too wide) in paragraph at lines 883--883
+Overfull \hbox (390.51804pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 OpenGL provides a pipeline through which data about the rende
 red scene is processed and rasterized. A simplified view of it is presented her
 e, given that some stages are optional or non-programmable.[] 
  []
 
 [42]
-Overfull \hbox (467.01913pt too wide) in paragraph at lines 883--883
+Overfull \hbox (467.01913pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Vertex data enters the pipeline, typically it has been upload
 ed to the GPU through a \texttt{Vertex Buffer Object}. Each vertex usually has 
 associated data such as a colour, a normal vector, and texture coordinates.\\[]
@@ -982,7 +980,7 @@ associated data such as a colour, a normal vector, and texture coordinates.\\[]
  []
 
 
-Overfull \hbox (479.76932pt too wide) in paragraph at lines 883--883
+Overfull \hbox (479.76932pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The Vertex Shader is run for every vertex in the scene. In th
 e typical case it transforms vertexes in 3d world space to window space coordin
 ates. Vertex data from the previous scene is bound in through named variables.\
@@ -990,7 +988,7 @@ ates. Vertex data from the previous scene is bound in through named variables.\
  []
 
 
-Overfull \hbox (849.52463pt too wide) in paragraph at lines 883--883
+Overfull \hbox (849.52463pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The Geometry Shader is run for every primitive in the scene (
 in all of the implementations here I've simplified these to triangles as a gene
 ral case). It is an unusual stage in that it can amplify geometry, outputting m
@@ -999,13 +997,13 @@ ter on.\\[]
  []
 
 
-Overfull \hbox (122.76419pt too wide) in paragraph at lines 883--883
+Overfull \hbox (122.76419pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The Fragment shader is run for every fragment in the window s
 pace, it is typically used to perform lighting and texturing for the scene.[] 
  []
 
 
-Overfull \hbox (624.2714pt too wide) in paragraph at lines 883--883
+Overfull \hbox (624.2714pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 This toy renderer proved invaluable to the success of the pro
 ject, since I knew and understood the source code completely, I could implement
  and test an idea for optimisation or an implementation strategy quickly. The t
@@ -1013,14 +1011,14 @@ oy renderer was implemented in C++.[]
  []
 
 
-Overfull \hbox (348.01743pt too wide) in paragraph at lines 883--883
+Overfull \hbox (348.01743pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 To get an idea of how these implementations would fare in a l
 arger, more computationally intensive renderer I decided to modify the demo pro
 vided with the Oculus SDK 5.0.1: OculusWorldDemo.[] 
  []
 
 
-Overfull \hbox (547.7703pt too wide) in paragraph at lines 883--883
+Overfull \hbox (547.7703pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The codebase to this was in C++ and the rendering code was wr
 itten to be extensible - allowing for different graphics APIs to implement lowe
 r level rendering calls. The OpenGL implementation was Open Source and under th
@@ -1028,14 +1026,14 @@ e Apache License.[]
  []
 
 
-Overfull \hbox (433.01865pt too wide) in paragraph at lines 883--883
+Overfull \hbox (433.01865pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 An agile approach was taken when implementing the antialising
  methods, stories were broken up into small, managable chunks. After these were
  implemented - extensions could be written up and implemented on top.[] 
  []
 
 
-Overfull \hbox (1117.27847pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1117.27847pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Unit tests were written for all new methods. However, where m
 ethods and classes were extended beyond Oculus' implementation, unit tests were
  not added due to the high degree of coupling within OculusWorldDemo and OpenGL
@@ -1044,35 +1042,35 @@ rectness, runtime assertions were made on all branches and method calls.[]
  []
 
 
-Overfull \hbox (216.26553pt too wide) in paragraph at lines 883--883
+Overfull \hbox (216.26553pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The OculusVR SDK was used in the Demo to interface with the O
 culus Rift DK2 HMD. An outdated version 0.5.0.1 was used being the last version
  to support linux.[] 
  []
 
 
-Overfull \hbox (139.76443pt too wide) in paragraph at lines 883--883
+Overfull \hbox (139.76443pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The SDK provided vector and matrix math modules, runtime asse
 rtions, and allowed barrel distortion and chromatic abberation to be performed.
 [] 
  []
 
 
-Overfull \hbox (246.01596pt too wide) in paragraph at lines 883--883
+Overfull \hbox (246.01596pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 C++ was used in both the toy renderer and OculusWorldDemo. It
  has native OpenGL bindings and has extensive compiler support allowing for per
 formance to be maximised.[] 
  []
 
 
-Overfull \hbox (420.26846pt too wide) in paragraph at lines 883--883
+Overfull \hbox (420.26846pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 GLSL is the OpenGL C-like shader language that is run on the 
 GPU. It was used to implement the first and second extensions. It's syntax is v
 ery similar to C. Learning it was not particularly time-consuming.[] 
  []
 
 [43]
-Overfull \hbox (696.52243pt too wide) in paragraph at lines 883--883
+Overfull \hbox (696.52243pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Git was used as a version control system due to its flexibili
 ty and my familiarity with it. Remote repositories were placed both on a separa
 te harddrive and Github. These remotes were updated on every commit. Commits we
@@ -1080,35 +1078,46 @@ re made after every development story was completed.[]
  []
 
 
-Overfull \hbox (377.76785pt too wide) in paragraph at lines 883--883
+Overfull \hbox (377.76785pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 In the event of failure of my development machine, MCS machin
 es were compatible and tested with the software I was using. Also two backups w
 ere made of all changes to the codebase, detailed above.[] 
  []
 
 
-Overfull \hbox (284.26651pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1495.5339pt too wide) in paragraph at lines 885--885
+[]\OT1/cmtt/m/n/8 This chapter describes the implementation of antialiasing tec
+hniques briefly outlined in Section \ref{vrdisplays}. I first give a brief intr
+oduction to OculusWorldDemo's structure - and then describe a general implement
+ation strategy for two antialiasing techniques: Subscreen Multisampling, and Su
+bscreen Supersampling. I also give an optimisation to the latter that is availa
+ble to OpenGL 4.0 and another that is available on some OpenGL ES implementatio
+ns.[] 
+ []
+
+
+Overfull \hbox (284.26651pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Given that the implementation of two antialiasing techniques 
 is built on top of Oculus' existing work, it was first neccesary to understand 
 a large portion of their codebase.[] 
  []
 
 
-Overfull \hbox (441.51877pt too wide) in paragraph at lines 883--883
+Overfull \hbox (441.51877pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Here I give a brief overview of system components that will b
 e modified and used later on. I also give a brief overview of Oculus' SDK befor
 e detailing components that were added and modified to OculusWorldDemo.[] 
  []
 
 
-Overfull \hbox (339.5173pt too wide) in paragraph at lines 883--883
+Overfull \hbox (339.5173pt too wide) in paragraph at lines 885--885
 []  \OT1/cmtt/m/n/8 The class describing the application OculusWorldDemo, conta
 ins high level rendering instructions, calculcation of HMD values, user input (
 Mouse, Keyboard), state initilisation and more.[] 
  []
 
 
-Overfull \hbox (594.52097pt too wide) in paragraph at lines 883--883
+Overfull \hbox (594.52097pt too wide) in paragraph at lines 885--885
 []  \OT1/cmtt/m/n/8 The module containing rendering state and methods, called b
 y OculusWorldDemoApp. Provides several implentations of its methods in DirextX 
 and OpenGL. Handles shader compilation, linking, GPU memory allocation for vert
@@ -1116,40 +1125,40 @@ ex \& texture data and more.[]
  []
 
 
-Overfull \hbox (207.76541pt too wide) in paragraph at lines 883--883
+Overfull \hbox (207.76541pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 At every frame, the Oculus SDK provides headtracking informat
 ion that must be used to maintain the appropriate user position and orientation
  in the program.[] 
  []
 
 
-Overfull \hbox (246.01596pt too wide) in paragraph at lines 883--883
+Overfull \hbox (246.01596pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The bulk of rendering code is done within the OculusWorldDemo
 App::OnIdle() method, which determines if and when a frame should be drawn, alo
 ng with other bookeeping.[] 
  []
 
 
-Overfull \hbox (54.76321pt too wide) in paragraph at lines 883--883
+Overfull \hbox (54.76321pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The Oculus SDK then takes $\tau$ and applies barrel distortio
 n and chromatic abberation through a post-processing stage.[] 
  []
 
 
-Overfull \hbox (156.76468pt too wide) in paragraph at lines 883--883
+Overfull \hbox (156.76468pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Where $(\vec p)$ is some point in the source image, and $\alp
 ha$ is the amount of disortion applied to the image, and is a property of the l
 ens.[] 
  []
 
 
-Overfull \hbox (37.76297pt too wide) in paragraph at lines 883--883
+Overfull \hbox (37.76297pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 \caption{Shows a regular pixel grid pre and post brown distor
 tion. Coordinates are normalised to the range $[-1,1]$}[] 
  []
 
 
-Overfull \hbox (1805.78836pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1805.78836pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The method used implement barrel distortion in a graphics API
  has evolved over the past few years. Initially, the distortion was calculated 
 as a post-processing step in the fragment shader. Later, the image provided to 
@@ -1161,7 +1170,7 @@ h can be built into the rendering pipeline in the vertex shader, it removes the
  []
 
 
-Overfull \hbox (1372.28214pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1372.28214pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 To achieve antialiasing in the centre of the image using Open
 GL it is are required to draw the scene twice for each eye. Once for the antial
 iased, low field of view centre, and one for the lower quality border. An imple
@@ -1170,29 +1179,29 @@ th projection matrices for each, and finally some method to blend the two rende
 r targets together before presenting the final frame.[] 
  []
 
-
-Overfull \hbox (156.76468pt too wide) in paragraph at lines 883--883
+[44]
+Overfull \hbox (156.76468pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 An essential component to 3D graphics is the projection trans
 formation. It takes as input 3D coordinates and maps them to 2D window coordina
 tes.[] 
  []
 
-[44]
-Overfull \hbox (173.76492pt too wide) in paragraph at lines 883--883
+
+Overfull \hbox (173.76492pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The orthographic projection is a form of parralel projection,
  where all projection lines are parralel to the \texttt{lookAt} vector /*TODO*/
  define.[] 
  []
 
 
-Overfull \hbox (229.01572pt too wide) in paragraph at lines 883--883
+Overfull \hbox (229.01572pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 This matrix is used to render two dimensional information at 
 a required distance from the user. In OculusWorldDemo and others it is used to 
 render UI components.[] 
  []
 
 
-Overfull \hbox (1130.02866pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1130.02866pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 To project onto a smaller portion of the screen it's neccesar
 y to specify alternate orthographic and perspective projection matrices that co
 rrespond to the smaller viewing frustrum in the center of the screen. In Oculus
@@ -1201,7 +1210,7 @@ hoProjection} corresponding to the center and peripheral view respectively.[]
  []
 
 
-Overfull \hbox (513.7698pt too wide) in paragraph at lines 883--883
+Overfull \hbox (513.7698pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The Oculus SDK will provide to the programmer the estimated f
 ield of view from the vector going from the eye to the center of the image. Thi
 s information can be used to construct a frustum and projection matrix use in r
@@ -1209,20 +1218,20 @@ endering.[]
  []
 
 
-Overfull \hbox (37.76297pt too wide) in paragraph at lines 883--883
+Overfull \hbox (37.76297pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 This information can be used to compute a matrix for both the
  full field of view and reduced, central field of view.[] 
  []
 
 
-Overfull \hbox (394.7681pt too wide) in paragraph at lines 883--883
+Overfull \hbox (394.7681pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 In the common case however, given a matrix \texttt{m} represe
 nting the projection for a full, symmetric field of view, the matrix for a smal
 ler field of view can be computed with the following method.[] 
  []
 
 
-Overfull \hbox (700.77249pt too wide) in paragraph at lines 883--883
+Overfull \hbox (700.77249pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The above returns a projection matrix whose near planes dimen
 sions are $\frac{1}{\texttt{ratio}}$ of the input projection matrix's near plan
 e. This small matrix will correspond to the smaller field of view whose render 
@@ -1230,7 +1239,7 @@ target will have higher quality antialiasing applied.[]
  []
 
 
-Overfull \hbox (815.52414pt too wide) in paragraph at lines 883--883
+Overfull \hbox (815.52414pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The framebuffer that is used must be complete before we begin
  rendering to it, so textures must be allocated and formatted properly beforeha
 nd. This section will describe texture allocation in OpenGL, and how the implem
@@ -1239,14 +1248,14 @@ entation in OculusWorldDemo was modified to permit the approach outlined before
  []
 
 
-Overfull \hbox (318.267pt too wide) in paragraph at lines 883--883
+Overfull \hbox (318.267pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The Oculus SDK provides a method \texttt{ovrHmd\_GetFovTextur
 eSize()} that returns a reccomended texture size for a given Field of View and 
 pixel density at the centre of the screen.[] 
  []
 
 
-Overfull \hbox (811.27408pt too wide) in paragraph at lines 883--883
+Overfull \hbox (811.27408pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The process for allocating a framebuffer in OpenGL that conta
 in render target textures that are $\frac{1}{r}$ the size of the destination te
 xture is the same as normal framebuffer generation. Render target sizes must be
@@ -1255,34 +1264,34 @@ xture is the same as normal framebuffer generation. Render target sizes must be
  []
 
 
-Overfull \hbox (195.01523pt too wide) in paragraph at lines 883--883
+Overfull \hbox (195.01523pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The perspective transformation is usually performed in the ve
 rtex shader stage, so the perspective transformation matrix must be linked up t
 o this stage.[] 
  []
 
 [45]
-Overfull \hbox (178.01498pt too wide) in paragraph at lines 883--883
+Overfull \hbox (178.01498pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The render method of each scene needs only to know which eye 
 it is rendering to, and whether it is drawing to the center or the borders of t
 he image.[] 
  []
 
 
-Overfull \hbox (165.2648pt too wide) in paragraph at lines 883--883
+Overfull \hbox (165.2648pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 So the render method in OculusWorldDemoApp was modified to in
 clude the perspective projection matrix of the portion of the scene it is drawi
 ng to.[] 
  []
 
 
-Overfull \hbox (25.01279pt too wide) in paragraph at lines 883--883
+Overfull \hbox (25.01279pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 You can then bind the correct projection matrices inside this
  method with a call to \texttt{glUniformMatrix4fv()}[] 
  []
 
 
-Overfull \hbox (845.27457pt too wide) in paragraph at lines 883--883
+Overfull \hbox (845.27457pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Before beginning to render to each view with corresponding fr
 amebuffer $F$, OpenGL state needs to be set up. Therefore for each framebuffer 
 $F$ the following steps are needed inside of the render loop. 4 Framebuffers ca
@@ -1291,7 +1300,7 @@ ampling.[]
  []
 
 
-Overfull \hbox (505.26968pt too wide) in paragraph at lines 883--883
+Overfull \hbox (505.26968pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 As I will describe later on, this process can be handled on t
 he GPU side with the use of the geometry shader, freeing up the CPU and reducin
 g the number of draw calls to a half (or a quarter if stereoscopic rendering is
@@ -1299,7 +1308,7 @@ g the number of draw calls to a half (or a quarter if stereoscopic rendering is
  []
 
 
-Overfull \hbox (938.77591pt too wide) in paragraph at lines 883--883
+Overfull \hbox (938.77591pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 With a multisampled or supersampled texture along with a sing
 le sampled border texture, a resolve from the multisampled or supersampled text
 ure to the destination buffer needs to be performed to merge the two together b
@@ -1308,7 +1317,7 @@ ng in a post-processing stage.[]
  []
 
 
-Overfull \hbox (947.27603pt too wide) in paragraph at lines 883--883
+Overfull \hbox (947.27603pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The function below takes as arguments a multisampled or super
 sampled texture along with an output texture. It then resolves the samples from
  the source texture to the target texture. The method doesn't care whether the 
@@ -1317,20 +1326,20 @@ from the source texture's flags.[]
  []
 
 
-Overfull \hbox (46.26309pt too wide) in paragraph at lines 883--883
+Overfull \hbox (46.26309pt too wide) in paragraph at lines 885--885
 []    \OT1/cmtt/m/n/8 glFramebufferTexture2D(GL_DRAW_FRAMEBUFFER, GL_COLOR_ATTA
 CHMENT0, GL_TEXTURE_2D, ((Texture*)outputTex)->TexId, 0);[] 
  []
 
 
-Overfull \hbox (241.7659pt too wide) in paragraph at lines 883--883
+Overfull \hbox (241.7659pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 \color{green}    int off_x = (outputTex->GetWidth() - outputT
 ex->GetWidth()/ratio)/2; //Offset from bottom left of the target texture we wis
 h to blit the source to.[] 
  []
 
 
-Overfull \hbox (539.27017pt too wide) in paragraph at lines 883--883
+Overfull \hbox (539.27017pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The method needs to set up the OpenGL state machine for the \
 texttt{glBlitFramebuffer} on line 21. First a multisampled framebuffer is set u
 p to be read in line 2. Next we associate this framebuffer with \texttt{msaaTex
@@ -1338,26 +1347,26 @@ p to be read in line 2. Next we associate this framebuffer with \texttt{msaaTex
  []
 
 
-Overfull \hbox (114.26407pt too wide) in paragraph at lines 883--883
+Overfull \hbox (114.26407pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 We then set up the destination texture in its own framebuffer
 , and set the GL state to draw to this buffer in the blit in lines 11-13.[] 
  []
 
 
-Overfull \hbox (29.26285pt too wide) in paragraph at lines 883--883
+Overfull \hbox (29.26285pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Note that assertions are made to check for framebuffer comple
 teness. An imcomplete framebuffer cannot be drawn to.[] 
  []
 
-
-Overfull \hbox (161.01474pt too wide) in paragraph at lines 883--883
+[46]
+Overfull \hbox (161.01474pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Lines 19-24 implement the last stage of the downsampling meth
 od given in Y. It's enough to only blit the color buffer and do a linear downsa
 mple.[] 
  []
 
-[46]
-Overfull \hbox (790.02377pt too wide) in paragraph at lines 883--883
+
+Overfull \hbox (790.02377pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The GL\_LINEAR filter will perform a supersample resolve by t
 aking a weighted linear combination of the destination texels nearest neighbors
  in the source texture. Given that the source textures texels are equally space
@@ -1365,20 +1374,20 @@ d, this linear filter implements the average given in \ref{supersampling}.[]
  []
 
 
-Overfull \hbox (348.01743pt too wide) in paragraph at lines 883--883
+Overfull \hbox (348.01743pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 If the input texture is multisampled, and if the source and d
 estination rectangles are the same size, OpenGL will perform a multisample reso
 lve onto the destination framebuffer in hardware.[] 
  []
 
 
-Overfull \hbox (97.26382pt too wide) in paragraph at lines 883--883
+Overfull \hbox (97.26382pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 This situation can be improved twofold (or fourfold if render
 ing a stereoscopic image) by taking advantage of the geometry shader.[] 
  []
 
 
-Overfull \hbox (1232.03012pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1232.03012pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Instead of submitting a draw call for each viewport, it's pos
 sible to provide projection and view information to the geometry shader, which 
 can decide which projection matrix to apply to which view. It can then, for eac
@@ -1388,14 +1397,14 @@ h primitive it recieves, send one to each specified view in a single draw call.
  []
 
 
-Overfull \hbox (203.51535pt too wide) in paragraph at lines 883--883
+Overfull \hbox (203.51535pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 First, we need to effectively disable the vertex shader. It c
 an simply be redefined to pass through all its input data onwards towards the g
 eometry shader.[] 
  []
 
 
-Overfull \hbox (1508.28409pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1508.28409pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 It's possible to either simultaneously render to separate lay
 ers of a layered texture, or simultaneously render to two separate viewports wi
 thin the same, large texture. I use the latter approach for simplicity, and to 
@@ -1406,13 +1415,13 @@ pling.[]
  []
 
 
-Overfull \hbox (101.51389pt too wide) in paragraph at lines 883--883
+Overfull \hbox (101.51389pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 This optimisation requires the OpenGL extension \texttt{ARB\_
 viewport\_array} though it is ubiqitous across modern implementations.[] 
  []
 
 
-Overfull \hbox (828.27432pt too wide) in paragraph at lines 883--883
+Overfull \hbox (828.27432pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The above initialises a viewport array such that the first vi
 ewport occupies the left half of the texture, and the second the right half of 
 the screen. Viewport 0 will have a high field of view rendered to it, while Vie
@@ -1421,20 +1430,20 @@ e.\\[]
  []
 
 
-Overfull \hbox (37.76297pt too wide) in paragraph at lines 883--883
+Overfull \hbox (37.76297pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Next the geometry shader must be enabled and compiled. Below,
  I give a snippet of the relevant geometry shader code.[] 
  []
 
 [47]
-Overfull \hbox (390.51804pt too wide) in paragraph at lines 883--883
+Overfull \hbox (390.51804pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 As required by the geometry shader the input and output primi
 tive type are specified. This same code can be generalised for other primitive 
 types, but triangles are shown here being the general case.[] 
  []
 
 
-Overfull \hbox (1312.78128pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1312.78128pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Line 5 selects the projection matrix based on the looping var
 iable \texttt{i}. Then, colour, texture and normal information are passed on to
  the fragment shader for use in lighting and texturing. Finally the position of
@@ -1444,20 +1453,20 @@ plied to all vertices in the primitive.[]
  []
 
 
-Overfull \hbox (246.01596pt too wide) in paragraph at lines 883--883
+Overfull \hbox (246.01596pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The resulting wide framebuffer can then be resolved in the sa
 me way given in section \ref{resolving}. The right half of the screen can be bl
 itted onto the left half.[] 
  []
 
 
-Overfull \hbox (63.26334pt too wide) in paragraph at lines 883--883
+Overfull \hbox (63.26334pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Alternatively, you could perform a downsample in the barrel d
 istortion shader, though this alternative wasn't implemented.[] 
  []
 
 
-Overfull \hbox (1036.52731pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1036.52731pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Foveated rendering refers to the technique of tracking users 
 fovea, so that sampling can be dynamically increased at a fixation point, reduc
 ing resolution in the users peripheral. The technique shows promise because onl
@@ -1466,7 +1475,7 @@ resolution owing to the number of cones in the fovea.[]
  []
 
 
-Overfull \hbox (841.0245pt too wide) in paragraph at lines 883--883
+Overfull \hbox (841.0245pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Given eye-tracking information at the beginning of the frame,
  ideally a fixation point $(fix_x,fix_y)$ in normalised window coordinates, the
  technique using the geomtry shader in BRAH can be modified to perform foveated
@@ -1475,7 +1484,7 @@ Overfull \hbox (841.0245pt too wide) in paragraph at lines 883--883
  []
 
 
-Overfull \hbox (705.02255pt too wide) in paragraph at lines 883--883
+Overfull \hbox (705.02255pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 SASDASD defines the perspective projection matrix, given the 
 frustrum parameters $(near, far, top, bottom, left, right)$ of the full field o
 f view, a new projection can be used to render around our fixation point $(fix_
@@ -1483,7 +1492,7 @@ x, fix_y)$, it is defined by the following parameters:[]
  []
 
 
-Overfull \hbox (1113.02841pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1113.02841pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Where $r$ is a parameter that denotes the ratio of the screen
  space rendered at high resolution to the space rendered at a lower one. It sho
 uld be small enough such that the field of view around the fovea is rendered to
@@ -1492,7 +1501,7 @@ including the users proximity to the screen and the size of the screen.[]
  []
 
 
-Overfull \hbox (836.77444pt too wide) in paragraph at lines 883--883
+Overfull \hbox (836.77444pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 It's then possible to render to two separate viewports simula
 tneously. One for a supersampled image around the fovea, and the other for the 
 low resolution peripheral. A method of blending the two images together needs t
@@ -1501,7 +1510,7 @@ o be made, a blit operation onto the texture passed to the Oculus SDK here will
  []
 
 
-Overfull \hbox (853.77469pt too wide) in paragraph at lines 883--883
+Overfull \hbox (853.77469pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 To reduce artefacts introduced by foveated rendering, extra p
 rocessing - gaussian blur, increased contrast should be applied to the peripher
 al image. These weren't implemented, but this extension shows that foveated ren
@@ -1510,7 +1519,7 @@ in OpenGL.[]
  []
 
 
-Overfull \hbox (1113.02841pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1113.02841pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Thanks to the barrel distortion, the number of texels per pix
 el as we move away from the center of the image increases. And because of the n
 ature of graphics APIs, typical applications render to a higher resolution than
@@ -1519,7 +1528,7 @@ ed in the center, where texel density is relatively uniform and lowest.[]
  []
 
 
-Overfull \hbox (518.01987pt too wide) in paragraph at lines 883--883
+Overfull \hbox (518.01987pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Using the same technique for foveated rendering for a fixatio
 n point at the centre of the screen, it is possible to reduce the number of fra
 gments shaded, while still maintaining at least a texel per pixel density as a 
@@ -1527,7 +1536,7 @@ threshold.[]
  []
 
 
-Overfull \hbox (1363.78201pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1363.78201pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 This approach can be taken even further and render below the 
 single texel per pixel threshold, exploiting astigmasitm in the lens. My implem
 entation renders to two views of the same size, which should reduce fragment sh
@@ -1537,7 +1546,7 @@ ld in the peripheral, however, it's possible to increase the resolution here to
  []
 
 
-Overfull \hbox (1657.03622pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1657.03622pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 A blit operation here might be wasteful, given that the rende
 rtarget is not antialiased, and would require an upscale of the lower resolutio
 n texture, wasting GPU memory. So a better method would be to blend the two tex
@@ -1548,35 +1557,35 @@ SDK can be modified in the following way:[]
  []
 
 
-Overfull \hbox (297.0167pt too wide) in paragraph at lines 883--883
+Overfull \hbox (297.0167pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 While some optimisation was allowed for Subscreen Supersampli
 ng through the use of the geometry shader, harware support is needed to perform
  Subscreen Multisampling efficiently.[] 
  []
 
 
-Overfull \hbox (131.26431pt too wide) in paragraph at lines 883--883
+Overfull \hbox (131.26431pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 An API extension that allowed for simultaneous drawing to two
  targets could help to perform Subscreen Multisampling much more efficiently.[]
  
  []
 
 
-Overfull \hbox (144.0145pt too wide) in paragraph at lines 883--883
+Overfull \hbox (144.0145pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Multi-projection hardware is available for some GPU vendors, 
 and this would give a considerable speedup to most of the techniques given here
 .[] 
  []
 
 
-Overfull \hbox (161.01474pt too wide) in paragraph at lines 883--883
+Overfull \hbox (161.01474pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The disadvantage of the geometry shader approach to multi-res
 olution shading is the incurred cost of invoking the optional geometry shader s
 tage.[] 
  []
 
 
-Overfull \hbox (1980.04086pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1980.04086pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Two extensions to OpenGL have been proposed by Oculus, \textt
 t{OVR\_MULTIEW}, and \texttt{OVR\_MULTIVIEW2}. These extensions will allow mult
 iple elements of a 2D texture array to be rendered to simultaneously. Allowing 
@@ -1588,53 +1597,53 @@ ti-projection hardware in modern GPUs.[]
  []
 
 
-Overfull \hbox (20.76273pt too wide) in paragraph at lines 883--883
+Overfull \hbox (20.76273pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Regardless, a brief explaination of multi-resolution renderin
 g usign \texttt{OVR\_MULTIVIEW} will be given here.[] 
  []
 
 [48]
-Overfull \hbox (250.26602pt too wide) in paragraph at lines 883--883
+Overfull \hbox (250.26602pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 \item Then, a framebuffer must be generated, and the layered 
 texture attached to it. This can be done using the new function \texttt{glFrame
 bufferTextureMultiviewOVR}[] 
  []
 
 
-Overfull \hbox (97.26382pt too wide) in paragraph at lines 883--883
+Overfull \hbox (97.26382pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 glFramebufferTextureMultiviewOVR(GL_DRAW_FRAMEBUFFER, GL_COLO
 R_ATTACHMENT0, frameBufferTextureId, 0, 0, 2); attach layered texture[] 
  []
 
 
-Overfull \hbox (148.26456pt too wide) in paragraph at lines 883--883
+Overfull \hbox (148.26456pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 glFramebufferTextureMultiviewOVR(GL_DRAW_FRAMEBUFFER, GL_DEPT
 H_ATTACHMENT, frameBufferDepthTextureId, 0, 0, 2); //attach layered depth textu
 re[] 
  []
 
 
-Overfull \hbox (46.26309pt too wide) in paragraph at lines 883--883
+Overfull \hbox (46.26309pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 OVR_ASSERT(glCheckFramebufferStatus(GL_DRAW_FRAMEBUFFER) == G
 L_FRAMEBUFFER_COMPLETE); //assert framebuffer is complete[] 
  []
 
 
-Overfull \hbox (352.26749pt too wide) in paragraph at lines 883--883
+Overfull \hbox (352.26749pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Then, in a manner similar to selecting a projection matrix ba
 sed on viewport before, a projection can be selected based on the variable \tex
 ttt{gl\_ViewID\_OVR} in the vertex shader like so.[] 
  []
 
 
-Overfull \hbox (292.76663pt too wide) in paragraph at lines 883--883
+Overfull \hbox (292.76663pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 A user study was performed to asses the subjective quality ac
 ross the techniques implemented. The section BLAH describes the experiment, and
  section NRAH describes its results.[] 
  []
 
 
-Overfull \hbox (1002.52682pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1002.52682pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Subjects were given 3 different scenes to observe, each with 
 headtracking disabled, and headtracking enabled, across 3 different antialiasin
 g techniques and a control. They were: no antialiasing (control), Fullscreen mu
@@ -1643,7 +1652,7 @@ The latter two being implemented by myself.\\[]
  []
 
 
-Overfull \hbox (1198.02963pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1198.02963pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Test subjects were presented with two images, one after anoth
 er, and asked to choose the one with better image quality, though the interpret
 ation of better quality was left to the subject. All permutations of image comp
@@ -1653,14 +1662,14 @@ heir choice.[]
  []
 
 
-Overfull \hbox (263.0162pt too wide) in paragraph at lines 883--883
+Overfull \hbox (263.0162pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Results varied slightly when headtracking was disabled, possi
 bly owing to the salience of temporal artefacts at polygon edges (flickering) w
 hen headtracking was enabled.[] 
  []
 
 
-Overfull \hbox (1827.03867pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1827.03867pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Subjects Subscreen Supersampling generally performed poorly h
 ere, despite offering the best texture filtering of all the techniques. Users c
 omplained that the image was noticably, sharp at the centre, and were able to d
@@ -1672,7 +1681,7 @@ g.[]
  []
 
 
-Overfull \hbox (1538.03452pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1538.03452pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Fullscreen Multisampling and Subscreen Multisampling were lar
 gely indistinguishable, most users had difficulty choosing between them and som
 e made contradictary choices when the image order was reversed. This is might b
@@ -1683,7 +1692,7 @@ ct was based.[]
  []
 
 
-Overfull \hbox (4228.32315pt too wide) in paragraph at lines 883--883
+Overfull \hbox (4228.32315pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 While a user study performes provides a robust assesment of i
 mage quality across different approaches, Computational metrics for objective i
 mage quality assesment can be essential. The performance of the system determin
@@ -1702,14 +1711,14 @@ ndent setting.[]
  []
 
 [49]
-Overfull \hbox (450.01889pt too wide) in paragraph at lines 883--883
+Overfull \hbox (450.01889pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 A reduction in the number of API calls we send to the GPU can
  contribute to better performance of the system. Every API call needs to be sen
 d to the GPU and validated, taking hundreds to thousands of instructions.[] 
  []
 
 
-Overfull \hbox (815.52414pt too wide) in paragraph at lines 883--883
+Overfull \hbox (815.52414pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Subscreen Multisampling could not be optimised in the same wa
 y as Subscreen Supersampling due to the OpenGL constraint that Complete Framebu
 ffers' Layers must have the same number of samples. Therefore it was neccesary 
@@ -1718,21 +1727,21 @@ to render the scene twice, explaining why it has twice the number of draw calls
  []
 
 
-Overfull \hbox (250.26602pt too wide) in paragraph at lines 883--883
+Overfull \hbox (250.26602pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Subscreen Supersampling has one more draw call than the other
 s because the blending of the two image in this implementation was performed vi
 a an extra blit operation.[] 
  []
 
 
-Overfull \hbox (407.51828pt too wide) in paragraph at lines 883--883
+Overfull \hbox (407.51828pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Fragment shader invocations generally increase linearly with 
 the size of image. If our application bottleneck is at the fragment shader stag
 e, we will reap performance benefits by shading less fragments.[] 
  []
 
 
-Overfull \hbox (594.52097pt too wide) in paragraph at lines 883--883
+Overfull \hbox (594.52097pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 As expected, significantly fewer fragments are shaded in subs
 creen analogues of fullscreen antialiasing techniques. In this instance Subscre
 en Multisampling shades 7.6\% fewer fragments, while Subscreen Supersampling sh
@@ -1740,7 +1749,7 @@ ades 49.5\% fewer fragments.[]
  []
 
 
-Overfull \hbox (1776.03793pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1776.03793pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Suprisingly, less time is spent shading fragments in Subscree
 n Supersampling than in Subscreen Multisampling even though the former invokes 
 the same shader code roughly 1 million times more. This can be attributed to th
@@ -1751,13 +1760,13 @@ xploit caches more fully where all invocations happen in one batch.\\[]
  []
 
 
-Overfull \hbox (76.01352pt too wide) in paragraph at lines 883--883
+Overfull \hbox (76.01352pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Subscreen Supersampling also outperforms its Fullscreen count
 erpart, achieving a 33.3\% speedup in the Fragment Shader stage.[] 
  []
 
 [50]
-Overfull \hbox (790.02377pt too wide) in paragraph at lines 883--883
+Overfull \hbox (790.02377pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 By capturing views of a scene using different rendering techn
 iques and subtracting them, we can observe artefacts that were present in the s
 cene before and after antialiasing was applied. The image differences below hav
@@ -1765,13 +1774,13 @@ e been thresholded, to make artefacts that have been removed more visible.[]
  []
 
 
-Overfull \hbox (12.2626pt too wide) in paragraph at lines 883--883
+Overfull \hbox (12.2626pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 \caption{Image of the tree scene showing the thresholded diff
 erence between Subscreen SSAA and Subscreen MSAA}[] 
  []
 
 
-Overfull \hbox (1176.77933pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1176.77933pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Using Supersampled Antialiasing, we can see texture filtering
  has improved. While multisampling only removes artefacts at polygon boundaries
 . Tree leaves inside of polygons are represented using alpha channel. Supersamp
@@ -1781,7 +1790,7 @@ not, hence the large difference between supersampling and multisampling in this
  []
 
 
-Overfull \hbox (1236.28018pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1236.28018pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Subscreen MSAA works as expected here, artefacts at polygon e
 dges do not differ between fullscreen and subscreen. Interestingly, there is a 
 minute difference in texturing between the two approaches. An explaination for 
@@ -1791,14 +1800,14 @@ section \ref{matrix}.[]
  []
 
 
-Overfull \hbox (424.51852pt too wide) in paragraph at lines 883--883
+Overfull \hbox (424.51852pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Because of the barrel distortion applied in post-processing O
 culus recommends rendering at a resolution \%40 larger than the display permits
  to achieve an acceptable pixel density in the centre of the image.[] 
  []
 
 
-Overfull \hbox (730.52292pt too wide) in paragraph at lines 883--883
+Overfull \hbox (730.52292pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 A large problem facing the traditional barrel distortion appl
 ied in post-processing is a non-uniform pixel density across the image. Futherm
 ore, pixel density is highest at the extremeties, where gaze is less likely to 
@@ -1806,7 +1815,7 @@ be fixed and lens astigmatism will have the greatest impact.[]
  []
 
 
-Overfull \hbox (2179.79373pt too wide) in paragraph at lines 883--883
+Overfull \hbox (2179.79373pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 By only rendering at full resolution in the centre of the ima
 ge, pixel density is improved at the center, while decreasing the pixel density
  in the edges of the image. The number of fragments that we shade is reduced by
@@ -1818,8 +1827,8 @@ ould expect a considerable decrease in the time to present a frame using this m
 ethod.[] 
  []
 
-
-Overfull \hbox (1941.79031pt too wide) in paragraph at lines 883--883
+[51]
+Overfull \hbox (1941.79031pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 This project's aim was to investigate common antialiasing tec
 hniques in the context of Virtual Reality. Two antialiasing techniques were dev
 eloped and tested in a production demo, and one of these techniques was extende
@@ -1830,14 +1839,14 @@ reas. These techniques were profiled to assess their performance and image qual
 ity was assessed objectively.[] 
  []
 
-[51]
-Overfull \hbox (67.5134pt too wide) in paragraph at lines 883--883
+
+Overfull \hbox (67.5134pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 This shows promise where fragment shaders are becoming more c
 omplex and resolutions in Virtual Reality displays increase.\\[] 
  []
 
 
-Overfull \hbox (960.02621pt too wide) in paragraph at lines 883--883
+Overfull \hbox (960.02621pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Though Subscreen Multisampling was almost indistinguishable f
 rom its fullscreen counterpart, implementation was not parallelisable because o
 f limitations of the OpenGL API, and would be more inefficient for most applica
@@ -1846,7 +1855,7 @@ g is particularly time consuming.\\[]
  []
 
 
-Overfull \hbox (556.27042pt too wide) in paragraph at lines 883--883
+Overfull \hbox (556.27042pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 Subscreen Supersampling was more visibly jarring, increased t
 exture filtering in the centre of the image along with noticable alpha culling 
 improvement meant that this technique was usually distinguishable from its full
@@ -1854,14 +1863,14 @@ screen counterpart.[]
  []
 
 
-Overfull \hbox (127.01425pt too wide) in paragraph at lines 883--883
+Overfull \hbox (127.01425pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 However, it's implementation shaded 49.5\% fewer fragments an
 d was parralelisable allowing for processing time to be cut significantly.\\[] 
 
  []
 
 
-Overfull \hbox (1844.03891pt too wide) in paragraph at lines 883--883
+Overfull \hbox (1844.03891pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 The second extension allowed for 49.5\% fewer fragments to be
  shaded than standard rendering, while improving the pixel density in the centr
 e of the image, where it is usually lowest and decreasing pixel density at the 
@@ -1873,14 +1882,14 @@ ses.\\[]
  []
 
 
-Overfull \hbox (229.01572pt too wide) in paragraph at lines 883--883
+Overfull \hbox (229.01572pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 These techniques were written to be applicable to any OpenGL 
 forward renderer. They were first written in a toy renderer and then applied to
  a production demo.\\[] 
  []
 
 
-Overfull \hbox (739.02304pt too wide) in paragraph at lines 883--883
+Overfull \hbox (739.02304pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 While the method using the geometry shader is somewhat invasi
 ve to the vertex shader - I gave an example of future API functionality that ca
 n implement the same method, while being almost transparent to the vertex shade
@@ -1888,7 +1897,7 @@ r, and without the need of invoking the geometry shader stage.[]
  []
 
 
-Overfull \hbox (2375.29654pt too wide) in paragraph at lines 883--883
+Overfull \hbox (2375.29654pt too wide) in paragraph at lines 885--885
 []\OT1/cmtt/m/n/8 When asked about the performance gains Foveated Rendering wou
 ld bring, John Carmark (Oculus CTO, Lead programmer of Doom, Quake) said: "Toda
 y, it might be a net negative due to rendering additional views. It will only b
@@ -1902,25 +1911,25 @@ rojection in a platform independent setting, allowing for savings to be made in
 
 File: proposal.tex  (verbatim)
 [52]
-Overfull \hbox (46.26309pt too wide) in paragraph at lines 886--886
+Overfull \hbox (46.26309pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 A problem with modern Virtual Reality headsets is that they u
 se low resolution displays to cover a huge Field of View.[] 
  []
 
 
-Overfull \hbox (16.51266pt too wide) in paragraph at lines 886--886
+Overfull \hbox (16.51266pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 Graphical artefacts, such as moir\'e patterns and pixellated 
 edges (jaggies), are pronounced on these displays.[] 
  []
 
 
-Overfull \hbox (25.01279pt too wide) in paragraph at lines 886--886
+Overfull \hbox (25.01279pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 A good technique to ameliorate these artefacts if super-sampl
 ing, but super-sampling is often too expensive in VR[] 
  []
 
 
-Overfull \hbox (994.0267pt too wide) in paragraph at lines 886--886
+Overfull \hbox (994.0267pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 Unfortunately, modern consumer headsets suffer from astigmati
 sm because of a single lens between the viewer and the display. We can't remove
  these distortions without (another) anastigmatic lens, however we do currently
@@ -1929,7 +1938,7 @@ en the edges of the image become distorted.[]
  []
 
 
-Overfull \hbox (696.52243pt too wide) in paragraph at lines 886--886
+Overfull \hbox (696.52243pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 and sampling less as we move towards the blurrier edges (Figu
 re \ref{blurfig}). This project aims to extend an existing open source system t
 o include this optimisation, and to measure the impact on both the performance 
@@ -1937,7 +1946,7 @@ of the system, and on the image quality to the user.[]
  []
 
 
-Overfull \hbox (960.02621pt too wide) in paragraph at lines 886--886
+Overfull \hbox (960.02621pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 Novel anti-aliasing techniques, such as subpixel-reconstructi
 on and temporal antialiasing, are still actively being developed. I intend to b
 uild on Intel's research[1] into a hybrid raytracing/rasterizing VR renderer by
@@ -1946,7 +1955,7 @@ wing for GPU hardware acceleration.[]
  []
 
 
-Overfull \hbox (828.27432pt too wide) in paragraph at lines 886--886
+Overfull \hbox (828.27432pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 Free and extensible renderers exist for VR headsets, such as 
 Unity. However I will be extending the existing open-source OSVR-RenderManager,
  which will allow me to easily create separate reusable demos to show off certa
@@ -1955,13 +1964,13 @@ ine.[]
  []
 
 
-Overfull \hbox (25.01279pt too wide) in paragraph at lines 886--886
+Overfull \hbox (25.01279pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 OSVR is compatible with all modern VR headsets, and supports 
 all modern graphics APIs (OpenGL, Vulkan, Direct3D).[] 
  []
 
 
-Overfull \hbox (994.0267pt too wide) in paragraph at lines 886--886
+Overfull \hbox (994.0267pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 I have good experience in C/C++ through small projects and th
 e IB C/C++ course. I'm familiar with the graphics pipeline and have experience 
 in WebGL, with some experience writing vertex and fragment shaders in OpenGL. I
@@ -1970,7 +1979,7 @@ in WebGL, with some experience writing vertex and fragment shaders in OpenGL. I
  []
 
 
-Overfull \hbox (798.5239pt too wide) in paragraph at lines 886--886
+Overfull \hbox (798.5239pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 For this project I shall be using my own quad-core machine wi
 th a VR capable GPU. I will also be using an Occulus Rift Development Kit 2 [3]
 (lent to me by the Hackers at Cambridge group) for testing and user studies. So
@@ -1979,14 +1988,14 @@ urce backups will be made both to a private Github repository and MCS daily.[]
  []
 
 
-Overfull \hbox (348.01743pt too wide) in paragraph at lines 886--886
+Overfull \hbox (348.01743pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 \item \textbf{Setup} Fork the existing Open Source Virtual Re
 ality-RenderManager repository. Create a daily cronjob to backup this to github
  and MCS. Research my chosen renderer's pipeline.[] 
  []
 
 
-Overfull \hbox (496.76956pt too wide) in paragraph at lines 886--886
+Overfull \hbox (496.76956pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 \item \textbf {Core development} Develop/modify a simple supe
 r-sampling algorithm. Extend the algorithm to allow for areas of the screen to 
 be ignored. Further extend to seamlessly composite draws that we sample differe
@@ -1994,21 +2003,21 @@ ntly.[]
  []
 
 
-Overfull \hbox (207.76541pt too wide) in paragraph at lines 886--886
+Overfull \hbox (207.76541pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 \item \textbf {Demo creation} Create a couple of OpenGL demos
  that highlight both moire patterns and pixellated edges, for use in visual qua
 lity experiment.[] 
  []
 
 
-Overfull \hbox (203.51535pt too wide) in paragraph at lines 886--886
+Overfull \hbox (203.51535pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 \item \textbf {Optimisation} Make use of a GPU profiler to de
 termine any redundancy or inefficiency. Refactor the algorithm to make it easil
 y configurable.[] 
  []
 
-
-Overfull \hbox (1070.5278pt too wide) in paragraph at lines 886--886
+[53]
+Overfull \hbox (1070.5278pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 \item \textbf {Evaluation} Make use of benchmarking/profiling
  software to evaluate the algorithm with regards to performance. Perform visual
  quality experiment to evaluate the impact of the algorithm on image quality to
@@ -2016,66 +2025,66 @@ Overfull \hbox (1070.5278pt too wide) in paragraph at lines 886--886
 roach against no anti-aliasing, and fullscreen anti-aliasing.[] 
  []
 
-[53]
-Overfull \hbox (54.76321pt too wide) in paragraph at lines 886--886
+
+Overfull \hbox (54.76321pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 \item Provide an alternative anti-aliasing technique that suf
 fers only negligible loss in image quality to the end user.[] 
  []
 
 
-Overfull \hbox (373.51779pt too wide) in paragraph at lines 886--886
+Overfull \hbox (373.51779pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 \item Evaluate both full screen antialiasing, my selective an
 tialiasing approach, and no antialiasing from a user perspective by constructin
 g demos that show off artefacts masked by antialiasing.[] 
  []
 
 
-Overfull \hbox (267.26627pt too wide) in paragraph at lines 886--886
+Overfull \hbox (267.26627pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 \item Research using a heuristic to determine salient objects
  or regions in the scene, and extend my algorithm to more closely resemble a fo
 veated rendering[2] technique.[] 
  []
 
 
-Overfull \hbox (59.01328pt too wide) in paragraph at lines 886--886
+Overfull \hbox (59.01328pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 \item Further reduce the requirement to super-sample by deter
 mining which objects/samples can be shared between each eye.[] 
  []
 
 
-Overfull \hbox (343.76736pt too wide) in paragraph at lines 886--886
+Overfull \hbox (343.76736pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 \item \textbf{Michaelmas weeks 2--4} Start project Setup, Beg
 in refreshing knowledge on OpenGL. Research the rendering pipeline of my chosen
  renderer. Formulate an implementation strategy.[] 
  []
 
 
-Overfull \hbox (220.5156pt too wide) in paragraph at lines 886--886
+Overfull \hbox (220.5156pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 \item \textbf{Michaelmas weeks 5--6} Complete project setup. 
 Test writing custom code in the renderer, start implementation of selective ant
 ialiasing algorithm[] 
  []
 
 
-Overfull \hbox (42.01303pt too wide) in paragraph at lines 886--886
+Overfull \hbox (42.01303pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 \item \textbf{Lent weeks 6--8} Finish user studies, start per
 formance analysis. Write up User studies in disseration.[] 
  []
 
 
-Overfull \hbox (16.51266pt too wide) in paragraph at lines 886--886
+Overfull \hbox (16.51266pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 \item \textbf{Easter term 0--2:}  Complete dissertation, proo
 f read. Submit to DoS and supervisor for comments.[] 
  []
 
-
-Overfull \hbox (16.51266pt too wide) in paragraph at lines 886--886
+[54]
+Overfull \hbox (16.51266pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 \item Using Astigmatism in Wide Angle HMDs to Improve Renderi
 ng D. Pohl, T. Bolkart, S. Nickels, O. Grau, 2015.[] 
  []
 
-[54]
-Overfull \hbox (8.01254pt too wide) in paragraph at lines 886--886
+
+Overfull \hbox (8.01254pt too wide) in paragraph at lines 888--888
 []\OT1/cmtt/m/n/8 \item Foveated 3d graphics. B. Guenter, M. Finch, S. Drucker,
  D. Tan, and J. Snyder. ACM SIGGRAPH Asia, 2012.[] 
  []
@@ -2103,31 +2112,28 @@ in-ing which ob-
  []
 
 [61])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 901.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 903.
  [62]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 901.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 903.
  (./diss.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 901.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 901.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 903.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 903.
 Package rerunfilecheck Info: File `diss.out' has not changed.
 (rerunfilecheck)             Checksum: 2BBE2B9DAEC4EAD65F5D1B4778323299;3762.
 
 
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 901.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 903.
  ) 
 Here is how much of TeX's memory you used:
- 8008 strings out of 493029
- 120667 string characters out of 6136234
- 222741 words of memory out of 5000000
- 11272 multiletter control sequences out of 15000+600000
+ 8019 strings out of 493029
+ 120917 string characters out of 6136234
+ 222805 words of memory out of 5000000
+ 11281 multiletter control sequences out of 15000+600000
  13159 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,11n,40p,1151b,498s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,11n,40p,1151b,494s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
@@ -2143,10 +2149,10 @@ m/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on diss.pdf (62 pages, 6414715 bytes).
+Output written on diss.pdf (62 pages, 6415605 bytes).
 PDF statistics:
- 827 PDF objects out of 1000 (max. 8388607)
- 703 compressed objects within 8 object streams
+ 828 PDF objects out of 1000 (max. 8388607)
+ 704 compressed objects within 8 object streams
  181 named destinations out of 1000 (max. 500000)
  525 words of extra memory for PDF output out of 10000 (max. 10000000)
 
