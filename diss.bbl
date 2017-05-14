@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{armDeveloper}
 {ARM Mali Virtual Reality SDK}.
@@ -7,6 +7,18 @@
 \bibitem{oculus}
 {Oculus VR}.
 \newblock \url{http://www.oculus.com}, 2014.
+
+\bibitem{abrash}
+Michael Abrash.
+\newblock When it comes to resolution, it's all relative.
+\newblock
+  \url{http://blogs.valvesoftware.com/abrash/when-it-comes-to-resolution-its-all-relative/}.
+
+\bibitem{rafalPaper}
+Vamsi~Kiran Adhikarla, Marek Vinkler, Denis Sumin, Rafał~K. Mantiuk, Karol
+  Myszkowski1, Hans-Peter Seidel, and Piotr Didyk.
+\newblock Towards a quality metric for dense light fields.
+\newblock {\em arXiv preprint arXiv:1704.07576}, 2017.
 
 \bibitem{OVRmultiview}
 Cass Everitt.
@@ -24,6 +36,11 @@ Cass Everitt.
 Brian Kehrer.
 \newblock {Cardboard Design Lab}.
 \newblock \url{https://developers.google.com/vr/unity/}.
+
+\bibitem{pwcomp}
+Dr.~Rafal Mantiuk.
+\newblock Thurstonian scaling for pair-wise comparison experiments.
+\newblock https://github.com/mantiuk/pwcmp, 2016.
 
 \bibitem{multiResShading}
 {NVIDIA} Nathan~Reed.

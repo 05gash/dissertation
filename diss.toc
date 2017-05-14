@@ -41,10 +41,13 @@
 \contentsline {section}{\numberline {4.5}Removal of artefacts}{34}{section.4.5}
 \contentsline {subsection}{\numberline {4.5.1}Subscreen Supersampling}{34}{subsection.4.5.1}
 \contentsline {subsection}{\numberline {4.5.2}Subscreen Multisampling}{35}{subsection.4.5.2}
-\contentsline {section}{\numberline {4.6}Extension 1.5 Evaluation}{36}{section.4.6}
-\contentsline {chapter}{\numberline {5}Conclusion}{37}{chapter.5}
-\contentsline {section}{\numberline {5.1}Achievements}{37}{section.5.1}
-\contentsline {section}{\numberline {5.2}Final Remarks}{38}{section.5.2}
-\contentsline {chapter}{Bibliography}{38}{section.5.2}
-\contentsline {chapter}{\numberline {A}TODO}{41}{appendix.A}
-\contentsline {chapter}{\numberline {B}Project Proposal}{43}{appendix.B}
+\contentsline {section}{\numberline {4.6}Subjective Assesment}{35}{section.4.6}
+\contentsline {section}{\numberline {4.7}User Study Setup}{35}{section.4.7}
+\contentsline {section}{\numberline {4.8}User study results}{36}{section.4.8}
+\contentsline {section}{\numberline {4.9}Extension 1 Evaluation}{38}{section.4.9}
+\contentsline {chapter}{\numberline {5}Conclusion}{39}{chapter.5}
+\contentsline {section}{\numberline {5.1}Achievements}{39}{section.5.1}
+\contentsline {section}{\numberline {5.2}Final Remarks}{40}{section.5.2}
+\contentsline {chapter}{Bibliography}{40}{section.5.2}
+\contentsline {chapter}{\numberline {A}TODO}{43}{appendix.A}
+\contentsline {chapter}{\numberline {B}Project Proposal}{45}{appendix.B}
