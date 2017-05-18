@@ -1,6 +1,6 @@
 \contentsline {chapter}{\numberline {1}Introduction}{9}{chapter.1}
 \contentsline {section}{\numberline {1.1}Background}{9}{section.1.1}
-\contentsline {section}{\numberline {1.2}Common Antialiasing Approaches}{9}{section.1.2}
+\contentsline {section}{\numberline {1.2}Common Anti-aliasing Approaches}{9}{section.1.2}
 \contentsline {section}{\numberline {1.3}Virtual Reality Headmounted Displays}{10}{section.1.3}
 \contentsline {chapter}{\numberline {2}Preparation}{13}{chapter.2}
 \contentsline {section}{\numberline {2.1}Previous Work}{13}{section.2.1}
@@ -29,25 +29,26 @@
 \contentsline {section}{\numberline {3.10}Amplifying Geometry}{24}{section.3.10}
 \contentsline {subsection}{\numberline {3.10.1}The Geometry Shader}{24}{subsection.3.10.1}
 \contentsline {section}{\numberline {3.11}Extension 1: Non-uniform Texel Density}{26}{section.3.11}
-\contentsline {subsection}{\numberline {3.11.1}Blending the two textures}{26}{subsection.3.11.1}
+\contentsline {subsection}{\numberline {3.11.1}Blending the two textures}{27}{subsection.3.11.1}
 \contentsline {section}{\numberline {3.12}Stereoscopic rendering}{28}{section.3.12}
 \contentsline {section}{\numberline {3.13}Limitations}{28}{section.3.13}
-\contentsline {section}{\numberline {3.14}Future Hardware Support}{28}{section.3.14}
+\contentsline {section}{\numberline {3.14}Future Hardware Support}{29}{section.3.14}
 \contentsline {chapter}{\numberline {4}Evaluation}{31}{chapter.4}
 \contentsline {section}{\numberline {4.1}Objective Assessment}{31}{section.4.1}
 \contentsline {section}{\numberline {4.2}API calls}{31}{section.4.2}
 \contentsline {section}{\numberline {4.3}Fragment shader invocations}{32}{section.4.3}
 \contentsline {section}{\numberline {4.4}Fragment Shader Timing}{33}{section.4.4}
-\contentsline {section}{\numberline {4.5}Removal of artefacts}{34}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Subscreen Supersampling}{34}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Subscreen Multisampling}{35}{subsection.4.5.2}
-\contentsline {section}{\numberline {4.6}Subjective Assesment}{35}{section.4.6}
-\contentsline {section}{\numberline {4.7}User Study Setup}{35}{section.4.7}
-\contentsline {section}{\numberline {4.8}User study results}{36}{section.4.8}
-\contentsline {section}{\numberline {4.9}Extension 1 Evaluation}{38}{section.4.9}
-\contentsline {chapter}{\numberline {5}Conclusion}{39}{chapter.5}
-\contentsline {section}{\numberline {5.1}Achievements}{39}{section.5.1}
-\contentsline {section}{\numberline {5.2}Final Remarks}{40}{section.5.2}
-\contentsline {chapter}{Bibliography}{40}{section.5.2}
-\contentsline {chapter}{\numberline {A}TODO}{43}{appendix.A}
-\contentsline {chapter}{\numberline {B}Project Proposal}{45}{appendix.B}
+\contentsline {section}{\numberline {4.5}Geometry Processing}{33}{section.4.5}
+\contentsline {section}{\numberline {4.6}Removal of artefacts}{35}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Subscreen Supersampling}{35}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}Subscreen Multisampling}{36}{subsection.4.6.2}
+\contentsline {section}{\numberline {4.7}Subjective Assessment}{36}{section.4.7}
+\contentsline {section}{\numberline {4.8}User Study Setup}{36}{section.4.8}
+\contentsline {section}{\numberline {4.9}User study results}{37}{section.4.9}
+\contentsline {section}{\numberline {4.10}Extension 1 Evaluation}{39}{section.4.10}
+\contentsline {chapter}{\numberline {5}Conclusion}{41}{chapter.5}
+\contentsline {section}{\numberline {5.1}Achievements}{41}{section.5.1}
+\contentsline {section}{\numberline {5.2}Final Remarks}{42}{section.5.2}
+\contentsline {chapter}{Bibliography}{42}{section.5.2}
+\contentsline {chapter}{\numberline {A}TODO}{45}{appendix.A}
+\contentsline {chapter}{\numberline {B}Project Proposal}{47}{appendix.B}

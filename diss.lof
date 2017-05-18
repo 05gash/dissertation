@@ -10,15 +10,16 @@
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Shows a high level process of achieving Subscreen Antialiasing.\relax }}{20}{figure.caption.14}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Shows the field of view for each eye. Not shown are the fov\_Up and fov\_Down parameters. IPD represents the Inter Pupillary Distance of the user - The distance between the center of each eye $\approx 66mm$.\relax }}{21}{figure.caption.15}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Shows the high level process of rendering to two resolutions with one draw call\relax }}{25}{figure.caption.16}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Shows the texture coordinates for the low field of view texture given on the outer rectangle. The low field of view texture can then be sampled correctly in the fragment shader.\relax }}{27}{figure.caption.17}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Shows the texel per pixel density across a barrel distorted image at the recommended Oculus DK2 texture size.\relax }}{26}{figure.caption.17}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Shows the texture coordinates for the low field of view texture given on the outer rectangle. The low field of view texture can then be sampled correctly in the fragment shader.\relax }}{28}{figure.caption.18}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Shows the number fragment shader invocations across the different techniques.\relax }}{32}{figure.caption.18}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Shows the time taken to process fragments across the techniques.\relax }}{33}{figure.caption.19}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Image of the tree scene showing the thresholded difference between Subscreen SSAA and Subscreen MSAA\relax }}{34}{figure.caption.20}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Highlights aliasing that is removed from both Subscreen MSAA and Fullscreen MSAA\relax }}{35}{figure.caption.21}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Shows the Just-Objectionable-Difference(JOD) of three anti-aliasing techniques from a reference image of Fullscreen Multisampling. Greater JOD implies greater image quality to the reference.\relax }}{36}{figure.caption.22}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Shows the texel to pixel density across a barrel distorted image.\relax }}{38}{figure.caption.23}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Shows the number fragment shader invocations across the different techniques.\relax }}{32}{figure.caption.19}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Shows the time taken to process fragments across the techniques.\relax }}{33}{figure.caption.20}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Image of the tree scene showing the thresholded difference between Subscreen SSAA and Subscreen MSAA\relax }}{35}{figure.caption.21}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Highlights aliasing that is removed from both Subscreen MSAA and Fullscreen MSAA\relax }}{36}{figure.caption.22}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Shows the Just-Objectionable-Difference(JOD) of three anti-aliasing techniques from a reference image of Fullscreen Multisampling. Greater JOD implies greater image quality to the reference.\relax }}{37}{figure.caption.23}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Shows the texel to pixel density across a barrel distorted image.\relax }}{39}{figure.caption.24}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces The center of the perceived image is sharp, while the edges get progressively blurrier\relax }}{46}{figure.caption.27}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces The center of the perceived image is sharp, while the edges get progressively blurrier\relax }}{48}{figure.caption.27}

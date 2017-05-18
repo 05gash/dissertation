@@ -23,8 +23,8 @@
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {1.1}Background}{9}{section.1.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.2}Common Antialiasing Approaches}{9}{section.1.2}}
-\newlabel{supersampling}{{1.2}{9}{Common Antialiasing Approaches}{section.1.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Common Anti-aliasing Approaches}{9}{section.1.2}}
+\newlabel{supersampling}{{1.2}{9}{Common Anti-aliasing Approaches}{section.1.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces An example of 4x Supersampling for a single pixel.\relax }}{10}{figure.caption.8}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{downsample}{{1.1}{10}{An example of 4x Supersampling for a single pixel.\relax }{figure.caption.8}{}}
@@ -86,66 +86,71 @@
 \citation{arbViewport}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Shows the high level process of rendering to two resolutions with one draw call\relax }}{25}{figure.caption.16}}
 \newlabel{epsfig1}{{3.5}{25}{Shows the high level process of rendering to two resolutions with one draw call\relax }{figure.caption.16}{}}
+\citation{vertexDisplacement}
 \@writefile{toc}{\contentsline {section}{\numberline {3.11}Extension 1: Non-uniform Texel Density}{26}{section.3.11}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.11.1}Blending the two textures}{26}{subsection.3.11.1}}
-\newlabel{blending}{{3.11.1}{26}{Blending the two textures}{subsection.3.11.1}{}}
+\newlabel{epsfig1}{{\caption@xref {epsfig1}{ on input line 630}}{26}{Extension 1: Non-uniform Texel Density}{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Shows the texel per pixel density across a barrel distorted image at the recommended Oculus DK2 texture size.\relax }}{26}{figure.caption.17}}
+\newlabel{fig:barreldensity1}{{3.6}{26}{Shows the texel per pixel density across a barrel distorted image at the recommended Oculus DK2 texture size.\relax }{figure.caption.17}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.11.1}Blending the two textures}{27}{subsection.3.11.1}}
+\newlabel{blending}{{3.11.1}{27}{Blending the two textures}{subsection.3.11.1}{}}
 \citation{armDeveloper}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Shows the texture coordinates for the low field of view texture given on the outer rectangle. The low field of view texture can then be sampled correctly in the fragment shader.\relax }}{27}{figure.caption.17}}
-\newlabel{fig:texblend}{{3.6}{27}{Shows the texture coordinates for the low field of view texture given on the outer rectangle. The low field of view texture can then be sampled correctly in the fragment shader.\relax }{figure.caption.17}{}}
 \citation{multiResShading}
-\citation{OVRmultiview}
-\citation{OVRmultiview2}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Shows the texture coordinates for the low field of view texture given on the outer rectangle. The low field of view texture can then be sampled correctly in the fragment shader.\relax }}{28}{figure.caption.18}}
+\newlabel{fig:texblend}{{3.7}{28}{Shows the texture coordinates for the low field of view texture given on the outer rectangle. The low field of view texture can then be sampled correctly in the fragment shader.\relax }{figure.caption.18}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.12}Stereoscopic rendering}{28}{section.3.12}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.13}Limitations}{28}{section.3.13}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.14}Future Hardware Support}{28}{section.3.14}}
+\citation{OVRmultiview}
+\citation{OVRmultiview2}
+\@writefile{toc}{\contentsline {section}{\numberline {3.14}Future Hardware Support}{29}{section.3.14}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {4}Evaluation}{31}{chapter.4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {4.1}Objective Assessment}{31}{section.4.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.2}API calls}{31}{section.4.2}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.3}Fragment shader invocations}{32}{section.4.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Shows the number fragment shader invocations across the different techniques.\relax }}{32}{figure.caption.18}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Shows the number fragment shader invocations across the different techniques.\relax }}{32}{figure.caption.19}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.4}Fragment Shader Timing}{33}{section.4.4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Shows the time taken to process fragments across the techniques.\relax }}{33}{figure.caption.19}}
-\newlabel{fig:subim2}{{4.3a}{34}{The original Scene\relax }{figure.caption.20}{}}
-\newlabel{sub@fig:subim2}{{a}{34}{The original Scene\relax }{figure.caption.20}{}}
-\newlabel{ssaatree}{{4.3b}{34}{Fullscreen MSAA - Subscreen SSAA\relax }{figure.caption.20}{}}
-\newlabel{sub@ssaatree}{{b}{34}{Fullscreen MSAA - Subscreen SSAA\relax }{figure.caption.20}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Image of the tree scene showing the thresholded difference between Subscreen SSAA and Subscreen MSAA\relax }}{34}{figure.caption.20}}
-\newlabel{fig:supersample}{{4.3}{34}{Image of the tree scene showing the thresholded difference between Subscreen SSAA and Subscreen MSAA\relax }{figure.caption.20}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Removal of artefacts}{34}{section.4.5}}
-\newlabel{removeArtefacts}{{4.5}{34}{Removal of artefacts}{section.4.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Subscreen Supersampling}{34}{subsection.4.5.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}Subscreen Multisampling}{35}{subsection.4.5.2}}
-\newlabel{fig:subim2}{{4.4a}{35}{The original Scene\relax }{figure.caption.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Shows the time taken to process fragments across the techniques.\relax }}{33}{figure.caption.20}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Geometry Processing}{33}{section.4.5}}
+\newlabel{fig:subim2}{{4.3a}{35}{The original Scene\relax }{figure.caption.21}{}}
 \newlabel{sub@fig:subim2}{{a}{35}{The original Scene\relax }{figure.caption.21}{}}
-\newlabel{fig:subim1}{{4.4b}{35}{Fullscreen MSAA - Subscreen MSAA\relax }{figure.caption.21}{}}
-\newlabel{sub@fig:subim1}{{b}{35}{Fullscreen MSAA - Subscreen MSAA\relax }{figure.caption.21}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Highlights aliasing that is removed from both Subscreen MSAA and Fullscreen MSAA\relax }}{35}{figure.caption.21}}
-\newlabel{fig:multisample}{{4.4}{35}{Highlights aliasing that is removed from both Subscreen MSAA and Fullscreen MSAA\relax }{figure.caption.21}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.6}Subjective Assesment}{35}{section.4.6}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.7}User Study Setup}{35}{section.4.7}}
-\newlabel{studySetup}{{4.7}{35}{User Study Setup}{section.4.7}{}}
+\newlabel{ssaatree}{{4.3b}{35}{Fullscreen MSAA - Subscreen SSAA\relax }{figure.caption.21}{}}
+\newlabel{sub@ssaatree}{{b}{35}{Fullscreen MSAA - Subscreen SSAA\relax }{figure.caption.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Image of the tree scene showing the thresholded difference between Subscreen SSAA and Subscreen MSAA\relax }}{35}{figure.caption.21}}
+\newlabel{fig:supersample}{{4.3}{35}{Image of the tree scene showing the thresholded difference between Subscreen SSAA and Subscreen MSAA\relax }{figure.caption.21}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.6}Removal of artefacts}{35}{section.4.6}}
+\newlabel{removeArtefacts}{{4.6}{35}{Removal of artefacts}{section.4.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.1}Subscreen Supersampling}{35}{subsection.4.6.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.2}Subscreen Multisampling}{36}{subsection.4.6.2}}
+\newlabel{fig:subim2}{{4.4a}{36}{The original Scene\relax }{figure.caption.22}{}}
+\newlabel{sub@fig:subim2}{{a}{36}{The original Scene\relax }{figure.caption.22}{}}
+\newlabel{fig:subim1}{{4.4b}{36}{Fullscreen MSAA - Subscreen MSAA\relax }{figure.caption.22}{}}
+\newlabel{sub@fig:subim1}{{b}{36}{Fullscreen MSAA - Subscreen MSAA\relax }{figure.caption.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Highlights aliasing that is removed from both Subscreen MSAA and Fullscreen MSAA\relax }}{36}{figure.caption.22}}
+\newlabel{fig:multisample}{{4.4}{36}{Highlights aliasing that is removed from both Subscreen MSAA and Fullscreen MSAA\relax }{figure.caption.22}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.7}Subjective Assessment}{36}{section.4.7}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.8}User Study Setup}{36}{section.4.8}}
+\newlabel{studySetup}{{4.8}{36}{User Study Setup}{section.4.8}{}}
 \citation{rafalPaper}
 \citation{pwcomp}
-\@writefile{toc}{\contentsline {section}{\numberline {4.8}User study results}{36}{section.4.8}}
-\newlabel{studyResults}{{4.8}{36}{User study results}{section.4.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Shows the Just-Objectionable-Difference(JOD) of three anti-aliasing techniques from a reference image of Fullscreen Multisampling. Greater JOD implies greater image quality to the reference.\relax }}{36}{figure.caption.22}}
-\newlabel{fig:jod}{{4.5}{36}{Shows the Just-Objectionable-Difference(JOD) of three anti-aliasing techniques from a reference image of Fullscreen Multisampling. Greater JOD implies greater image quality to the reference.\relax }{figure.caption.22}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.9}Extension 1 Evaluation}{38}{section.4.9}}
-\newlabel{epsfig1}{{4.6a}{38}{Original texel density\relax }{figure.caption.23}{}}
-\newlabel{sub@epsfig1}{{a}{38}{Original texel density\relax }{figure.caption.23}{}}
-\newlabel{epsfig1}{{4.6b}{38}{Proposed texel density\relax }{figure.caption.23}{}}
-\newlabel{sub@epsfig1}{{b}{38}{Proposed texel density\relax }{figure.caption.23}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Shows the texel to pixel density across a barrel distorted image.\relax }}{38}{figure.caption.23}}
-\newlabel{fig:barreldensity}{{4.6}{38}{Shows the texel to pixel density across a barrel distorted image.\relax }{figure.caption.23}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusion}{39}{chapter.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.9}User study results}{37}{section.4.9}}
+\newlabel{studyResults}{{4.9}{37}{User study results}{section.4.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Shows the Just-Objectionable-Difference(JOD) of three anti-aliasing techniques from a reference image of Fullscreen Multisampling. Greater JOD implies greater image quality to the reference.\relax }}{37}{figure.caption.23}}
+\newlabel{fig:jod}{{4.5}{37}{Shows the Just-Objectionable-Difference(JOD) of three anti-aliasing techniques from a reference image of Fullscreen Multisampling. Greater JOD implies greater image quality to the reference.\relax }{figure.caption.23}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.10}Extension 1 Evaluation}{39}{section.4.10}}
+\newlabel{epsfig1}{{4.6a}{39}{Original texel density\relax }{figure.caption.24}{}}
+\newlabel{sub@epsfig1}{{a}{39}{Original texel density\relax }{figure.caption.24}{}}
+\newlabel{epsfig1}{{4.6b}{39}{Proposed texel density\relax }{figure.caption.24}{}}
+\newlabel{sub@epsfig1}{{b}{39}{Proposed texel density\relax }{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Shows the texel to pixel density across a barrel distorted image.\relax }}{39}{figure.caption.24}}
+\newlabel{fig:barreldensity}{{4.6}{39}{Shows the texel to pixel density across a barrel distorted image.\relax }{figure.caption.24}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusion}{41}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Achievements}{39}{section.5.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Achievements}{41}{section.5.1}}
 \bibdata{refs}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Final Remarks}{40}{section.5.2}}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{40}{section.5.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Final Remarks}{42}{section.5.2}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{42}{section.5.2}}
 \bibcite{armDeveloper}{1}
 \bibcite{oculus}{2}
 \bibcite{abrash}{3}
@@ -158,11 +163,11 @@
 \bibcite{Astigpap}{10}
 \bibcite{arbViewport}{11}
 \bibcite{MotionToPhoton}{12}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}TODO}{43}{appendix.A}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}TODO}{45}{appendix.A}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {B}Project Proposal}{45}{appendix.B}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}Project Proposal}{47}{appendix.B}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lof}{\contentsline {figure}{\numberline {B.1}{\ignorespaces The center of the perceived image is sharp, while the edges get progressively blurrier\relax }}{46}{figure.caption.27}}
-\newlabel{blurfig}{{B.1}{46}{The center of the perceived image is sharp, while the edges get progressively blurrier\relax }{figure.caption.27}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {B.1}{\ignorespaces The center of the perceived image is sharp, while the edges get progressively blurrier\relax }}{48}{figure.caption.27}}
+\newlabel{blurfig}{{B.1}{48}{The center of the perceived image is sharp, while the edges get progressively blurrier\relax }{figure.caption.27}{}}
