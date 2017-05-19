@@ -15,7 +15,7 @@ Michael Abrash.
   \url{http://blogs.valvesoftware.com/abrash/when-it-comes-to-resolution-its-all-relative/}.
 
 \bibitem{rafalPaper}
-Vamsi~Kiran Adhikarla, Marek Vinkler, Denis Sumin, Rafał~K. Mantiuk, Karol
+Vamsi~Kiran Adhikarla, Marek Vinkler, Denis Sumin, Rafal~K. Mantiuk, Karol
   Myszkowski1, Hans-Peter Seidel, and Piotr Didyk.
 \newblock Towards a quality metric for dense light fields.
 \newblock {\em arXiv preprint arXiv:1704.07576}, 2017.
@@ -40,12 +40,18 @@ Brian Kehrer.
 \bibitem{pwcomp}
 Dr.~Rafal Mantiuk.
 \newblock Thurstonian scaling for pair-wise comparison experiments.
-\newblock https://github.com/mantiuk/pwcmp, 2016.
+\newblock \url{https://github.com/mantiuk/pwcmp}, 2016.
 
 \bibitem{multiResShading}
 {NVIDIA} Nathan~Reed.
 \newblock Multi-res shading.
 \newblock \url{https://developer.nvidia.com/vrworks/graphics/multiresshading}.
+
+\bibitem{patney2016towards}
+Anjul Patney, Marco Salvi, Joohwan Kim, Anton Kaplanyan, Chris Wyman, Nir
+  Benty, David Luebke, and Aaron Lefohn.
+\newblock Towards foveated rendering for gaze-tracked virtual reality.
+\newblock {\em ACM Transactions on Graphics (TOG)}, 35(6):179, 2016.
 
 \bibitem{Astigpap}
 Daniel Pohl, Timo Bolkart, Stefan Nickels, and Oliver Grau.

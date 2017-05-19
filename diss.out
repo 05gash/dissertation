@@ -5,50 +5,54 @@
 \BOOKMARK [0][-]{chapter.2}{Preparation}{}% 5
 \BOOKMARK [1][-]{section.2.1}{Previous Work}{chapter.2}% 6
 \BOOKMARK [1][-]{section.2.2}{OpenGL}{chapter.2}% 7
-\BOOKMARK [2][-]{subsection.2.2.1}{The OpenGL pipeline}{section.2.2}% 8
+\BOOKMARK [2][-]{subsection.2.2.1}{The OpenGL Pipeline}{section.2.2}% 8
 \BOOKMARK [1][-]{section.2.3}{Development}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.4}{Software libraries}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.4}{Software Libraries}{chapter.2}% 10
 \BOOKMARK [1][-]{section.2.5}{Programming Languages}{chapter.2}% 11
 \BOOKMARK [1][-]{section.2.6}{Development Tools}{chapter.2}% 12
 \BOOKMARK [2][-]{subsection.2.6.1}{Version Control}{section.2.6}% 13
 \BOOKMARK [2][-]{subsection.2.6.2}{Failsafes}{section.2.6}% 14
 \BOOKMARK [0][-]{chapter.3}{Implementation}{}% 15
-\BOOKMARK [1][-]{section.3.1}{OculusWorldDemo Structure}{chapter.3}% 16
-\BOOKMARK [1][-]{section.3.2}{The Render Loop}{chapter.3}% 17
-\BOOKMARK [1][-]{section.3.3}{Barrel Distortion}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.4}{Implementation overview}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.1}{Implementation Overview}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.2}{OculusWorldDemo Structure}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.3}{The Render Loop}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.4}{Barrel Distortion}{chapter.3}% 19
 \BOOKMARK [1][-]{section.3.5}{Projection Transformation}{chapter.3}% 20
-\BOOKMARK [2][-]{subsection.3.5.1}{Orthographic projection}{section.3.5}% 21
-\BOOKMARK [2][-]{subsection.3.5.2}{Perspective projection}{section.3.5}% 22
+\BOOKMARK [2][-]{subsection.3.5.1}{Orthographic Projection}{section.3.5}% 21
+\BOOKMARK [2][-]{subsection.3.5.2}{Perspective Projection}{section.3.5}% 22
 \BOOKMARK [2][-]{subsection.3.5.3}{Matrix Initialisation}{section.3.5}% 23
 \BOOKMARK [1][-]{section.3.6}{Allocating Textures}{chapter.3}% 24
-\BOOKMARK [1][-]{section.3.7}{Drawing the scene}{chapter.3}% 25
-\BOOKMARK [2][-]{subsection.3.7.1}{Modifying The Render Loop}{section.3.7}% 26
+\BOOKMARK [1][-]{section.3.7}{Drawing the Scene}{chapter.3}% 25
+\BOOKMARK [2][-]{subsection.3.7.1}{Modifying the Render Loop}{section.3.7}% 26
 \BOOKMARK [1][-]{section.3.8}{MultiSample Resolve}{chapter.3}% 27
-\BOOKMARK [1][-]{section.3.9}{OpenGL optimisations}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.9}{OpenGL Optimisation}{chapter.3}% 28
 \BOOKMARK [1][-]{section.3.10}{Amplifying Geometry}{chapter.3}% 29
-\BOOKMARK [2][-]{subsection.3.10.1}{The Geometry Shader}{section.3.10}% 30
-\BOOKMARK [1][-]{section.3.11}{Extension 1: Non-uniform Texel Density}{chapter.3}% 31
-\BOOKMARK [2][-]{subsection.3.11.1}{Blending the two textures}{section.3.11}% 32
-\BOOKMARK [1][-]{section.3.12}{Stereoscopic rendering}{chapter.3}% 33
-\BOOKMARK [1][-]{section.3.13}{Limitations}{chapter.3}% 34
-\BOOKMARK [1][-]{section.3.14}{Future Hardware Support}{chapter.3}% 35
-\BOOKMARK [0][-]{chapter.4}{Evaluation}{}% 36
-\BOOKMARK [1][-]{section.4.1}{Objective Assessment}{chapter.4}% 37
-\BOOKMARK [1][-]{section.4.2}{API calls}{chapter.4}% 38
-\BOOKMARK [1][-]{section.4.3}{Fragment shader invocations}{chapter.4}% 39
-\BOOKMARK [1][-]{section.4.4}{Fragment Shader Timing}{chapter.4}% 40
-\BOOKMARK [1][-]{section.4.5}{Geometry Processing}{chapter.4}% 41
-\BOOKMARK [1][-]{section.4.6}{Removal of artefacts}{chapter.4}% 42
-\BOOKMARK [2][-]{subsection.4.6.1}{Subscreen Supersampling}{section.4.6}% 43
-\BOOKMARK [2][-]{subsection.4.6.2}{Subscreen Multisampling}{section.4.6}% 44
-\BOOKMARK [1][-]{section.4.7}{Subjective Assessment}{chapter.4}% 45
-\BOOKMARK [1][-]{section.4.8}{User Study Setup}{chapter.4}% 46
-\BOOKMARK [1][-]{section.4.9}{User study results}{chapter.4}% 47
-\BOOKMARK [1][-]{section.4.10}{Extension 1 Evaluation}{chapter.4}% 48
-\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 49
-\BOOKMARK [1][-]{section.5.1}{Achievements}{chapter.5}% 50
-\BOOKMARK [1][-]{section.5.2}{Final Remarks}{chapter.5}% 51
-\BOOKMARK [0][-]{section.5.2}{Bibliography}{}% 52
-\BOOKMARK [0][-]{appendix.A}{TODO}{}% 53
-\BOOKMARK [0][-]{appendix.B}{Project Proposal}{}% 54
+\BOOKMARK [2][-]{subsection.3.10.1}{Geometry Shader Setup}{section.3.10}% 30
+\BOOKMARK [2][-]{subsection.3.10.2}{The Geometry Shader}{section.3.10}% 31
+\BOOKMARK [1][-]{section.3.11}{Extension 1: Non-uniform Texel Density}{chapter.3}% 32
+\BOOKMARK [2][-]{subsection.3.11.1}{Blending the Two Textures}{section.3.11}% 33
+\BOOKMARK [1][-]{section.3.12}{Stereoscopic Rendering}{chapter.3}% 34
+\BOOKMARK [1][-]{section.3.13}{Limitations}{chapter.3}% 35
+\BOOKMARK [1][-]{section.3.14}{Future Hardware Support}{chapter.3}% 36
+\BOOKMARK [2][-]{subsection.3.14.1}{Brief Implementation using OVR\137MULTIVIEW}{section.3.14}% 37
+\BOOKMARK [0][-]{chapter.4}{Evaluation}{}% 38
+\BOOKMARK [1][-]{section.4.1}{Objective Assessment}{chapter.4}% 39
+\BOOKMARK [1][-]{section.4.2}{API Calls}{chapter.4}% 40
+\BOOKMARK [1][-]{section.4.3}{Fragment Shader Invocations}{chapter.4}% 41
+\BOOKMARK [1][-]{section.4.4}{Fragment Shader Timing}{chapter.4}% 42
+\BOOKMARK [1][-]{section.4.5}{Geometry Processing}{chapter.4}% 43
+\BOOKMARK [1][-]{section.4.6}{Artefact Removal}{chapter.4}% 44
+\BOOKMARK [2][-]{subsection.4.6.1}{Subscreen Supersampling}{section.4.6}% 45
+\BOOKMARK [2][-]{subsection.4.6.2}{Subscreen Multisampling}{section.4.6}% 46
+\BOOKMARK [1][-]{section.4.7}{Subjective Assessment}{chapter.4}% 47
+\BOOKMARK [2][-]{subsection.4.7.1}{User Study Setup}{section.4.7}% 48
+\BOOKMARK [2][-]{subsection.4.7.2}{User Study Results}{section.4.7}% 49
+\BOOKMARK [1][-]{section.4.8}{Extension 1 Evaluation}{chapter.4}% 50
+\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 51
+\BOOKMARK [1][-]{section.5.1}{Achievements}{chapter.5}% 52
+\BOOKMARK [1][-]{section.5.2}{Final Remarks}{chapter.5}% 53
+\BOOKMARK [0][-]{section.5.2}{Bibliography}{}% 54
+\BOOKMARK [0][-]{appendix.A}{Geometry Shader}{}% 55
+\BOOKMARK [0][-]{appendix.B}{Matlab code to generate figure 4.9}{}% 56
+\BOOKMARK [0][-]{appendix.C}{Raw User Study Results}{}% 57
+\BOOKMARK [0][-]{appendix.D}{Project Proposal}{}% 58

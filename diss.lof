@@ -1,25 +1,28 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces An example of 4x Supersampling for a single pixel.\relax }}{10}{figure.caption.8}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Barrel distortion applied to a rectangular grid, normalised to the range [-1,1]\relax }}{11}{figure.caption.9}
-\contentsline {figure}{\numberline {1.3}{\ignorespaces A depiction of lens astigmatism. The perceived image blurs as you move away from the sharp center.\relax }}{11}{figure.caption.10}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces A glimpse at the OpenGL rendering pipeline\relax }}{14}{figure.caption.11}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces A glimpse at the OpenGL rendering pipeline\relax }}{15}{figure.caption.10}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Shows a regular pixel grid pre and post brown distortion, with $\alpha = 0.35 $.\relax }}{18}{figure.caption.12}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Shows a render of OculusWorldDemo being used to texture a mesh, achieving barrel distortion.\relax }}{19}{figure.caption.13}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Shows a high level process of achieving Subscreen Antialiasing.\relax }}{20}{figure.caption.14}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Shows the field of view for each eye. Not shown are the fov\_Up and fov\_Down parameters. IPD represents the Inter Pupillary Distance of the user - The distance between the center of each eye $\approx 66mm$.\relax }}{21}{figure.caption.15}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Shows the high level process of rendering to two resolutions with one draw call\relax }}{25}{figure.caption.16}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Shows the texel per pixel density across a barrel distorted image at the recommended Oculus DK2 texture size.\relax }}{26}{figure.caption.17}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Shows the texture coordinates for the low field of view texture given on the outer rectangle. The low field of view texture can then be sampled correctly in the fragment shader.\relax }}{28}{figure.caption.18}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Shows a high level process of achieving Subscreen Anti-aliasing. Green components represent the low field of view, while red represents the high field of view.\relax }}{18}{figure.caption.11}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Shows a regular pixel grid pre and post brown distortion, with $\alpha = 0.35 $.\relax }}{19}{figure.caption.12}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Shows a planar projection of OculusWorldDemo being used to texture a distorted mesh, achieving barrel distortion.\relax }}{20}{figure.caption.13}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Shows the field of view for each eye. Not shown are the fov\_Up and fov\_Down parameters. IPD represents the Inter Pupillary Distance of the user - The distance between the center of each eye $\approx 66mm$.\relax }}{21}{figure.caption.14}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Shows the high level process of rendering to two resolutions with one draw call\relax }}{25}{figure.caption.15}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Shows the texel per pixel density across a barrel distorted image at the recommended Oculus DK2 texture size. Colour represents texel count at some pixel, with a colour bar given on the right.\relax }}{27}{figure.caption.16}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Shows the texture coordinates for the low field of view texture given on the outer rectangle. The low field of view texture can then be sampled correctly in the fragment shader.\relax }}{29}{figure.caption.17}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Shows the number fragment shader invocations across the different techniques.\relax }}{32}{figure.caption.19}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Shows the time taken to process fragments across the techniques.\relax }}{33}{figure.caption.20}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Image of the tree scene showing the thresholded difference between Subscreen SSAA and Subscreen MSAA\relax }}{35}{figure.caption.21}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Highlights aliasing that is removed from both Subscreen MSAA and Fullscreen MSAA\relax }}{36}{figure.caption.22}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Shows the Just-Objectionable-Difference(JOD) of three anti-aliasing techniques from a reference image of Fullscreen Multisampling. Greater JOD implies greater image quality to the reference.\relax }}{37}{figure.caption.23}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Shows the texel to pixel density across a barrel distorted image.\relax }}{39}{figure.caption.24}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Shows the number fragment shader invocations across the different techniques.\relax }}{32}{figure.caption.18}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Shows the time taken to process fragments across the techniques.\relax }}{33}{figure.caption.19}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Image of the tree scene showing the thresholded difference between Subscreen SSAA and Subscreen MSAA\relax }}{35}{figure.caption.20}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Shows the implementation of the tree leaves in OculusWorldDemo, the checkerboard pattern represents transparency in the texture.\relax }}{35}{figure.caption.21}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Highlights aliasing that is removed from both Subscreen MSAA and Fullscreen MSAA\relax }}{36}{figure.caption.22}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces A view of the difference between the techniques in the courtyard scene.\relax }}{37}{figure.caption.23}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Shows the three scenes presented in the user study.\relax }}{38}{figure.caption.24}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Shows the Just-Objectionable-Difference(JOD) of three anti-aliasing techniques from a reference image of Fullscreen Multisampling. Greater JOD implies greater image quality to the reference.\relax }}{39}{figure.caption.25}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Proposed texel to pixel density for the Oculus DK2 display. The colour represents the number of texels rendered for a point on the display.\relax }}{41}{figure.caption.26}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces The center of the perceived image is sharp, while the edges get progressively blurrier\relax }}{48}{figure.caption.27}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {D.1}{\ignorespaces The center of the perceived image is sharp, while the edges get progressively blurrier\relax }}{54}{figure.caption.29}
